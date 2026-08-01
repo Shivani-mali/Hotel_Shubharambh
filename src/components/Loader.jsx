@@ -101,8 +101,8 @@ const Loader = () => {
                 key={i} 
                 className="window"
                 style={{
-                  animationDelay: \`\${delay}s\`,
-                  animationDuration: \`\${duration}s\`
+                  animationDelay: `${delay}s`,
+                  animationDuration: `${duration}s`
                 }}
               ></div>
             );
