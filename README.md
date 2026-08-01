@@ -1,16 +1,89 @@
-# React + Vite
+# 🏨 Hotel Shubharambh
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern, responsive, and SEO-optimized website developed for **Hotel Shubharambh Family Restaurant, Lodging & Function Hall**.
 
-Currently, two official plugins are available:
+The website is designed with a **Marathi-first**, **mobile-first** approach to help local customers easily explore the restaurant, lodging, function hall, and contact information.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🌟 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🇮🇳 Marathi First UI
+- 📱 Fully Responsive Design
+- ⚡ Lightning Fast Performance
+- 🔍 SEO Optimized
+- 🍽️ Digital Restaurant Menu
+- 🛏️ Lodging Information
+- 🎉 Function Hall Information
+- 🖼️ Interactive Gallery
+- ⭐ Google Reviews
+- 📍 Google Maps Integration
+- 📞 One-Tap Calling
+- 💬 WhatsApp Integration
+- 🎨 Smooth Animations
+- ♿ Accessibility Focused
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🛠 Tech Stack
+
+- React
+- Vite
+- Node.js
+- Tailwind CSS
+- Framer Motion
+- React Router
+- React Icons
+
+---
+
+## 📂 Folder Structure
+
+```
+src/
+│
+├── assets/
+├── components/
+├── pages/
+├── layouts/
+├── hooks/
+├── utils/
+├── data/
+├── routes/
+└── styles/
+```
+
+---
+
+## 📷 Screenshots
+
+(Add screenshots after deployment)
+
+---
+
+## 🚀 Live Website
+
+https://hotel-shubharambh.vercel.app
+
+---
+
+## 📌 Project Highlights
+
+- Mobile First Design
+- Marathi First Experience
+- SEO Optimized
+- High Performance
+- Local Business Focus
+- Premium UI/UX
+
+---
+
+## 🎯 Purpose
+
+This website was developed to improve the digital presence of Hotel Shubharambh and provide customers with a seamless experience for discovering the restaurant, lodging, function hall, and contact information.
+
+---
+
+## 👩‍💻 Developed By
+
+Shivani Mali
