@@ -41,13 +41,12 @@ const Loader = () => {
         }
         
         .hotel-loader .window {
-          background: white;
+          background: transparent;
           width: 0.5em;
           height: 1em;
           float: left;
           margin: 0 0.5em 0.5em 0;
           border-radius: 2px;
-          animation: flicker 1s infinite ease;
         }
         
         .hotel-loader .window:nth-of-type(5n) {
@@ -64,18 +63,19 @@ const Loader = () => {
           margin-left: -0.5em;
           border-top-left-radius: 3px;
           border-top-right-radius: 3px;
+          box-shadow: 0 0 10px #facc15;
         }
         
         @keyframes flicker {
-          0% { background: transparent; }
-          50% { background: #facc15; }
-          100% { background: transparent; }
+          0% { background: transparent; box-shadow: none; }
+          50% { background: #facc15; box-shadow: 0 0 8px #facc15; }
+          100% { background: transparent; box-shadow: none; }
         }
         
         @keyframes neon {
-          0% { text-shadow: none; color: #9ca3af; }
-          50% { text-shadow: 0 0 8px rgba(255, 255, 255, 0.8); color: white; }
-          100% { text-shadow: none; color: #9ca3af; }
+          0% { text-shadow: none; color: #6b7280; }
+          50% { text-shadow: 0 0 15px #facc15, 0 0 5px #facc15; color: #ffffff; }
+          100% { text-shadow: none; color: #6b7280; }
         }
       `}</style>
       
@@ -101,8 +101,7 @@ const Loader = () => {
                 key={i} 
                 className="window"
                 style={{
-                  animationDelay: `${delay}s`,
-                  animationDuration: `${duration}s`
+                  animation: `flicker ${duration}s infinite ease ${delay}s`
                 }}
               ></div>
             );
