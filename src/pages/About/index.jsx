@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaWhatsapp, FaStar, FaUsers, FaClock, FaCar, FaLeaf, FaBed, FaUtensils, FaShieldAlt, FaChild, FaBuilding } from 'react-icons/fa';
 import SEO from '../../components/SEO';
 import hotelMainBg from '../../assets/hotel_main_page.png';
+import aboutPageImg from '../../assets/about_page.jpeg';
 
 const fadeIn = {
   hidden: { opacity: 0, y: 20 },
@@ -50,7 +51,7 @@ const About = () => {
       <section className="relative h-[60vh] min-h-[400px] flex flex-col justify-center pb-10 md:pb-0">
         <div className="absolute inset-0 z-0">
           <img 
-            src={hotelMainBg} 
+            src={aboutPageImg} 
             alt="Hotel Shubharambh About" 
             className="w-full h-full object-cover object-center"
           />
@@ -59,7 +60,7 @@ const About = () => {
         
         <div className="container-ds relative z-10 text-center px-4 pt-20">
           <motion.div initial="hidden" animate="visible" variants={fadeIn} className="flex flex-col items-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-normal text-white mb-4">
               आमच्या<span className="text-brand-red">बद्दल</span>
             </h1>
             <p className="text-brand-gold text-lg md:text-xl font-medium mb-8 max-w-2xl mx-auto italic">
@@ -70,7 +71,7 @@ const About = () => {
                 <FaPhoneAlt className="mr-2" /> कॉल करा
               </a>
               <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
-                <FaWhatsapp className="mr-2" size={18} /> WhatsApp
+                <FaWhatsapp className="mr-2" size={18} /> <span className="font-english">WhatsApp</span>
               </a>
             </div>
           </motion.div>
@@ -89,7 +90,7 @@ const About = () => {
               className="order-2 md:order-1"
             >
               <span className="section-subtitle">आमची कथा</span>
-              <h2 className="section-title text-left mb-6">हॉटेल शुभारंभ मधील आपले स्वागत आहे</h2>
+              <h2 className="section-title text-left mb-6">हॉटेल शुभारंभमध्ये आपले स्वागत आहे</h2>
               <div className="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
                 <p>
                   मुडशिंगी, कोल्हापूर येथे स्थित <strong className="text-brand-dark">हॉटेल शुभारंभ</strong> हे एक नाविन्यपूर्ण फॅमिली रेस्टॉरंट आणि लॉजिंग आहे. 
@@ -116,7 +117,7 @@ const About = () => {
             >
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
                 <img 
-                  src={hotelMainBg} 
+                  src={aboutPageImg} 
                   alt="Hotel Shubharambh Story" 
                   className="w-full h-auto object-cover md:h-[500px]"
                 />
@@ -139,7 +140,7 @@ const About = () => {
               <div className="w-16 h-16 bg-brand-red text-white rounded-full flex items-center justify-center mb-6 shadow-lg">
                 <FaUsers size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">आमचे ध्येय (Mission)</h3>
+              <h3 className="card-title mb-4">आमचे ध्येय (Mission)</h3>
               <p className="text-xl text-gray-700 italic font-medium">
                 "प्रत्येक पाहुण्याला घरासारखा अनुभव देणे आणि उत्कृष्ट सेवा प्रदान करणे."
               </p>
@@ -153,7 +154,7 @@ const About = () => {
               <div className="w-16 h-16 bg-brand-gold text-white rounded-full flex items-center justify-center mb-6 shadow-lg">
                 <FaStar size={28} />
               </div>
-              <h3 className="text-2xl font-bold text-brand-dark mb-4">आमचा दृष्टिकोन (Vision)</h3>
+              <h3 className="card-title mb-4">आमचा दृष्टिकोन (Vision)</h3>
               <p className="text-xl text-gray-700 italic font-medium">
                 "मुडशिंगीतील सर्वात विश्वासार्ह फॅमिली रेस्टॉरंट आणि लॉजिंग बनणे."
               </p>
@@ -167,7 +168,7 @@ const About = () => {
         <div className="container-ds">
           <div className="text-center mb-16">
             <span className="text-brand-gold font-bold uppercase tracking-wider text-sm mb-2 block">विश्वास</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-white">ग्राहकांचा आमच्यावर विश्वास का आहे?</h2>
+            <h2 className="text-3xl md:text-4xl font-display font-normal text-white">ग्राहकांचा आमच्यावर विश्वास का आहे?</h2>
           </div>
           
           <motion.div 
@@ -182,8 +183,8 @@ const About = () => {
                 <div className="w-20 h-20 mx-auto bg-white/10 rounded-full flex items-center justify-center mb-4">
                   <stat.icon className={`text-3xl ${stat.color}`} />
                 </div>
-                <div className="text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-gray-400 font-medium">{stat.label}</div>
+                <div className="text-3xl font-bold mb-2 font-english">{stat.value}</div>
+                <div className="text-gray-400 font-medium font-english">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -211,7 +212,7 @@ const About = () => {
                 <div className="w-14 h-14 mx-auto bg-white rounded-full flex items-center justify-center mb-4 shadow-sm text-brand-red">
                   <fac.icon size={24} />
                 </div>
-                <h4 className="font-bold text-brand-dark text-sm md:text-base">{fac.label}</h4>
+                <h4 className="font-bold text-brand-dark text-sm md:text-base font-english">{fac.label}</h4>
               </motion.div>
             ))}
           </div>
@@ -222,7 +223,7 @@ const About = () => {
       <section className="py-20 relative overflow-hidden bg-brand-red">
         <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/food.png')]"></div>
         <div className="container-ds relative z-10 text-center">
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">आजच भेट द्या!</h2>
+          <h2 className="text-3xl md:text-5xl font-display font-normal text-white mb-6">आजच भेट द्या!</h2>
           <p className="text-red-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
             हॉटेल शुभारंभ मध्ये येऊन आमची स्वादिष्ट चव आणि आदरातिथ्य नक्की अनुभवा. 
           </p>
@@ -231,7 +232,7 @@ const About = () => {
               <FaPhoneAlt className="mr-2" /> कॉल करा
             </a>
             <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 text-white hover:bg-green-700 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
-              <FaWhatsapp className="mr-2" size={20} /> WhatsApp
+              <FaWhatsapp className="mr-2" size={20} /> <span className="font-english">WhatsApp</span>
             </a>
           </div>
         </div>

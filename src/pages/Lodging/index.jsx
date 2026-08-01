@@ -49,7 +49,7 @@ const Lodging = () => {
         <div className="container-ds relative z-10 text-center px-4 pt-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} 
-            className="text-4xl md:text-6xl font-bold text-white mb-6"
+            className="text-4xl md:text-6xl font-display font-normal text-white mb-6"
           >
             आरामदायक <span className="text-brand-red">लॉजिंग</span>
           </motion.h1>
@@ -84,7 +84,7 @@ const Lodging = () => {
                   <img src={room.img} alt={room.type} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-2xl font-bold text-brand-dark mb-2">{room.type}</h3>
+                  <h3 className="card-title mb-2">{room.type}</h3>
                   <p className="text-brand-red font-bold text-lg mb-4">{room.price} <span className="text-sm text-gray-500 font-normal">/ night (approx)</span></p>
                   <p className="text-gray-600 mb-6">{room.desc}</p>
                   <div className="flex items-center gap-2 text-sm text-gray-500 mb-6 font-medium bg-gray-50 p-3 rounded-lg">
@@ -103,7 +103,7 @@ const Lodging = () => {
       {/* Facilities */}
       <section className="py-16 bg-brand-light">
         <div className="container-ds text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-brand-dark mb-10">लॉजिंग मधील सुविधा</h2>
+          <h2 className="text-2xl md:text-3xl font-display font-normal text-brand-dark mb-10">लॉजिंग मधील सुविधा</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { icon: FaWifi, label: "मोफत वाय-फाय (WiFi)" },
@@ -127,15 +127,15 @@ const Lodging = () => {
       <section className="py-16 bg-white">
         <div className="container-ds max-w-4xl mx-auto">
           <div className="bg-gray-50 p-8 rounded-[32px] border border-gray-200 shadow-sm">
-            <h3 className="text-2xl font-bold text-brand-dark mb-6 text-center border-b border-gray-200 pb-4">नियम व अटी (Rules & Guidelines)</h3>
+            <h3 className="text-2xl font-display font-normal text-brand-dark mb-6 text-center border-b border-gray-200 pb-4">नियम व अटी (Rules & Guidelines)</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-                <span className="block text-gray-500 text-sm mb-1">Check-in Time</span>
-                <span className="text-xl font-bold text-brand-red">12:00 PM</span>
+                <span className="block text-gray-500 text-sm mb-1 font-english">Check-in Time</span>
+                <span className="text-xl font-bold text-brand-red font-english">12:00 PM</span>
               </div>
               <div className="bg-white p-4 rounded-xl shadow-sm text-center">
-                <span className="block text-gray-500 text-sm mb-1">Check-out Time</span>
-                <span className="text-xl font-bold text-brand-red">11:00 AM</span>
+                <span className="block text-gray-500 text-sm mb-1 font-english">Check-out Time</span>
+                <span className="text-xl font-bold text-brand-red font-english">11:00 AM</span>
               </div>
             </div>
             <ul className="space-y-3 text-gray-700">

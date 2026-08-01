@@ -1,13 +1,11 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaBars, FaTimes, FaPhoneAlt, FaGlobe, FaHome, FaInfoCircle, FaUtensils, FaBed, FaBuilding } from 'react-icons/fa';
+import { FaBars, FaTimes, FaPhoneAlt, FaHome, FaInfoCircle, FaUtensils, FaBed, FaBuilding } from 'react-icons/fa';
 import { Link, NavLink } from 'react-router-dom';
+import logoImg from '../assets/Logo.bmp';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [lang, setLang] = useState('MR');
-
-  const toggleLang = () => setLang(lang === 'MR' ? 'EN' : 'MR');
 
   return (
     <nav className="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm">
@@ -15,9 +13,8 @@ const Navbar = () => {
         <div className="flex justify-between h-20 items-center">
           
           {/* Logo */}
-          <Link to="/" className="flex-shrink-0 flex items-center gap-2">
-            <div className="w-10 h-10 bg-brand-red rounded-full flex items-center justify-center text-white font-bold text-xl">S</div>
-            <span className="font-bold text-xl text-brand-dark">शुभारंभ</span>
+          <Link to="/" className="flex-shrink-0 flex items-center">
+            <img src={logoImg} alt="Hotel Shubharambh Logo" className="h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav - Hidden on mobile */}
@@ -32,13 +29,6 @@ const Navbar = () => {
 
           {/* Right Actions */}
           <div className="flex items-center space-x-4">
-            <button onClick={toggleLang} className="flex items-center gap-1 text-sm font-medium text-gray-600 hover:text-brand-gold">
-              <FaGlobe /> {lang}
-            </button>
-            <a href="tel:+919860842093" className="hidden sm:flex btn-primary !min-h-[40px] !px-4 text-sm gap-2">
-              <FaPhoneAlt size={14} /> कॉल करा
-            </a>
-            
             {/* Hamburger */}
             <button onClick={() => setIsOpen(!isOpen)} className="tb:hidden p-2 text-gray-600 focus:outline-none">
               {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}

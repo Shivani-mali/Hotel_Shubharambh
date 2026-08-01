@@ -85,7 +85,7 @@ const Home = () => {
             <span className="text-brand-gold font-semibold uppercase text-[14px] md:text-base mb-5 block tracking-wide">
               परंपरेचा आणि चवीचा संगम
             </span>
-            <h1 className="text-[32px] leading-[1.2] md:text-6xl lg:text-7xl font-bold text-white mb-6">
+            <h1 className="text-[32px] leading-[1.2] md:text-6xl lg:text-7xl font-display font-normal text-white mb-6">
               हॉटेल <span className="text-brand-red">शुभारंभ</span>
             </h1>
             
@@ -101,7 +101,7 @@ const Home = () => {
                 <FaPhoneAlt className="mr-2" /> आता कॉल करा
               </a>
               <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="btn-outline text-white border-white hover:bg-white hover:text-brand-dark flex items-center justify-center text-[16px] md:text-lg h-[48px] md:h-auto md:py-4 w-full sm:w-[220px] bg-black/20 backdrop-blur-[2px] md:bg-transparent">
-                <FaMapMarkerAlt className="mr-2" /> दिशा (Directions)
+                <FaMapMarkerAlt className="mr-2" /> दिशा <span className="font-english ml-1">(Directions)</span>
               </a>
             </div>
           </motion.div>
@@ -118,7 +118,7 @@ const Home = () => {
             </a>
             <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 bg-green-50 rounded-xl hover:bg-green-600 hover:text-white transition-colors text-green-600 group">
               <FaWhatsapp size={28} className="mb-2" />
-              <span className="font-semibold text-sm md:text-base">WhatsApp</span>
+              <span className="font-semibold text-sm md:text-base font-english">WhatsApp</span>
             </a>
             <Link to="/menu" className="flex flex-col items-center justify-center p-4 bg-yellow-50 rounded-xl hover:bg-brand-gold hover:text-white transition-colors text-[#8A6D15] group">
               <FaUtensils size={24} className="mb-2" />
@@ -135,11 +135,11 @@ const Home = () => {
       {/* 3. About Preview */}
       <section className="py-24 bg-brand-light">
         <div className="container-ds">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
-              <div className="section-subtitle text-left">आमच्याबद्दल</div>
-              <h2 className="text-3xl tb:text-4xl font-bold text-brand-dark mb-6">कोल्हापूरची अस्सल चव आणि आपुलकीची सेवा</h2>
-              <div className="space-y-4 text-gray-600 mb-8 leading-relaxed">
+              <div className="section-subtitle !text-left">आमच्याबद्दल</div>
+              <h2 className="text-3xl tb:text-4xl font-display font-normal text-brand-dark mb-6 text-left">कोल्हापूरची अस्सल चव आणि आपुलकीची सेवा</h2>
+              <div className="space-y-4 text-gray-600 mb-8 leading-relaxed text-lg">
                 <p>
                   हॉटेल शुभारंभमध्ये आपले मनःपूर्वक स्वागत!
                 </p>
@@ -147,18 +147,35 @@ const Home = () => {
                   अस्सल कोल्हापुरी चव, स्वच्छ आणि आरामदायी लॉजिंग, तसेच आपुलकीची सेवा यामुळे आम्ही अनेक कुटुंबांचा विश्वास संपादन केला आहे. आमचे स्पेशल बटर चिकन, तांबडा रस्सा, पांढरा रस्सा, तंदूर स्पेशालिटी आणि सीफूड पदार्थ ग्राहकांच्या विशेष पसंतीस उतरले आहेत.
                 </p>
               </div>
-              <Link to="/about" className="btn-secondary">आमच्याबद्दल अधिक जाणून घ्या &rarr;</Link>
+              
+              <div className="flex flex-col sm:flex-row items-center justify-start gap-6 mt-10">
+                <Link to="/about" className="btn-secondary">आमच्याबद्दल अधिक जाणून घ्या &rarr;</Link>
+              </div>
             </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn} className="relative">
-              <img src={hotelMainBg} alt="Restaurant Ambiance" className="rounded-2xl shadow-card w-full h-[400px] object-cover" />
-              <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-xl shadow-popup hidden md:block">
-                <div className="flex items-center gap-4">
-                  <div className="text-brand-gold">
-                    <FaStar size={32} />
+
+            <motion.div 
+              initial={{ opacity: 0, x: 30 }} 
+              whileInView={{ opacity: 1, x: 0 }} 
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative hidden md:block"
+            >
+              <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
+                <img 
+                  src={hotelMainBg} 
+                  alt="Hotel Shubharambh" 
+                  className="w-full h-auto object-cover lg:h-[450px]"
+                />
+                <div className="absolute inset-0 border-4 border-white/20 rounded-[32px] pointer-events-none"></div>
+                
+                {/* Floating Rating Badge */}
+                <div className="absolute -bottom-6 -left-6 md:bottom-8 md:-left-8 bg-white px-6 py-3 rounded-full shadow-xl flex items-center justify-center gap-3 border border-gray-100 z-10">
+                  <div className="text-brand-gold flex-shrink-0">
+                    <FaStar className="text-[24px]" />
                   </div>
-                  <div>
-                    <div className="text-2xl font-bold text-brand-dark">४.८/५</div>
-                    <div className="text-gray-500 font-medium">गूगल रिव्ह्यूज</div>
+                  <div className="text-left leading-tight">
+                    <div className="text-lg font-bold text-brand-dark font-english">4.8/5</div>
+                    <div className="text-gray-500 font-medium text-xs whitespace-nowrap"><span className="font-english">Google Reviews</span></div>
                   </div>
                 </div>
               </div>
@@ -191,7 +208,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-brand-dark mb-3">फॅमिली व गार्डन रेस्टॉरंट</h3>
+                <h3 className="card-title mb-3">फॅमिली व गार्डन रेस्टॉरंट</h3>
                 <p className="text-gray-600 mb-6">चविष्ट शाकाहारी आणि मांसाहारी कोल्हापुरी जेवण. कुटुंबासाठी स्वतंत्र आणि सुरक्षित बैठक व्यवस्था.</p>
                 <Link to="/restaurant" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
               </div>
@@ -206,7 +223,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-brand-dark mb-3">स्वच्छ आणि आरामदायी खोल्या</h3>
+                <h3 className="card-title mb-3">स्वच्छ आणि आरामदायी खोल्या</h3>
                 <p className="text-gray-600 mb-6">प्रवाशांसाठी सुरक्षित आणि आरामदायी वास्तव्य. गरम पाणी, पार्किंग आणि 24 तास सेवा उपलब्ध.</p>
                 <Link to="/lodging" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
               </div>
@@ -221,7 +238,7 @@ const Home = () => {
                 </div>
               </div>
               <div className="p-8">
-                <h3 className="text-2xl font-bold text-brand-dark mb-3">छोट्या कार्यक्रमांसाठी हॉल</h3>
+                <h3 className="card-title mb-3">छोट्या कार्यक्रमांसाठी हॉल</h3>
                 <p className="text-gray-600 mb-6">वाढदिवस, नामकरण आणि कौटुंबिक कार्यक्रमांसाठी उत्तम. स्वादिष्ट जेवणासह संपूर्ण व्यवस्था.</p>
                 <Link to="/hall" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
               </div>
@@ -235,7 +252,7 @@ const Home = () => {
         <div className="container-ds">
           <div className="section-header !text-white">
             <span className="section-subtitle !text-brand-gold">आजची खासियत</span>
-            <h2 className="text-3xl tb:text-4xl font-bold mb-4 text-white">आमचे लोकप्रिय पदार्थ</h2>
+            <h2 className="text-3xl tb:text-4xl font-display font-normal mb-4 text-white">आमचे लोकप्रिय पदार्थ</h2>
           </div>
           
           <div className="flex overflow-x-auto pb-8 -mx-4 px-4 snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:grid-cols-4 md:overflow-visible md:p-0 md:mx-0">
@@ -321,7 +338,7 @@ const Home = () => {
         <div className="container-ds">
           <div className="section-header">
             <span className="section-subtitle">ग्राहकांचे मनोगत</span>
-            <h2 className="section-title">गूगल रिव्ह्यूज</h2>
+            <h2 className="section-title font-english">Google Reviews</h2>
           </div>
           
           <div className="relative flex w-full flex-col items-center justify-center overflow-hidden py-10">
@@ -349,7 +366,7 @@ const Home = () => {
               <div className="flex text-brand-gold text-xl group-hover:scale-110 transition-transform">
                 <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
               </div>
-              <span>आम्हाला Google वर रेटिंग द्या</span>
+              <span>आम्हाला <span className="font-english">Google</span> वर रेटिंग द्या</span>
             </a>
           </div>
 
@@ -396,7 +413,7 @@ const Home = () => {
           
           {/* Contact Details & Banner */}
           <div className="bg-brand-red text-white p-8 md:p-16 flex flex-col justify-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">आम्हाला भेट द्या!</h2>
+            <h2 className="text-3xl md:text-5xl font-display font-normal mb-6">आम्हाला भेट द्या!</h2>
             <p className="text-red-100 text-lg mb-10">तुमच्या सर्व प्रश्नांसाठी आणि बुकिंगसाठी आम्हाला संपर्क करा.</p>
             
             <div className="space-y-6 mb-12">
@@ -413,7 +430,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="tel:+919860842093" className="btn-secondary text-brand-dark w-full sm:w-auto justify-center text-center">कॉल करा</a>
               <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-500 hover:bg-green-600 text-white btn-base w-full sm:w-auto justify-center text-center transition-colors shadow-md flex items-center gap-2">
-                <FaWhatsapp size={20} /> WhatsApp
+                <FaWhatsapp size={20} /> <span className="font-english">WhatsApp</span>
               </a>
             </div>
           </div>

@@ -32,7 +32,7 @@ const Contact = () => {
         <div className="container-ds relative z-10 text-center px-4 pt-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} 
-            className="text-4xl md:text-6xl font-bold text-white mb-4"
+            className="text-4xl md:text-6xl font-display font-normal text-white mb-4"
           >
             आमच्याशी <span className="text-brand-red">संपर्क</span> करा
           </motion.h1>
@@ -50,7 +50,7 @@ const Contact = () => {
           
           {/* Contact Info Cards */}
           <motion.div initial="hidden" animate="visible" variants={fadeIn} className="space-y-6">
-            <h2 className="text-3xl font-bold text-brand-dark mb-8">संपर्क माहिती</h2>
+            <h2 className="text-3xl font-display font-normal text-brand-dark mb-8">संपर्क माहिती</h2>
             
             <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex gap-5 items-start">
               <div className="w-12 h-12 bg-red-50 text-brand-red rounded-full flex items-center justify-center shrink-0">
@@ -73,10 +73,10 @@ const Contact = () => {
                 <FaPhoneAlt size={20} />
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 text-lg mb-1">फोन आणि WhatsApp</h3>
+                <h3 className="font-bold text-gray-900 text-lg mb-1">फोन आणि <span className="font-english">WhatsApp</span></h3>
                 <p className="text-gray-600 mb-2">ऑर्डर आणि बुकिंग साठी संपर्क करा.</p>
                 <div className="flex flex-col sm:flex-row gap-4 mt-3">
-                  <a href="tel:+919860842093" className="font-bold text-lg text-brand-dark hover:text-brand-red">+91 9860842093</a>
+                  <a href="tel:+919860842093" className="font-bold text-lg text-brand-dark hover:text-brand-red font-english">+91 9860842093</a>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@ const Contact = () => {
         {/* FAQs */}
         <div className="max-w-3xl mx-auto mt-24 mb-16">
           <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-brand-dark mb-4">नेहमी विचारले जाणारे प्रश्न (FAQ)</h2>
+            <h2 className="text-3xl font-display font-normal text-brand-dark mb-4">नेहमी विचारले जाणारे प्रश्न (FAQ)</h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
@@ -140,13 +140,13 @@ const Contact = () => {
       
       {/* CTA Section */}
       <section className="bg-brand-dark py-16 text-center px-4">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">आम्ही तुमच्या स्वागतासाठी तयार आहोत!</h2>
+        <h2 className="text-2xl md:text-3xl font-display font-normal text-white mb-8">आम्ही तुमच्या स्वागतासाठी तयार आहोत!</h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href="tel:+919860842093" className="btn-primary flex items-center justify-center text-lg px-8 py-3 rounded-full">
             <FaPhoneAlt className="mr-2" /> कॉल करा
           </a>
           <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-lg px-8 py-3 rounded-full transition-colors">
-            <FaWhatsapp className="mr-2" size={20} /> WhatsApp
+            <FaWhatsapp className="mr-2" size={20} /> <span className="font-english">WhatsApp</span>
           </a>
         </div>
       </section>

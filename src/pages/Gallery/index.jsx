@@ -46,7 +46,7 @@ const Gallery = () => {
         <div className="container-ds relative z-10 text-center px-4 pt-10">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} 
-            className="text-4xl md:text-6xl font-bold text-white mb-4"
+            className="text-4xl md:text-6xl font-display font-normal text-white mb-4"
           >
             आमची <span className="text-brand-red">गॅलरी</span>
           </motion.h1>
@@ -68,7 +68,7 @@ const Gallery = () => {
               onClick={() => setActiveCategory(cat)}
               className={`whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-bold transition-all ${activeCategory === cat ? 'bg-brand-red text-white shadow-md' : 'bg-white text-gray-600 hover:bg-gray-100 shadow-sm border border-gray-100'}`}
             >
-              {cat}
+              <span className="font-english">{cat}</span>
             </button>
           ))}
         </div>
@@ -92,7 +92,7 @@ const Gallery = () => {
                   <FaExpand className="text-white opacity-0 group-hover:opacity-100 text-3xl transform scale-50 group-hover:scale-100 transition-all duration-300" />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <span className="text-white font-bold text-sm bg-brand-red/90 px-2 py-1 rounded">{img.category}</span>
+                  <span className="text-white font-bold text-sm bg-brand-red/90 px-2 py-1 rounded font-english">{img.category}</span>
                 </div>
               </motion.div>
             ))}
@@ -131,7 +131,7 @@ const Gallery = () => {
               />
               <div className="absolute bottom-[-40px] text-center w-full">
                 <span className="text-white font-medium bg-black/50 px-4 py-1.5 rounded-full backdrop-blur-sm">
-                  {selectedImage.category}
+                  <span className="font-english">{selectedImage.category}</span>
                 </span>
               </div>
             </motion.div>

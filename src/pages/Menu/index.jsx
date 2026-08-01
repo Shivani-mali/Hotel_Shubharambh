@@ -1,10 +1,10 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaPhoneAlt, FaWhatsapp, FaSearch, FaLeaf, FaDrumstickBite, FaFire, FaTimes } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp, FaSearch, FaLeaf, FaDrumstickBite, FaFire, FaTimes, FaChevronDown } from 'react-icons/fa';
 import SEO from '../../components/SEO';
 import hotelMainBg from '../../assets/hotel_main_page.png';
 
-const categories = ["All", "Veg", "Non-Veg", "Starter", "Main Course", "Thali", "Chinese", "Breakfast", "Beverages", "Desserts"];
+const categories = ["All", "Starter", "Main Course", "Thali", "Chinese", "Breakfast", "Beverages", "Desserts"];
 
 // Removed local gallery image imports since they are hotel exteriors
 
@@ -79,8 +79,9 @@ const menuData = [
 const Menu = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
-  const [vegFilter, setVegFilter] = useState("All"); // All, Veg, Non-Veg
+  const [vegFilter, setVegFilter] = useState("All");
   const [selectedDish, setSelectedDish] = useState(null);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const filteredMenu = useMemo(() => {
     return menuData.filter(item => {
@@ -109,7 +110,7 @@ const Menu = () => {
         <div className="container-ds relative z-10 text-center px-4">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} 
-            className="text-4xl md:text-6xl font-bold text-white mb-4"
+            className="text-4xl md:text-6xl font-display font-normal text-white mb-4"
           >
             आमचा <span className="text-brand-gold">मेनू</span>
           </motion.h1>
@@ -122,21 +123,66 @@ const Menu = () => {
         </div>
       </section>
 
-      {/* Controls: Search & Veg Toggle */}
+      {/* Controls: Search, Filter Dropdown & Veg Toggle */}
       <div className="sticky top-20 z-30 bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 py-4">
-        <div className="container-ds flex flex-col sm:flex-row gap-4 items-center justify-between">
+        <div className="container-ds flex flex-col sm:flex-row gap-4 items-center justify-between px-4">
           
-          <div className="relative w-full sm:max-w-xs">
-            <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
-            <input 
-              type="text" 
-              placeholder="शोधा (Search dishes)..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:border-brand-red bg-gray-50"
-            />
+          <div className="flex w-full sm:max-w-lg gap-3">
+            {/* Search */}
+            <div className="relative flex-1">
+              <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+              <input 
+                type="text" 
+                placeholder="शोधा (Search dishes)..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full pl-10 pr-3 py-2 rounded-full border border-gray-200 focus:outline-none focus:border-brand-red bg-gray-50"
+              />
+            </div>
+            
+            {/* Category Dropdown (Custom) */}
+            <div className="relative w-1/3 min-w-[140px] sm:min-w-[160px]">
+              <button 
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                className="w-full h-full flex items-center justify-between pl-4 pr-4 py-2 rounded-full border border-gray-200 focus:outline-none focus:border-brand-red bg-white hover:bg-gray-50 text-brand-dark font-bold text-sm cursor-pointer shadow-sm transition-colors"
+              >
+                <span className="truncate">{activeCategory === "All" ? "All Categories" : activeCategory}</span>
+                <FaChevronDown className={`text-gray-400 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`} size={12} />
+              </button>
+              
+              <AnimatePresence>
+                {isDropdownOpen && (
+                  <>
+                    <div className="fixed inset-0 z-40" onClick={() => setIsDropdownOpen(false)}></div>
+                    <motion.div 
+                      initial={{ opacity: 0, y: -10, scale: 0.95 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                      transition={{ duration: 0.15 }}
+                      className="absolute right-0 mt-2 w-48 bg-white border border-gray-100 rounded-2xl shadow-xl z-50 overflow-hidden"
+                    >
+                      <div className="max-h-64 overflow-y-auto py-2">
+                        {categories.map((cat) => (
+                          <button
+                            key={cat}
+                            onClick={() => {
+                              setActiveCategory(cat);
+                              setIsDropdownOpen(false);
+                            }}
+                            className={`w-full text-left px-5 py-2.5 text-sm font-semibold transition-colors ${activeCategory === cat ? 'bg-brand-red/10 text-brand-red' : 'text-gray-700 hover:bg-gray-50 hover:text-brand-dark'}`}
+                          >
+                            {cat === "All" ? "All Categories" : cat}
+                          </button>
+                        ))}
+                      </div>
+                    </motion.div>
+                  </>
+                )}
+              </AnimatePresence>
+            </div>
           </div>
 
+          {/* Veg / Non-Veg Toggle */}
           <div className="flex bg-gray-100 p-1 rounded-full relative w-full sm:w-auto">
             {["All", "Veg", "Non-Veg"].map((type) => (
               <button
@@ -159,27 +205,12 @@ const Menu = () => {
         </div>
       </div>
 
-      {/* Sticky Categories */}
-      <div className="sticky top-[130px] sm:top-[88px] z-20 bg-brand-light/95 backdrop-blur-md py-3 overflow-x-auto hide-scrollbar border-b border-gray-200 shadow-sm">
-        <div className="container-ds flex gap-2 px-4">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setActiveCategory(cat)}
-              className={`whitespace-nowrap px-5 py-2 rounded-full text-sm font-bold transition-all ${activeCategory === cat ? 'bg-brand-red text-white shadow-md' : 'bg-white text-gray-600 hover:bg-gray-100 border border-gray-200'}`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-      </div>
-
       <div className="container-ds pt-10">
         
         {/* Chef Specials Banner (Only show if "All" is selected) */}
         {activeCategory === "All" && searchQuery === "" && (
           <div className="mb-12">
-            <h2 className="text-2xl font-bold text-brand-dark mb-6 flex items-center gap-2">
+            <h2 className="text-2xl font-display font-normal text-brand-dark mb-6 flex items-center gap-2">
               <span className="text-brand-gold">★</span> शेफ स्पेशल (Chef Special)
             </h2>
             <div className="flex overflow-x-auto gap-4 pb-4 hide-scrollbar snap-x">
@@ -318,7 +349,7 @@ const Menu = () => {
                     <FaPhoneAlt /> कॉल करून ऑर्डर करा
                   </a>
                   <a href={`https://wa.me/919860842093?text=I would like to order: ${selectedDish.name}`} target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold w-full py-4 rounded-full text-center flex justify-center items-center gap-2 text-lg transition-colors">
-                    <FaWhatsapp size={20} /> WhatsApp वर ऑर्डर द्या
+                    <FaWhatsapp size={20} /> <span className="font-english">WhatsApp</span> वर ऑर्डर द्या
                   </a>
                 </div>
               </div>
