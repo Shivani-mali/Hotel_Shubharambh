@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaHome, FaUtensils, FaBed, FaImages } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/Logo.bmp';
 
@@ -9,10 +9,11 @@ const Footer = () => {
         
         {/* Brand */}
         <div>
-          <div className="mb-4">
-            <Link to="/">
-              <img src={logoImg} alt="Hotel Shubharambh Logo" className="h-16 w-auto object-contain rounded-md" />
-            </Link>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="bg-white p-1 rounded-lg">
+              <img src={logoImg} alt="Hotel Shubharambh Logo" className="h-12 w-auto object-contain" />
+            </div>
+            <h2 className="text-brand-gold font-display font-bold text-2xl">हॉटेल शुभारंभ</h2>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
             मुडशिंगी, कोल्हापूर मधील सर्वोत्तम फॅमिली रेस्टॉरंट आणि लॉजिंग. 
@@ -23,11 +24,12 @@ const Footer = () => {
         {/* Quick Links */}
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">महत्त्वाच्या लिंक्स</h3>
-          <ul className="space-y-3">
-            <li><Link to="/menu" className="hover:text-brand-gold transition-colors">मेनू <span className="font-english">(Menu)</span></Link></li>
-            <li><Link to="/lodging" className="hover:text-brand-gold transition-colors">लॉजिंग <span className="font-english">(Lodging)</span></Link></li>
-            <li><Link to="/hall" className="hover:text-brand-gold transition-colors">फंक्शन हॉल <span className="font-english">(Function Hall)</span></Link></li>
-            <li><Link to="/gallery" className="hover:text-brand-gold transition-colors">गॅलरी <span className="font-english">(Gallery)</span></Link></li>
+          <ul className="space-y-4">
+            <li><Link to="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 hover:text-brand-gold transition-colors"><FaHome className="text-brand-gold/70" /> मुख्यपृष्ठ <span className="font-english text-xs text-gray-500 ml-1">(Home)</span></Link></li>
+            <li><Link to="/menu" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 hover:text-brand-gold transition-colors"><FaUtensils className="text-brand-gold/70" /> मेनू <span className="font-english text-xs text-gray-500 ml-1">(Menu)</span></Link></li>
+            <li><Link to="/lodging" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 hover:text-brand-gold transition-colors"><FaBed className="text-brand-gold/70" /> लॉजिंग <span className="font-english text-xs text-gray-500 ml-1">(Lodging)</span></Link></li>
+            <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 hover:text-brand-gold transition-colors"><FaPhoneAlt className="text-brand-gold/70" /> संपर्क <span className="font-english text-xs text-gray-500 ml-1">(Contact)</span></Link></li>
+            <li><Link to="/gallery" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 hover:text-brand-gold transition-colors"><FaImages className="text-brand-gold/70" /> गॅलरी <span className="font-english text-xs text-gray-500 ml-1">(Gallery)</span></Link></li>
           </ul>
         </div>
 

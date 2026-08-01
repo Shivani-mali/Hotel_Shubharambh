@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom';
 import { Marquee } from '../../components/ui/marquee';
 import SEO from '../../components/SEO';
 import hotelMainBg from '../../assets/hotel_main_page.png';
+import room1 from '../../assets/Rooms/room1.jpeg';
+import hallImg from '../../assets/Gallery/Hall.jpg';
+import { specialOffers, chefRecommends } from '../Menu/menuData';
 
 // Dynamically import all review images
 const reviewImages = import.meta.glob('../../assets/reviews/*.png', { eager: true, query: '?url', import: 'default' });
@@ -70,7 +73,7 @@ const Home = () => {
       />
       
       {/* 1. Hero Section */}
-      <section className="relative h-[80vh] md:h-[85vh] min-h-[550px] md:min-h-[600px] flex flex-col justify-end md:justify-center pb-40 md:pb-0">
+      <section className="relative h-[80vh] md:h-[85vh] min-h-[550px] md:min-h-[600px] flex flex-col justify-end md:justify-center pb-24 md:pb-0">
         <div className="absolute inset-0 z-0">
           <img 
             src={hotelMainBg} 
@@ -85,11 +88,25 @@ const Home = () => {
             <span className="text-brand-gold font-semibold uppercase text-[14px] md:text-base mb-5 block tracking-wide">
               परंपरेचा आणि चवीचा संगम
             </span>
-            <h1 className="text-[32px] leading-[1.2] md:text-6xl lg:text-7xl font-display font-normal text-white mb-6">
-              हॉटेल <span className="text-brand-red">शुभारंभ</span>
-            </h1>
+            <motion.h1 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+              className="text-[32px] leading-[1.2] md:text-6xl lg:text-7xl font-display font-normal text-white mb-6 drop-shadow-xl"
+            >
+              हॉटेल <motion.span 
+                animate={{ 
+                  color: ["#B71C1C", "#FF3D00", "#B71C1C"],
+                  textShadow: ["0px 0px 0px rgba(255,61,0,0)", "0px 0px 25px rgba(255,61,0,0.8)", "0px 0px 0px rgba(255,61,0,0)"] 
+                }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                className="text-brand-red inline-block font-bold"
+              >
+                शुभारंभ
+              </motion.span>
+            </motion.h1>
             
-            <p className="text-gray-200 text-[16px] md:hidden mb-8 font-medium">
+            <p className="text-gray-200 text-[16px] md:hidden mb-2 font-medium">
               फॅमिली रेस्टॉरंट &bull; लॉजिंग &bull; हॉल
             </p>
             <p className="text-gray-200 text-lg md:text-xl max-w-2xl mx-auto mb-10 hidden md:block">
@@ -202,7 +219,7 @@ const Home = () => {
             {/* Restaurant */}
             <motion.div variants={fadeIn} className="card-premium group">
               <div className="h-64 overflow-hidden relative">
-                <img src={galleryImages[0] || hotelMainBg} alt="Restaurant" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={hotelMainBg} alt="Restaurant" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-red font-bold flex items-center gap-2 shadow-sm">
                   <FaUtensils /> रेस्टॉरंट
                 </div>
@@ -210,21 +227,21 @@ const Home = () => {
               <div className="p-8">
                 <h3 className="card-title mb-3">फॅमिली व गार्डन रेस्टॉरंट</h3>
                 <p className="text-gray-600 mb-6">चविष्ट शाकाहारी आणि मांसाहारी कोल्हापुरी जेवण. कुटुंबासाठी स्वतंत्र आणि सुरक्षित बैठक व्यवस्था.</p>
-                <Link to="/restaurant" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
+                <Link to="/about" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
               </div>
             </motion.div>
 
             {/* Lodging */}
             <motion.div variants={fadeIn} className="card-premium group">
               <div className="h-64 overflow-hidden relative">
-                <img src={galleryImages[1] || hotelMainBg} alt="Lodging" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={room1} alt="Lodging" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-red font-bold flex items-center gap-2 shadow-sm">
                   <FaBed /> लॉजिंग
                 </div>
               </div>
               <div className="p-8">
                 <h3 className="card-title mb-3">स्वच्छ आणि आरामदायी खोल्या</h3>
-                <p className="text-gray-600 mb-6">प्रवाशांसाठी सुरक्षित आणि आरामदायी वास्तव्य. गरम पाणी, पार्किंग आणि 24 तास सेवा उपलब्ध.</p>
+                <p className="text-gray-600 mb-6">प्रवाशांसाठी सुरक्षित आणि आरामदायी वास्तव्य. २४ तास गरम पाणी. चेक-आउट: १०:०० AM. रूम रेंट: ₹899/-</p>
                 <Link to="/lodging" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
               </div>
             </motion.div>
@@ -232,7 +249,7 @@ const Home = () => {
             {/* Function Hall */}
             <motion.div variants={fadeIn} className="card-premium group">
               <div className="h-64 overflow-hidden relative">
-                <img src={galleryImages[2] || hotelMainBg} alt="Function Hall" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={hallImg} alt="Function Hall" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-brand-red font-bold flex items-center gap-2 shadow-sm">
                   <FaUserFriends /> फंक्शन हॉल
                 </div>
@@ -240,7 +257,7 @@ const Home = () => {
               <div className="p-8">
                 <h3 className="card-title mb-3">छोट्या कार्यक्रमांसाठी हॉल</h3>
                 <p className="text-gray-600 mb-6">वाढदिवस, नामकरण आणि कौटुंबिक कार्यक्रमांसाठी उत्तम. स्वादिष्ट जेवणासह संपूर्ण व्यवस्था.</p>
-                <Link to="/hall" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
+                <Link to="/contact" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
               </div>
             </motion.div>
           </motion.div>
@@ -255,22 +272,29 @@ const Home = () => {
             <h2 className="text-3xl tb:text-4xl font-display font-normal mb-4 text-white">आमचे लोकप्रिय पदार्थ</h2>
           </div>
           
-          <div className="flex overflow-x-auto pb-8 -mx-4 px-4 snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:grid-cols-4 md:overflow-visible md:p-0 md:mx-0">
-            {[
-              { name: "चिकन तंदुरी", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
-              { name: "शाकाहारी स्पेशल थाळी", img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80" }
-            ].map((item, i) => (
-              <div key={i} className="min-w-[280px] w-[80vw] md:w-auto snap-center bg-gray-800 rounded-xl overflow-hidden shadow-xl">
-                <img src={item.img} alt={item.name} className="w-full h-48 object-cover" />
-                <div className="p-5">
-                  <h4 className="text-xl font-bold text-white mb-2">{item.name}</h4>
-                  <p className="text-gray-400 text-sm mb-4">ताज्या मसाल्यांचा वापर करून बनवलेले अस्सल कोल्हापुरी जेवण.</p>
+          <div className="flex overflow-x-auto pb-8 -mx-4 px-4 snap-x snap-mandatory hide-scrollbar gap-6 md:grid md:grid-cols-3 lg:grid-cols-4 md:overflow-visible md:p-0 md:mx-0">
+            {[...specialOffers.slice(0, 4), ...chefRecommends.slice(0, 4)].map((item, i) => (
+              <div key={i} className="min-w-[80vw] sm:min-w-[300px] md:min-w-0 md:w-auto snap-center bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative group">
+                <div className="absolute top-4 left-0 z-20">
+                  <div className="bg-brand-red text-white text-xs font-bold px-3 py-1.5 rounded-r-md shadow-lg relative">
+                    {item.badge || "⭐ स्पेशल ऑफर"}
+                  </div>
+                </div>
+                <div className="relative h-48 overflow-hidden">
+                  <img src={item.img} alt={item.name} loading="lazy" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                </div>
+                <div className="p-5 flex flex-col items-center relative z-10 -mt-10">
+                  <h4 className="text-xl font-bold text-white mb-1 drop-shadow-md">{item.name}</h4>
+                  <p className="text-[#FFD700] text-2xl font-black drop-shadow-md">₹ {item.price}</p>
                 </div>
               </div>
             ))}
           </div>
-          <div className="text-center mt-8">
-             <Link to="/menu" className="btn-secondary">संपूर्ण मेनू पहा</Link>
+          <div className="text-center mt-10">
+             <Link to="/menu" className="inline-flex items-center justify-center bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-[0_10px_30px_rgba(220,38,38,0.4)] transition-all active:scale-95 hover:-translate-y-1 gap-2">
+               🍽️ संपूर्ण मेनू पाहा
+             </Link>
           </div>
         </div>
       </section>

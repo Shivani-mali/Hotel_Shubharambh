@@ -17,7 +17,7 @@ const faqs = [
 
 const Contact = () => {
   return (
-    <div className="bg-brand-light pb-20">
+    <div className="bg-brand-light">
       <SEO 
         title="संपर्क (Contact Us)"
         description="हॉटेल शुभारंभ, मुडशिंगी. पत्ता, फोन नंबर, गुगल मॅप आणि संपर्क माहिती."
