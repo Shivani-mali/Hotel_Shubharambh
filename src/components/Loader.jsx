@@ -41,7 +41,7 @@ const Loader = () => {
         }
         
         .hotel-loader .window {
-          background: transparent;
+          background: #2a2a2a;
           width: 0.5em;
           height: 1em;
           float: left;
@@ -67,9 +67,9 @@ const Loader = () => {
         }
         
         @keyframes flicker {
-          0% { background: transparent; box-shadow: none; }
+          0% { background: #2a2a2a; box-shadow: none; }
           50% { background: #facc15; box-shadow: 0 0 8px #facc15; }
-          100% { background: transparent; box-shadow: none; }
+          100% { background: #2a2a2a; box-shadow: none; }
         }
         
         @keyframes neon {
