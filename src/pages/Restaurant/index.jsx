@@ -1,0 +1,1 @@
+const Restaurant = () => { return <div className='p-8'><h1 className='text-3xl font-bold'>Restaurant Page</h1><p className='mt-4'>Content for Restaurant will go here.</p></div>; }; export default Restaurant;

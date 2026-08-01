@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta:wght@300;400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* -------------------------------------
+     Color Palette (Premium & Traditional)
+     ------------------------------------- */
+  --color-brand-red: #C62828; /* Primary Red - Deep, traditional, premium */
+  --color-brand-gold: #D4AF37; /* Warm Gold Accent - Elegant hospitality */
+  --color-brand-dark: #1F1F1F; /* Dark Gray - High contrast readable text */
+  --color-brand-light: #FBFBFC; /* Very Light Gray Background - Clean, spacious */
+  --color-brand-white: #FFFFFF;
+
+  /* -------------------------------------
+     Typography
+     ------------------------------------- */
+  --font-sans: 'Mukta', system-ui, sans-serif;
+  
+  /* Font Sizes (Fluid feeling) */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;    /* 18px */
+  --text-xl: 1.25rem;     /* 20px */
+  --text-2xl: 1.5rem;     /* 24px */
+  --text-3xl: 2rem;       /* 32px */
+  --text-4xl: 2.5rem;     /* 40px */
+  --text-5xl: 3.5rem;     /* 56px - Hero headings */
+
+  /* -------------------------------------
+     Spacing Scale
+     ------------------------------------- */
+  /* Standard Tailwind spacing is sufficient for basics, 
+     but we emphasize large white spaces */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-30: 7.5rem;
+  --spacing-section: 6rem;
+
+  /* -------------------------------------
+     Border Radius
+     ------------------------------------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+
+  /* -------------------------------------
+     Shadow System
+     ------------------------------------- */
+  --shadow-subtle: 0 4px 20px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 8px 30px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
+  --shadow-popup: 0 20px 60px rgba(0, 0, 0, 0.15);
+
+  /* -------------------------------------
+     Responsive Breakpoints
+     ------------------------------------- */
+  /* Mobile First Approach */
+  --breakpoint-xs: 360px;
+  --breakpoint-sm: 390px;
+  --breakpoint-md: 430px;
+  --breakpoint-tb: 768px; /* Tablet */
+  --breakpoint-lg: 1024px; /* Desktop */
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-100% - var(--gap))); }
+  }
+  @keyframes marquee-vertical {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(-100% - var(--gap))); }
+  }
+}
+
+/* -------------------------------------
+   Base Elements (Reset & Typography)
+   ------------------------------------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-light text-brand-dark font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight text-brand-dark leading-tight;
+  }
+}
+
+/* -------------------------------------
+   Components & Utilities
+   ------------------------------------- */
+@layer components {
+  /* Container (Generous padding for mobile-first) */
+  .container-ds {
+    @apply w-full max-w-7xl mx-auto px-5 xs:px-6 sm:px-8 tb:px-12 lg:px-16;
+  }
+
+  /* Buttons - Accessible, min 48px touch target */
+  .btn-base, .btn-primary, .btn-secondary, .btn-outline, .btn-ghost {
+    @apply inline-flex items-center justify-center font-medium rounded-lg transition-all duration-300 ease-out min-h-[48px] px-8 cursor-pointer select-none;
+  }
+  
+  .btn-primary {
+    @apply bg-brand-red text-white hover:bg-red-800 shadow-md hover:shadow-hover hover:-translate-y-1 active:translate-y-0 active:shadow-sm;
+  }
+  
+  .btn-secondary {
+    @apply bg-brand-gold text-brand-dark hover:bg-yellow-500 shadow-md hover:shadow-hover hover:-translate-y-1 active:translate-y-0 active:shadow-sm;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white bg-transparent;
+  }
+  
+  .btn-ghost {
+    @apply text-brand-dark hover:bg-black/5 bg-transparent;
+  }
+
+  /* Input Fields (Accessible, high contrast borders) */
+  .input-base {
+    @apply w-full min-h-[48px] px-4 rounded-lg border border-gray-300 bg-white text-brand-dark focus:outline-none focus:ring-2 focus:ring-brand-gold focus:border-brand-gold transition-colors text-base;
+  }
+
+  /* Cards (Premium subtle shadows) */
+  .card-premium {
+    @apply bg-white rounded-xl shadow-card hover:shadow-hover transition-all duration-300 overflow-hidden;
+  }
+
+  /* Badges */
+  .badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold uppercase bg-brand-gold/15 text-[#8A6D15];
+  }
+
+  /* Section Titles */
+  .section-header {
+    @apply flex flex-col items-center justify-center text-center mb-12 tb:mb-16;
+  }
+  .section-subtitle {
+    @apply text-brand-gold font-semibold uppercase text-sm mb-3;
+  }
+  .section-title {
+    @apply text-3xl tb:text-4xl lg:text-5xl font-bold text-brand-dark;
+  }
+
+  /* Images (Slightly rounded for premium feel) */
+  .img-premium {
+    @apply rounded-xl object-cover w-full h-full;
+  }
+
+  /* Loading States */
+  .skeleton {
+    @apply animate-pulse bg-gray-200/80 rounded-lg;
+  }
+
+  /* Toasts / Popups */
+  .popup-overlay {
+    @apply fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4;
+  }
+  .popup-content {
+    @apply bg-white rounded-2xl shadow-popup w-full max-w-lg p-6 tb:p-8 transform transition-all;
+  }
+  .toast {
+    @apply fixed bottom-4 right-4 bg-brand-dark text-white rounded-lg shadow-card px-6 py-4 flex items-center gap-3 z-50;
+  }
+}
+
+/* -------------------------------------
+   Custom Utilities
+   ------------------------------------- */
+.animate-marquee {
+  animation: marquee var(--duration, 40s) linear infinite;
+}
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration, 40s) linear infinite;
+}
