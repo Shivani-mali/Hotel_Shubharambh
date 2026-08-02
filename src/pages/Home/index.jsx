@@ -56,7 +56,7 @@ const Home = () => {
         schema={{
           "@context": "https://schema.org",
           "@type": "Restaurant",
-          "name": "Hotel Shubharambh",
+          "name": "🏨 हॉटेल शुभारंभ Lodging & Family Restaurant",
           "image": "https://hotelshubharambh.com/hero.png",
           "address": {
             "@type": "PostalAddress",
@@ -77,7 +77,7 @@ const Home = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src={hotelMainBg} 
-            alt="Hotel Shubharambh Garden" 
+            alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Garden" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/75 to-black/40 md:bg-black/60"></div>
@@ -158,7 +158,7 @@ const Home = () => {
               <h2 className="text-3xl tb:text-4xl font-display font-normal text-brand-dark mb-6 text-left">कोल्हापूरची अस्सल चव आणि आपुलकीची सेवा</h2>
               <div className="space-y-4 text-gray-600 mb-8 leading-relaxed text-lg">
                 <p>
-                  हॉटेल शुभारंभमध्ये आपले मनःपूर्वक स्वागत!
+                  🏨 हॉटेल शुभारंभ Lodging & Family Restaurantमध्ये आपले मनःपूर्वक स्वागत!
                 </p>
                 <p>
                   गेल्या <strong className="text-brand-dark">8 वर्षांपासून</strong> आम्ही <strong className="text-brand-dark">4 लाखांहून अधिक</strong> समाधानी ग्राहकांना उत्कृष्ट सेवा देत आहोत. अस्सल कोल्हापुरी चव, स्वच्छ आणि आरामदायी लॉजिंग, तसेच आपुलकीची सेवा यामुळे आम्ही अनेक कुटुंबांचा विश्वास संपादन केला आहे.
@@ -183,7 +183,7 @@ const Home = () => {
               <div className="relative rounded-[32px] shadow-2xl">
                 <img 
                   src={hotelMainBg} 
-                  alt="Hotel Shubharambh" 
+                  alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant" 
                   className="w-full h-auto object-cover lg:h-[450px] rounded-[32px]"
                 />
                 <div className="absolute inset-0 border-4 border-white/20 rounded-[32px] pointer-events-none"></div>
@@ -445,7 +445,7 @@ const Home = () => {
               allowFullScreen="" 
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Hotel Shubharambh Location Map"
+              title="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Location Map"
             ></iframe>
           </div>
           

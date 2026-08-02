@@ -230,7 +230,7 @@ const DigitalMenuBook = () => {
                          draggable="false" 
                        />
                        <div className="relative z-10 text-[#D4AF37] font-bold text-2xl tracking-widest text-center px-4">
-                         HOTEL SHUBHARAMBH
+                         🏨 हॉटेल शुभारंभ Lodging & Family Restaurant
                          <p className="text-white/50 text-sm mt-2 tracking-normal font-medium">Family Restaurant</p>
                        </div>
                     </div>

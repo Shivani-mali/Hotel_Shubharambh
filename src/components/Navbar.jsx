@@ -14,7 +14,7 @@ const Navbar = () => {
           
           {/* Logo */}
           <Link to="/" className="flex-shrink-0 flex items-center">
-            <img src={logoImg} alt="Hotel Shubharambh Logo" className="h-16 w-auto object-contain" />
+            <img src={logoImg} alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Logo" className="h-16 w-auto object-contain" />
           </Link>
 
           {/* Desktop Nav - Hidden on mobile */}

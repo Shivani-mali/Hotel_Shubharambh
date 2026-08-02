@@ -1,4 +1,4 @@
-﻿import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaHome, FaUtensils, FaBed, FaImages } from 'react-icons/fa';
+import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaHome, FaUtensils, FaBed, FaImages } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/Logo.bmp';
 
@@ -11,9 +11,9 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="bg-white p-1 rounded-lg">
-              <img src={logoImg} alt="Hotel Shubharambh Logo" className="h-12 w-auto object-contain" />
+              <img src={logoImg} alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Logo" className="h-12 w-auto object-contain" />
             </div>
-            <h2 className="text-brand-gold font-display font-bold text-2xl">हॉटेल शुभारंभ</h2>
+            <h2 className="text-brand-gold font-display font-bold text-2xl">हॉटेल शुभारंभ Lodging & Family Restaurant</h2>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed mb-6">
             मुडशिंगी, कोल्हापूर मधील सर्वोत्तम फॅमिली रेस्टॉरंट आणि लॉजिंग. 
@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
-        <span className="font-english">&copy; {new Date().getFullYear()} Hotel Shubharambh. All Rights Reserved.</span>
+        <span className="font-english">&copy; {new Date().getFullYear()} 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant. All Rights Reserved.</span>
       </div>
     </footer>
   );

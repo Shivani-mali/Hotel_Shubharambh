@@ -44,7 +44,7 @@ const About = () => {
     <div className="overflow-hidden bg-brand-light">
       <SEO 
         title="आमच्याबद्दल"
-        description="विश्वास, गुणवत्ता आणि आपुलकीचा अनुभव. हॉटेल शुभारंभ मधील आमची कथा, मिशन आणि सुविधा."
+        description="विश्वास, गुणवत्ता आणि आपुलकीचा अनुभव. 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant मधील आमची कथा, मिशन आणि सुविधा."
       />
 
       {/* 1. Hero Banner */}
@@ -52,7 +52,7 @@ const About = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src={aboutPageImg} 
-            alt="Hotel Shubharambh About" 
+            alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant About" 
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/60"></div>
@@ -89,26 +89,26 @@ const About = () => {
               variants={fadeIn}
               className="order-2 md:order-1"
             >
-              <span className="section-subtitle">आमची कथा</span>
-              <h2 className="section-title text-left mb-6">हॉटेल शुभारंभमध्ये आपले मनःपूर्वक स्वागत आहे!</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg text-justify">
+              <span className="section-subtitle">❤️ आमची कथा</span>
+              <h2 className="section-title text-left mb-6">हॉटेल शुभारंभ Lodging & Family Restaurant मध्ये आपले मनःपूर्वक स्वागत आहे!</h2>
+              <div className="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg text-left md:text-justify">
                 <p>
-                  मुडशिंगी, कोल्हापूर येथे स्थित <strong className="text-brand-dark">हॉटेल शुभारंभ</strong> हे केवळ एक रेस्टॉरंट आणि लॉजिंग नसून, प्रेम, मेहनत आणि उत्कृष्ट सेवेतून उभा राहिलेला एक विश्वासाचा प्रवास आहे.
+                  मुडशिंगी, कोल्हापूर येथे स्थित <strong className="text-brand-dark">हॉटेल शुभारंभ Lodging & Family Restaurant</strong> हे केवळ एक फॅमिली रेस्टॉरंट आणि लॉजिंग नसून, प्रेम, मेहनत आणि उत्कृष्ट सेवेतून उभा राहिलेला विश्वासाचा प्रवास आहे.
                 </p>
                 <p>
-                  या प्रवासाची सुरुवात <strong className="text-brand-dark">Founder – Mr. Datta D. Mali</strong> आणि <strong className="text-brand-dark">Co-Founder – Mrs. Snehal D. Mali</strong> यांनी एका साध्या स्वप्नातून केली. पती-पत्नी या दोघांनीही अथक परिश्रम, प्रामाणिक सेवा आणि ग्राहकांप्रती असलेल्या समर्पणाच्या बळावर हॉटेल शुभारंभ शून्यातून उभारून आज कोल्हापूर परिसरातील विश्वासार्ह आणि लोकप्रिय फॅमिली रेस्टॉरंट व लॉजिंगपैकी एक बनवले आहे.
+                  या प्रवासाची सुरुवात <strong className="text-brand-dark font-english">Founder – Mr. Datta D. Mali</strong> आणि <strong className="text-brand-dark font-english">Co-Founder – Mrs. Snehal D. Mali</strong> यांनी एका साध्या स्वप्नातून केली. पती-पत्नी या दोघांनीही अथक परिश्रम, प्रामाणिक सेवा आणि ग्राहकांप्रती असलेल्या समर्पणाच्या बळावर <strong className="text-brand-dark">हॉटेल शुभारंभ Lodging & Family Restaurant</strong> शून्यातून उभारून आज कोल्हापूर परिसरातील विश्वासार्ह आणि लोकप्रिय फॅमिली रेस्टॉरंट व लॉजिंगपैकी एक बनवले आहे.
                 </p>
                 <p>
-                  गेल्या <strong className="text-brand-dark font-english">8</strong> वर्षांमध्ये, आम्ही <strong className="text-brand-dark font-english">4</strong> लाखांहून अधिक ग्राहकांचे प्रेम आणि विश्वास संपादन केला आहे. आमच्याकडे अस्सल कोल्हापुरी चव, स्वादिष्ट शाकाहारी व मांसाहारी पदार्थ, तंदूर, सी-फूड, आरामदायी लॉजिंग आणि मनापासूनची सेवा यांचा अनोखा संगम अनुभवायला मिळतो.
+                  गेल्या <strong className="text-brand-dark"><span className="font-english">8</span> वर्षांमध्ये</strong>, आम्ही <strong className="text-brand-dark"><span className="font-english">4</span> लाखांहून अधिक ग्राहकांचे प्रेम आणि विश्वास</strong> संपादन केला आहे. आमच्याकडे अस्सल कोल्हापुरी चव, स्वादिष्ट शाकाहारी व मांसाहारी पदार्थ, तंदूर, सी-फूड, आरामदायी लॉजिंग आणि मनापासूनची सेवा यांचा अनोखा संगम अनुभवायला मिळतो.
                 </p>
                 <p>
-                  आमचे ध्येय केवळ स्वादिष्ट जेवण देणे नाही, तर प्रत्येक पाहुण्याला घरच्यासारखे प्रेम, आत्मीयता आणि आदरातिथ्य देणे आहे. म्हणूनच अनेक कुटुंबे, प्रवासी आणि नियमित ग्राहक आजही आमच्यावर विश्वास ठेवतात.
+                  आमचे ध्येय केवळ स्वादिष्ट जेवण देणे नाही, तर प्रत्येक पाहुण्याला घरच्यासारखे प्रेम, आत्मीयता आणि उत्कृष्ट आदरातिथ्य देणे आहे. म्हणूनच अनेक कुटुंबे, प्रवासी आणि नियमित ग्राहक आजही आमच्यावर विश्वास ठेवतात.
                 </p>
                 <p>
                   याशिवाय, वाढदिवस, नामकरण, साखरपुडा, वर्धापनदिन आणि इतर छोट्या कौटुंबिक कार्यक्रमांसाठी आमच्याकडे <strong className="text-brand-dark">मल्टिपर्पज फंक्शन हॉल</strong> देखील उपलब्ध आहे.
                 </p>
-                <p className="font-medium text-brand-dark">
-                  हॉटेल शुभारंभमध्ये आम्ही फक्त जेवण किंवा मुक्काम देत नाही, तर प्रत्येक पाहुण्यासाठी आनंददायी, सुरक्षित आणि अविस्मरणीय अनुभव घडवण्याचा प्रयत्न करतो.
+                <p className="font-medium text-brand-dark text-lg md:text-xl border-l-4 border-brand-red pl-4 mt-6">
+                  <strong className="text-brand-dark">हॉटेल शुभारंभ Lodging & Family Restaurant</strong> मध्ये आम्ही फक्त जेवण किंवा मुक्काम देत नाही, तर प्रत्येक पाहुण्यासाठी आनंददायी, सुरक्षित आणि अविस्मरणीय अनुभव घडवण्याचा प्रयत्न करतो.
                 </p>
               </div>
             </motion.div>
@@ -123,7 +123,7 @@ const About = () => {
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
                 <img 
                   src={aboutPageImg} 
-                  alt="Hotel Shubharambh Story" 
+                  alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Story" 
                   className="w-full h-auto object-cover md:h-[500px]"
                 />
                 <div className="absolute inset-0 border-4 border-white/20 rounded-[32px] pointer-events-none"></div>
@@ -230,7 +230,7 @@ const About = () => {
         <div className="container-ds relative z-10 text-center">
           <h2 className="text-3xl md:text-5xl font-display font-normal text-white mb-6">आजच भेट द्या!</h2>
           <p className="text-red-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-            हॉटेल शुभारंभ मध्ये येऊन आमची स्वादिष्ट चव आणि आदरातिथ्य नक्की अनुभवा. 
+            🏨 हॉटेल शुभारंभ Lodging & Family Restaurant मध्ये येऊन आमची स्वादिष्ट चव आणि आदरातिथ्य नक्की अनुभवा. 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
             <a href="tel:+919168788989" className="bg-white text-brand-red hover:bg-gray-50 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
