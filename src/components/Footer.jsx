@@ -35,18 +35,18 @@ const Footer = () => {
             <li>
               <span className="text-brand-gold font-bold flex items-center gap-2 mb-2"><FaPhoneAlt /> फोन:</span>
               <div className="flex flex-col gap-1 ml-6">
-                <a href="tel:+919168788989" className="hover:text-white transition-colors font-english">+91 91687 88989</a>
                 <a href="tel:+919860842093" className="hover:text-white transition-colors font-english">+91 98608 42093</a>
+                <a href="tel:+919168788989" className="hover:text-white transition-colors font-english">+91 91687 88989</a>
               </div>
             </li>
             <li>
               <span className="text-brand-gold font-bold flex items-center gap-2 mb-2"><FaWhatsapp /> WhatsApp:</span>
               <div className="flex flex-col gap-1 ml-6">
-                <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="hover:text-white transition-colors font-english">
-                  +91 91687 88989
-                </a>
                 <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="hover:text-white transition-colors font-english">
                   +91 98608 42093
+                </a>
+                <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="hover:text-white transition-colors font-english">
+                  +91 91687 88989
                 </a>
               </div>
             </li>

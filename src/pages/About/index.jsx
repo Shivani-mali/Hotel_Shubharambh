@@ -45,6 +45,15 @@ const About = () => {
       <SEO 
         title="आमच्याबद्दल"
         description="विश्वास, गुणवत्ता आणि आपुलकीचा अनुभव. हॉटेल शुभारंभ Lodging & Family Restaurant मधील आमची कथा, मिशन आणि सुविधा."
+        url="/about"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hotelshubharambh.com/" },
+            { "@type": "ListItem", "position": 2, "name": "About Us", "item": "https://hotelshubharambh.com/about" }
+          ]
+        }}
       />
 
       {/* 1. Hero Banner */}
@@ -67,10 +76,10 @@ const About = () => {
               "विश्वास, गुणवत्ता आणि आपुलकीचा अनुभव."
             </p>
             <div className="flex flex-row gap-4 justify-center">
-              <a href="tel:+919168788989" className="btn-primary flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full">
+              <a href="tel:+919860842093" className="btn-primary flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full">
                 <FaPhoneAlt className="mr-2" /> कॉल करा
               </a>
-              <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+              <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
                 <FaWhatsapp className="mr-2" size={18} /> <span className="font-english">WhatsApp</span>
               </a>
             </div>
@@ -233,10 +242,10 @@ const About = () => {
             हॉटेल शुभारंभ Lodging & Family Restaurant मध्ये येऊन आमची स्वादिष्ट चव आणि आदरातिथ्य नक्की अनुभवा. 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
-            <a href="tel:+919168788989" className="bg-white text-brand-red hover:bg-gray-50 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
+            <a href="tel:+919860842093" className="bg-white text-brand-red hover:bg-gray-50 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
               <FaPhoneAlt className="mr-2" /> कॉल करा
             </a>
-            <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="bg-green-600 text-white hover:bg-green-700 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
+            <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 text-white hover:bg-green-700 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
               <FaWhatsapp className="mr-2" size={20} /> <span className="font-english">WhatsApp</span>
             </a>
           </div>

@@ -51,24 +51,45 @@ const Home = () => {
   return (
     <div className="overflow-hidden">
       <SEO 
-        title="होम (Home)"
+        title="होम"
         description="मुडशिंगी मधील सर्वोत्तम फॅमिली रेस्टॉरंट, आरामदायक लॉजिंग आणि तुमच्या खास क्षणांसाठी फंक्शन हॉल. अस्सल कोल्हापुरी चवीचा अनुभव."
+        url="/"
+        keywords="hotel shubharambh, family restaurant kolhapur, mudshingi hotels, veg nonveg food, kolhapuri thali, lodging in kolhapur"
         schema={{
           "@context": "https://schema.org",
-          "@type": "Restaurant",
-          "name": "हॉटेल शुभारंभ Lodging & Family Restaurant",
-          "image": "https://hotelshubharambh.com/hero.png",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Mudshingi Road",
-            "addressLocality": "Kolhapur",
-            "addressRegion": "MH",
-            "postalCode": "416005",
-            "addressCountry": "IN"
-          },
-          "telephone": "+919860842093",
-          "servesCuisine": "Kolhapuri, Indian",
-          "priceRange": "$$"
+          "@graph": [
+            {
+              "@type": "Restaurant",
+              "name": "हॉटेल शुभारंभ Lodging & Family Restaurant",
+              "image": "https://hotelshubharambh.com/hero.png",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Mudshingi Road",
+                "addressLocality": "Kolhapur",
+                "addressRegion": "MH",
+                "postalCode": "416119",
+                "addressCountry": "IN"
+              },
+              "telephone": "+919860842093",
+              "servesCuisine": "Kolhapuri, Indian, Maharashtrian",
+              "priceRange": "$$"
+            },
+            {
+              "@type": "LodgingBusiness",
+              "name": "हॉटेल शुभारंभ Lodging & Family Restaurant",
+              "image": "https://hotelshubharambh.com/assets/room1.jpeg",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Mudshingi Road",
+                "addressLocality": "Kolhapur",
+                "addressRegion": "MH",
+                "postalCode": "416119",
+                "addressCountry": "IN"
+              },
+              "telephone": "+919860842093",
+              "priceRange": "₹899"
+            }
+          ]
         }}
       />
       
@@ -114,7 +135,7 @@ const Home = () => {
             </p>
             
             <div className="hidden md:flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center max-w-[320px] mx-auto sm:max-w-none">
-              <a href="tel:+919168788989" className="btn-primary flex items-center justify-center text-[16px] md:text-lg h-[52px] md:h-auto md:py-4 w-full sm:w-[220px]">
+              <a href="tel:+919860842093" className="btn-primary flex items-center justify-center text-[16px] md:text-lg h-[52px] md:h-auto md:py-4 w-full sm:w-[220px]">
                 <FaPhoneAlt className="mr-2" /> आता कॉल करा
               </a>
               <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="btn-outline text-white border-white hover:bg-white hover:text-brand-dark flex items-center justify-center text-[16px] md:text-lg h-[48px] md:h-auto md:py-4 w-full sm:w-[220px] bg-black/20 backdrop-blur-[2px] md:bg-transparent">
@@ -129,11 +150,11 @@ const Home = () => {
       <section className="relative z-20 -mt-10 px-4 hidden tb:block">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 bg-white p-4 md:p-6 rounded-2xl shadow-card">
-            <a href="tel:+919168788989" className="flex flex-col items-center justify-center p-4 bg-red-50 rounded-xl hover:bg-brand-red hover:text-white transition-colors text-brand-red group">
+            <a href="tel:+919860842093" className="flex flex-col items-center justify-center p-4 bg-red-50 rounded-xl hover:bg-brand-red hover:text-white transition-colors text-brand-red group">
               <FaPhoneAlt size={24} className="mb-2" />
               <span className="font-semibold text-sm md:text-base">कॉल करा</span>
             </a>
-            <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 bg-green-50 rounded-xl hover:bg-green-600 hover:text-white transition-colors text-green-600 group">
+            <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 bg-green-50 rounded-xl hover:bg-green-600 hover:text-white transition-colors text-green-600 group">
               <FaWhatsapp size={28} className="mb-2" />
               <span className="font-semibold text-sm md:text-base font-english">WhatsApp</span>
             </a>
@@ -462,15 +483,15 @@ const Home = () => {
               <div className="flex items-start gap-4 text-lg">
                 <FaPhoneAlt className="mt-1 text-brand-gold text-2xl flex-shrink-0" />
                 <div className="flex flex-col gap-1.5">
-                  <a href="tel:+919168788989" className="hover:text-brand-gold font-bold transition-colors font-english">+91 91687 88989</a>
                   <a href="tel:+919860842093" className="hover:text-brand-gold font-bold transition-colors font-english">+91 98608 42093</a>
+                  <a href="tel:+919168788989" className="hover:text-brand-gold font-bold transition-colors font-english">+91 91687 88989</a>
                 </div>
               </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+919168788989" className="btn-secondary text-brand-dark w-full sm:w-auto justify-center text-center">कॉल करा</a>
-              <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="bg-green-500 hover:bg-green-600 text-white btn-base w-full sm:w-auto justify-center text-center transition-colors shadow-md flex items-center gap-2">
+              <a href="tel:+919860842093" className="btn-secondary text-brand-dark w-full sm:w-auto justify-center text-center">कॉल करा</a>
+              <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-500 hover:bg-green-600 text-white btn-base w-full sm:w-auto justify-center text-center transition-colors shadow-md flex items-center gap-2">
                 <FaWhatsapp size={20} /> <span className="font-english">WhatsApp</span>
               </a>
             </div>

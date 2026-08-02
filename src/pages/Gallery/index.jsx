@@ -152,6 +152,15 @@ const Gallery = () => {
       <SEO 
         title="गॅलरी | हॉटेल शुभारंभ Lodging & Family Restaurant (Premium Gallery)"
         description="हॉटेल शुभारंभ Lodging & Family Restaurantचे प्रीमियम फोटो आणि व्हिडिओ. आमचे स्वादिष्ट पदार्थ, स्वच्छ रूम्स, आणि भव्य हॉलची झलक पहा."
+        url="/gallery"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hotelshubharambh.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://hotelshubharambh.com/gallery" }
+          ]
+        }}
       />
 
       {/* 1. Hero Section (Cinematic Video) */}

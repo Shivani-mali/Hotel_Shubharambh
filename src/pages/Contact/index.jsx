@@ -21,6 +21,27 @@ const Contact = () => {
       <SEO 
         title="संपर्क (Contact Us)"
         description="हॉटेल शुभारंभ Lodging & Family Restaurant, मुडशिंगी. पत्ता, फोन नंबर, गुगल मॅप आणि संपर्क माहिती."
+        url="/contact"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "FAQPage",
+              "mainEntity": faqs.map(faq => ({
+                "@type": "Question",
+                "name": faq.q,
+                "acceptedAnswer": { "@type": "Answer", "text": faq.a }
+              }))
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hotelshubharambh.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://hotelshubharambh.com/contact" }
+              ]
+            }
+          ]
+        }}
       />
 
       {/* Hero Section */}
@@ -78,11 +99,11 @@ const Contact = () => {
                 <div className="flex flex-col gap-2 mt-3">
                   <div className="flex items-center gap-2">
                     <FaPhoneAlt className="text-brand-red shrink-0" size={16} />
-                    <a href="tel:+919168788989" className="font-bold text-[15px] sm:text-lg text-brand-dark hover:text-brand-red font-english whitespace-nowrap">+91 91687 88989</a>
+                    <a href="tel:+919860842093" className="font-bold text-[15px] sm:text-lg text-brand-dark hover:text-brand-red font-english whitespace-nowrap">+91 98608 42093</a>
                   </div>
                   <div className="flex items-center gap-2">
                     <FaPhoneAlt className="text-brand-red shrink-0" size={16} />
-                    <a href="tel:+919860842093" className="font-bold text-[15px] sm:text-lg text-brand-dark hover:text-brand-red font-english whitespace-nowrap">+91 98608 42093</a>
+                    <a href="tel:+919168788989" className="font-bold text-[15px] sm:text-lg text-brand-dark hover:text-brand-red font-english whitespace-nowrap">+91 91687 88989</a>
                   </div>
                 </div>
               </div>
@@ -149,10 +170,10 @@ const Contact = () => {
       <section className="bg-brand-dark py-16 text-center px-4">
         <h2 className="text-2xl md:text-3xl font-display font-normal text-white mb-8">आम्ही तुमच्या स्वागतासाठी तयार आहोत!</h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+919168788989" className="btn-primary flex items-center justify-center text-lg px-8 py-3 rounded-full">
+          <a href="tel:+919860842093" className="btn-primary flex items-center justify-center text-lg px-8 py-3 rounded-full">
             <FaPhoneAlt className="mr-2" /> कॉल करा
           </a>
-          <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-lg px-8 py-3 rounded-full transition-colors">
+          <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-lg px-8 py-3 rounded-full transition-colors">
             <FaWhatsapp className="mr-2" size={20} /> <span className="font-english">WhatsApp</span>
           </a>
         </div>

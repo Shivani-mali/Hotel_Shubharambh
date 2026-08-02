@@ -56,8 +56,8 @@ const CallModal = () => {
             
             <div className="p-6 bg-[#FAF8F5] space-y-4">
               {[
-                { label: 'मुख्य संपर्क', number: '+91 91687 88989', raw: '+919168788989' },
-                { label: 'पर्यायी संपर्क', number: '+91 98608 42093', raw: '+919860842093' }
+                { label: 'मुख्य संपर्क', number: '+91 98608 42093', raw: '+919860842093' },
+                { label: 'पर्यायी संपर्क', number: '+91 91687 88989', raw: '+919168788989' }
               ].map((contact, i) => (
                 <div key={i} className="bg-white border border-gray-100 p-4 rounded-2xl shadow-sm hover:shadow-md transition-shadow">
                   <div className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">{contact.label}</div>

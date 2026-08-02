@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hotelshubharambh.com/sitemap.xml

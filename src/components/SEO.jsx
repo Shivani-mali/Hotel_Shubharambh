@@ -1,17 +1,19 @@
 import { Helmet } from 'react-helmet-async';
 
-const SEO = ({ title, description, url, image, schema }) => {
-  const siteName = "हॉटेल शुभारंभ Lodging & Family Restaurant (हॉटेल शुभारंभ Lodging & Family Restaurant)";
+const SEO = ({ title, description, url, image, schema, keywords }) => {
+  const siteName = "हॉटेल शुभारंभ Lodging & Family Restaurant";
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
-  const defaultDesc = "मुडशिंगी मधील सर्वोत्तम फॅमिली रेस्टॉरंट, आरामदायक लॉजिंग आणि तुमच्या खास क्षणांसाठी फंक्शन हॉल. अस्सल कोल्हापुरी चवीचा अनुभव.";
+  const defaultDesc = "मुडशिंगी, कोल्हापूर मधील सर्वोत्तम फॅमिली रेस्टॉरंट, आरामदायक लॉजिंग आणि तुमच्या खास क्षणांसाठी फंक्शन हॉल. अस्सल कोल्हापुरी चवीचा अनुभव.";
   const metaDesc = description || defaultDesc;
   const pageUrl = url ? `https://hotelshubharambh.com${url}` : "https://hotelshubharambh.com";
   const metaImage = image || "https://hotelshubharambh.com/hero.png";
+  const metaKeywords = keywords || "hotel shubharambh, mudshingi restaurant, kolhapur food, family restaurant kolhapur, lodging in mudshingi, kolhapuri thali, veg nonveg hotel";
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={metaDesc} />
+      <meta name="keywords" content={metaKeywords} />
       <link rel="canonical" href={pageUrl} />
 
       {/* Open Graph / Facebook */}

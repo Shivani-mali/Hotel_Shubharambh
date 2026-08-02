@@ -1,4 +1,4 @@
-﻿import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaBed, FaBath, 
@@ -69,6 +69,34 @@ const Lodging = () => {
       <SEO 
         title="प्रीमियम रूम्स | हॉटेल शुभारंभ Lodging & Family Restaurant (Premium Lodging Kolhapur)"
         description="कोल्हापूरमध्ये कुटुंबासाठी सर्वात सुरक्षित आणि आरामदायक हॉटेल. स्वच्छ खोल्या, 24 तास गरम पाणी, आणि मोफत पार्किंग. आजच आपली रूम बुक करा."
+        url="/lodging"
+        schema={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "LodgingBusiness",
+              "name": "हॉटेल शुभारंभ Lodging & Family Restaurant",
+              "image": "https://hotelshubharambh.com/assets/room1.jpeg",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "मुडशिंगी",
+                "addressLocality": "कोल्हापूर",
+                "addressRegion": "महाराष्ट्र",
+                "postalCode": "416119",
+                "addressCountry": "IN"
+              },
+              "telephone": "+919860842093",
+              "priceRange": "₹899"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hotelshubharambh.com/" },
+                { "@type": "ListItem", "position": 2, "name": "Lodging", "item": "https://hotelshubharambh.com/lodging" }
+              ]
+            }
+          ]
+        }}
       />
 
       {/* 1. Premium Hero Section */}
@@ -104,10 +132,10 @@ const Lodging = () => {
             
             {/* CTA Buttons - Hidden on Mobile to avoid clutter */}
             <div className="hidden md:flex flex-row gap-4 mt-6">
-              <a href="tel:+919168788989" className="bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(183,28,28,0.4)] transition-all active:scale-95 border border-red-500/30">
+              <a href="tel:+919860842093" className="bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(183,28,28,0.4)] transition-all active:scale-95 border border-red-500/30">
                 <FaPhoneAlt /> कॉल करा
               </a>
-              <a href="https://wa.me/919168788989?text=मला रूम बुकिंगबद्दल माहिती हवी आहे." target="_blank" rel="noreferrer" className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(37,211,102,0.4)] transition-all active:scale-95 border border-green-500/30">
+              <a href="https://wa.me/919860842093?text=मला रूम बुकिंगबद्दल माहिती हवी आहे." target="_blank" rel="noreferrer" className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(37,211,102,0.4)] transition-all active:scale-95 border border-green-500/30">
                 <FaWhatsapp size={22} /> WhatsApp
               </a>
               <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="bg-white hover:bg-gray-50 text-gray-800 font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-lg transition-all active:scale-95 border border-gray-200">
@@ -157,10 +185,10 @@ const Lodging = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                 <a href="tel:+919168788989" className="w-full bg-[#111] hover:bg-[#B71C1C] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
+                 <a href="tel:+919860842093" className="w-full bg-[#111] hover:bg-[#B71C1C] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
                   <FaPhoneAlt /> आता कॉल करा
                 </a>
-                <a href="https://wa.me/919168788989?text=मला प्रीमियम रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-full bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
+                <a href="https://wa.me/919860842093?text=मला प्रीमियम रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-full bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
                   <FaWhatsapp size={20} /> WhatsApp बुक
                 </a>
               </div>
@@ -414,10 +442,10 @@ const Lodging = () => {
           </div>
           
           <div className="flex flex-col tb:flex-row justify-center items-center gap-3 w-full">
-            <a href="tel:+919168788989" className="w-[88%] tb:w-auto h-[52px] px-8 bg-[#B71C1C] hover:bg-red-700 text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-red-500/50">
+            <a href="tel:+919860842093" className="w-[88%] tb:w-auto h-[52px] px-8 bg-[#B71C1C] hover:bg-red-700 text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-red-500/50">
               <FaPhoneAlt /> कॉल करा
             </a>
-            <a href="https://wa.me/919168788989?text=मला रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto h-[52px] px-8 bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-green-400/50">
+            <a href="https://wa.me/919860842093?text=मला रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto h-[52px] px-8 bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-green-400/50">
               <FaWhatsapp size={20} /> WhatsApp वर बुक करा
             </a>
             <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="flex w-[88%] tb:w-auto h-[52px] px-8 bg-white/10 hover:bg-white/20 text-white font-bold rounded-[18px] items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 backdrop-blur-md border border-white/20">

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaPhoneAlt, FaWhatsapp, FaLeaf, FaDrumstickBite, FaTimes, 
   FaSearch, FaUtensils, FaMapMarkerAlt, FaStar, FaFire, FaBookOpen,
-  FaChevronLeft, FaChevronRight
+  FaChevronLeft, FaChevronRight, FaDownload
 } from 'react-icons/fa';
 import SEO from '../../components/SEO';
 import { mainTabs, specialOffers, chefRecommends, menuData } from './menuData';
@@ -154,7 +154,19 @@ const Menu = () => {
 
   return (
     <div className="bg-[#FAF8F5] min-h-screen font-sans selection:bg-[#D4AF37] selection:text-[#111]">
-      <SEO title="आमचे मेनू | हॉटेल शुभारंभ Lodging & Family Restaurant (Fine Dining Menu)" description="अस्सल कोल्हापुरी चव आणि लक्झरी अनुभव. आमचे प्रीमियम डिजिटल मेनू पहा." />
+      <SEO 
+        title="आमचे मेनू | हॉटेल शुभारंभ Lodging & Family Restaurant (Fine Dining Menu)" 
+        description="अस्सल कोल्हापुरी चव आणि लक्झरी अनुभव. आमचे प्रीमियम डिजिटल मेनू पहा." 
+        url="/menu"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hotelshubharambh.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Menu", "item": "https://hotelshubharambh.com/menu" }
+          ]
+        }}
+      />
 
       {/* 1. Minimal Luxury Hero Section */}
       <section className="relative pt-20 pb-2 md:pt-32 md:pb-16 bg-white overflow-hidden">
@@ -413,14 +425,17 @@ const Menu = () => {
           <p className="text-base md:text-xl text-[#111]/80 font-bold mb-8">आजच तुमची ऑर्डर द्या किंवा हॉटेलला भेट द्या.</p>
           
           <div className="flex flex-col tb:flex-row justify-center items-center gap-3">
-            <a href="tel:+919168788989" className="w-[88%] tb:w-auto bg-[#111] hover:bg-black text-white font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
+            <a href="tel:+919860842093" className="w-[88%] tb:w-auto bg-[#111] hover:bg-black text-white font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
               <FaPhoneAlt /> कॉल करा
             </a>
-            <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto bg-white hover:bg-gray-50 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
+            <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto bg-white hover:bg-gray-50 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
               <FaWhatsapp size={20} className="text-[#25D366]" /> WhatsApp
             </a>
             <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto bg-white/30 hover:bg-white/40 border border-[#111]/20 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 backdrop-blur-sm">
               <FaMapMarkerAlt /> लोकेशन
+            </a>
+            <a href="/hotel-shubharambh-menu.zip" download className="w-[88%] tb:w-auto bg-black text-white hover:bg-gray-800 font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl border border-white/20">
+              <FaDownload /> मेनू डाउनलोड
             </a>
           </div>
         </div>
@@ -488,8 +503,8 @@ const Menu = () => {
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 flex items-center gap-3 pb-safe z-20">
-                <a href="tel:+919168788989" className="flex-[1] bg-gray-100 hover:bg-gray-200 text-[#111] font-bold py-3.5 rounded-xl text-center transition-colors">कॉल</a>
-                <a href={`https://wa.me/919168788989?text=मला ${selectedDish.name} ची ऑर्डर द्यायची आहे.`} target="_blank" rel="noreferrer" className="flex-[2] bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-3.5 rounded-xl text-center transition-colors shadow-lg">WhatsApp ऑर्डर</a>
+                <a href="tel:+919860842093" className="flex-[1] bg-gray-100 hover:bg-gray-200 text-[#111] font-bold py-3.5 rounded-xl text-center transition-colors">कॉल</a>
+                <a href={`https://wa.me/919860842093?text=मला ${selectedDish.name} ची ऑर्डर द्यायची आहे.`} target="_blank" rel="noreferrer" className="flex-[2] bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-3.5 rounded-xl text-center transition-colors shadow-lg">WhatsApp ऑर्डर</a>
               </div>
             </motion.div>
           </div>
@@ -511,7 +526,7 @@ const Menu = () => {
                  <button onClick={() => setActivePromoIndex(p => (p - 1 + promotionalOffers.length) % promotionalOffers.length)} className="w-12 h-12 bg-white/10 hover:bg-[#D4AF37] hover:text-black text-white rounded-full flex items-center justify-center transition-colors">
                    <FaChevronLeft />
                  </button>
-                 <a href={`https://wa.me/919168788989?text=मला ${promotionalOffers[activePromoIndex].title} बद्दल माहिती हवी आहे.`} target="_blank" rel="noreferrer" className="bg-[#25D366] text-white font-bold py-3 px-8 rounded-full flex items-center gap-2 flex-grow max-w-xs justify-center">
+                 <a href={`https://wa.me/919860842093?text=मला ${promotionalOffers[activePromoIndex].title} बद्दल माहिती हवी आहे.`} target="_blank" rel="noreferrer" className="bg-[#25D366] text-white font-bold py-3 px-8 rounded-full flex items-center gap-2 flex-grow max-w-xs justify-center">
                    <FaWhatsapp size={20} /> WhatsApp
                  </a>
                  <button onClick={() => setActivePromoIndex(p => (p + 1) % promotionalOffers.length)} className="w-12 h-12 bg-white/10 hover:bg-[#D4AF37] hover:text-black text-white rounded-full flex items-center justify-center transition-colors">
