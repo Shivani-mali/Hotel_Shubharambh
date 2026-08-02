@@ -287,6 +287,42 @@ const Menu = () => {
             </AnimatePresence>
           </div>
           
+          {/* Conditional Dish Grid for Veg/Non-Veg */}
+          <AnimatePresence>
+            {foodType !== 'All' && (
+              <motion.div 
+                initial={{ opacity: 0, height: 0 }} 
+                animate={{ opacity: 1, height: 'auto' }} 
+                exit={{ opacity: 0, height: 0 }}
+                className="overflow-hidden w-full mb-8"
+              >
+                <div className="text-center mb-6 pt-4">
+                  <span className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-bold border ${foodType === 'Veg' ? 'bg-green-50 text-green-700 border-green-200' : 'bg-red-50 text-[#B71C1C] border-red-200'}`}>
+                    {foodType === 'Veg' ? <FaLeaf /> : <FaDrumstickBite />}
+                    {foodType === 'Veg' ? 'शुद्ध शाकाहारी पदार्थ' : 'मांसाहारी पदार्थ'}
+                  </span>
+                </div>
+                
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                  {menuData.filter(d => d.type === foodType).slice(0, 15).map((dish, i) => (
+                    <motion.div 
+                      initial={{ opacity: 0, y: 10 }} 
+                      animate={{ opacity: 1, y: 0 }} 
+                      transition={{ delay: i * 0.05 }} 
+                      key={dish.id}
+                    >
+                      <DishCard dish={dish} onSelect={() => setSelectedDish(dish)} />
+                    </motion.div>
+                  ))}
+                </div>
+                
+                <div className="text-center mt-8">
+                  <p className="text-sm text-gray-500 font-medium">हे फक्त काही लोकप्रिय पदार्थ आहेत. संपूर्ण यादीसाठी डिजिटल मेनू पहा.</p>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+          
           {/* Direct Menu Button */}
           <div className="flex justify-center my-4">
             <button 
