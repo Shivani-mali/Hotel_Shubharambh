@@ -410,12 +410,6 @@ const Menu = () => {
                  </span>
                ))}
              </div>
-             
-             <div className="mt-6 flex justify-center">
-               <a href="/hotel-shubharambh-menu.pdf" download="Hotel-Shubharambh-Menu.pdf" className="inline-flex items-center gap-2 bg-[#D4AF37] text-black font-bold py-2.5 px-8 rounded-full text-sm md:text-base shadow-[0_5px_15px_rgba(212,175,55,0.3)] hover:-translate-y-1 transition-transform border border-yellow-300">
-                 <FaDownload /> मेनू PDF डाउनलोड करा
-               </a>
-             </div>
            </div>
            
            <div className="w-[95%] sm:w-full mx-auto">

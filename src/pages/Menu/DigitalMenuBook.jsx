@@ -118,7 +118,7 @@ const DigitalMenuBook = () => {
         
         <div className="flex items-center justify-center w-1/3">
           <span className="text-xs font-bold tracking-widest text-gray-300 bg-white/5 px-3 py-1 rounded-full shadow-inner whitespace-nowrap">
-            पान {currentPage + 1} / {totalPages + 1}
+            पान {currentPage + 1} / {totalPages * 2}
           </span>
         </div>
         
@@ -186,16 +186,32 @@ const DigitalMenuBook = () => {
                   </PageCover>
                 );
 
-                // 2. Individual Pages
+                // 2. Double-page Spreads
                 for (let i = 1; i < sortedMenuPages.length; i++) {
                   const page = sortedMenuPages[i];
+                  
+                  // Left Half
                   pagesToRender.push(
-                    <Page key={`page-${i}`}>
+                    <Page key={`page-${i}-left`}>
                       <div className="w-full h-full overflow-hidden relative">
                         <img 
                           src={page} 
-                          className="absolute top-0 left-0 w-full h-full object-fill mix-blend-multiply opacity-[0.98]" 
-                          alt={`Page ${i + 1}`} 
+                          className="absolute top-0 left-0 w-[200%] h-full object-cover mix-blend-multiply opacity-[0.98] max-w-none" 
+                          alt={`Page ${i * 2 - 1}`} 
+                          draggable="false" 
+                        />
+                      </div>
+                    </Page>
+                  );
+                  
+                  // Right Half
+                  pagesToRender.push(
+                    <Page key={`page-${i}-right`}>
+                      <div className="w-full h-full overflow-hidden relative">
+                        <img 
+                          src={page} 
+                          className="absolute top-0 right-0 w-[200%] h-full object-cover mix-blend-multiply opacity-[0.98] max-w-none" 
+                          alt={`Page ${i * 2}`} 
                           draggable="false" 
                         />
                       </div>
@@ -242,7 +258,7 @@ const DigitalMenuBook = () => {
         <div className="absolute inset-y-0 right-2 md:right-6 flex items-center pointer-events-none z-40">
           <button 
             onClick={handleNext} 
-            disabled={currentPage >= totalPages}
+            disabled={currentPage >= (totalPages * 2 - 2)}
             className="w-12 h-12 md:w-14 md:h-14 bg-black/60 hover:bg-[#B71C1C] backdrop-blur text-white rounded-full flex items-center justify-center shadow-lg transition-all pointer-events-auto disabled:opacity-0 disabled:pointer-events-none border border-white/10"
             title="पुढील पान"
           >
