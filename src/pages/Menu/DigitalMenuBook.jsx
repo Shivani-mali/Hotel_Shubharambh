@@ -196,7 +196,7 @@ const DigitalMenuBook = () => {
                       <div className="w-full h-full overflow-hidden relative">
                         <img 
                           src={page} 
-                          className="absolute top-0 left-0 w-[200%] h-full object-cover mix-blend-multiply opacity-[0.98] max-w-none" 
+                          className="absolute top-0 left-0 w-[200%] h-full object-fill mix-blend-multiply opacity-[0.98] max-w-none" 
                           alt={`Page ${i * 2 - 1}`} 
                           draggable="false" 
                         />
@@ -210,7 +210,7 @@ const DigitalMenuBook = () => {
                       <div className="w-full h-full overflow-hidden relative">
                         <img 
                           src={page} 
-                          className="absolute top-0 right-0 w-[200%] h-full object-cover mix-blend-multiply opacity-[0.98] max-w-none" 
+                          className="absolute top-0 right-0 w-[200%] h-full object-fill mix-blend-multiply opacity-[0.98] max-w-none" 
                           alt={`Page ${i * 2}`} 
                           draggable="false" 
                         />
@@ -244,7 +244,7 @@ const DigitalMenuBook = () => {
         </motion.div>
 
         {/* Floating Navigation Arrows */}
-        <div className="absolute inset-y-0 left-2 md:left-6 flex items-center pointer-events-none z-40">
+        <div className="absolute inset-y-0 left-2 md:left-6 hidden md:flex items-center pointer-events-none z-40">
           <button 
             onClick={handlePrev} 
             disabled={currentPage === 0}
@@ -255,7 +255,7 @@ const DigitalMenuBook = () => {
           </button>
         </div>
         
-        <div className="absolute inset-y-0 right-2 md:right-6 flex items-center pointer-events-none z-40">
+        <div className="absolute inset-y-0 right-2 md:right-6 hidden md:flex items-center pointer-events-none z-40">
           <button 
             onClick={handleNext} 
             disabled={currentPage >= (totalPages * 2 - 2)}
