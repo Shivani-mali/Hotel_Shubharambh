@@ -155,8 +155,8 @@ const Menu = () => {
   return (
     <div className="bg-[#FAF8F5] min-h-screen font-sans selection:bg-[#D4AF37] selection:text-[#111]">
       <SEO 
-        title="आमचे मेनू | हॉटेल शुभारंभ Lodging & Family Restaurant (Fine Dining Menu)" 
-        description="अस्सल कोल्हापुरी चव आणि लक्झरी अनुभव. आमचे प्रीमियम डिजिटल मेनू पहा." 
+        title="आमचा मेनू | हॉटेल शुभारंभ Lodging & Family Restaurant (Fine Dining Menu)" 
+        description="अस्सल कोल्हापुरी चव आणि लक्झरी अनुभव. आमचा प्रीमियम डिजिटल मेनू पहा." 
         url="/menu"
         schema={{
           "@context": "https://schema.org",
@@ -177,7 +177,7 @@ const Menu = () => {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             <span className="text-[#D4AF37] font-bold tracking-[0.3em] uppercase text-[10px] md:text-sm mb-2 block">Fine Dining Experience</span>
             <h1 className="text-4xl md:text-7xl font-display font-bold text-[#111] mb-2 tracking-tight">
-              आमचे <span className="text-[#B71C1C] italic">मेनू</span>
+              आमचा <span className="text-[#B71C1C] italic">मेनू</span>
             </h1>
             <p className="text-gray-500 text-sm md:text-xl font-medium max-w-sm md:max-w-2xl mx-auto leading-relaxed line-clamp-2">
               अस्सल कोल्हापुरी चव, ताजे साहित्य आणि उत्कृष्ट सेवेचा अनोखा संगम.
