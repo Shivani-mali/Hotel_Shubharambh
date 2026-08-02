@@ -23,10 +23,10 @@ const staggerContainer = {
 
 const About = () => {
   const stats = [
-    { icon: FaStar, value: "4.5/5", label: "Google Rating", color: "text-yellow-500" },
-    { icon: FaUsers, value: "40K+", label: "Happy Customers", color: "text-blue-500" },
-    { icon: FaClock, value: "3+", label: "Years of Service", color: "text-brand-gold" },
-    { icon: FaChild, value: "100%", label: "Family Friendly", color: "text-green-500" },
+    { icon: FaStar, value: "4.5/5", label: "गुगल रेटिंग", color: "text-yellow-500" },
+    { icon: FaUsers, value: "4 लाख+", label: "आनंदी ग्राहक", color: "text-blue-500" },
+    { icon: FaClock, value: "8+", label: "वर्षांचा अनुभव", color: "text-brand-gold" },
+    { icon: FaChild, value: "100%", label: "कौटुंबिक वातावरण", color: "text-green-500" },
   ];
 
   const facilities = [
@@ -67,10 +67,10 @@ const About = () => {
               "विश्वास, गुणवत्ता आणि आपुलकीचा अनुभव."
             </p>
             <div className="flex flex-row gap-4 justify-center">
-              <a href="tel:+919860842093" className="btn-primary flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full">
+              <a href="tel:+919168788989" className="btn-primary flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full">
                 <FaPhoneAlt className="mr-2" /> कॉल करा
               </a>
-              <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
+              <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="bg-green-600 hover:bg-green-700 text-white font-bold flex items-center justify-center text-sm md:text-base px-6 py-3 rounded-full shadow-md hover:shadow-lg transition-all duration-300">
                 <FaWhatsapp className="mr-2" size={18} /> <span className="font-english">WhatsApp</span>
               </a>
             </div>
@@ -90,20 +90,25 @@ const About = () => {
               className="order-2 md:order-1"
             >
               <span className="section-subtitle">आमची कथा</span>
-              <h2 className="section-title text-left mb-6">हॉटेल शुभारंभमध्ये आपले स्वागत आहे</h2>
-              <div className="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg">
+              <h2 className="section-title text-left mb-6">हॉटेल शुभारंभमध्ये आपले मनःपूर्वक स्वागत आहे!</h2>
+              <div className="space-y-4 text-gray-700 leading-relaxed text-base md:text-lg text-justify">
                 <p>
-                  मुडशिंगी, कोल्हापूर येथे स्थित <strong className="text-brand-dark">हॉटेल शुभारंभ</strong> हे एक नाविन्यपूर्ण फॅमिली रेस्टॉरंट आणि लॉजिंग आहे. 
-                  गेल्या अनेक वर्षांपासून आम्ही ग्राहकांना उत्कृष्ट चव आणि घरगुती आदरातिथ्य (Hospitality) प्रदान करत आहोत.
+                  मुडशिंगी, कोल्हापूर येथे स्थित <strong className="text-brand-dark">हॉटेल शुभारंभ</strong> हे केवळ एक रेस्टॉरंट आणि लॉजिंग नसून, प्रेम, मेहनत आणि उत्कृष्ट सेवेतून उभा राहिलेला एक विश्वासाचा प्रवास आहे.
                 </p>
                 <p>
-                  आमच्याकडे अस्सल कोल्हापुरी जेवणापासून ते शाकाहारी पदार्थांपर्यंत सर्व काही उपलब्ध आहे. 
-                  कुटुंबासाठी एक सुरक्षित आणि <strong className="text-brand-dark">Family Environment</strong> तयार करणे हे आमचे मुख्य ध्येय आहे. 
-                  स्थानिक लोकांचा आणि प्रवाशांचा <strong className="text-brand-dark">Local Trust</strong> हीच आमची खरी कमाई आहे.
+                  या प्रवासाची सुरुवात <strong className="text-brand-dark">Founder – Mr. Datta D. Mali</strong> आणि <strong className="text-brand-dark">Co-Founder – Mrs. Snehal D. Mali</strong> यांनी एका साध्या स्वप्नातून केली. पती-पत्नी या दोघांनीही अथक परिश्रम, प्रामाणिक सेवा आणि ग्राहकांप्रती असलेल्या समर्पणाच्या बळावर हॉटेल शुभारंभ शून्यातून उभारून आज कोल्हापूर परिसरातील विश्वासार्ह आणि लोकप्रिय फॅमिली रेस्टॉरंट व लॉजिंगपैकी एक बनवले आहे.
                 </p>
                 <p>
-                  शिवाय, वाढदिवस, नामकरण आणि छोट्या कौटुंबिक कार्यक्रमांसाठी आमच्याकडे <strong className="text-brand-dark">Small Function Hall</strong> (लहान समारंभ हॉल) देखील उपलब्ध आहे. 
-                  आम्ही तुम्हाला फक्त जेवणच नाही, तर एक अविस्मरणीय अनुभव देण्यासाठी कटिबद्ध आहोत.
+                  गेल्या <strong className="text-brand-dark font-english">8</strong> वर्षांमध्ये, आम्ही <strong className="text-brand-dark font-english">4</strong> लाखांहून अधिक ग्राहकांचे प्रेम आणि विश्वास संपादन केला आहे. आमच्याकडे अस्सल कोल्हापुरी चव, स्वादिष्ट शाकाहारी व मांसाहारी पदार्थ, तंदूर, सी-फूड, आरामदायी लॉजिंग आणि मनापासूनची सेवा यांचा अनोखा संगम अनुभवायला मिळतो.
+                </p>
+                <p>
+                  आमचे ध्येय केवळ स्वादिष्ट जेवण देणे नाही, तर प्रत्येक पाहुण्याला घरच्यासारखे प्रेम, आत्मीयता आणि आदरातिथ्य देणे आहे. म्हणूनच अनेक कुटुंबे, प्रवासी आणि नियमित ग्राहक आजही आमच्यावर विश्वास ठेवतात.
+                </p>
+                <p>
+                  याशिवाय, वाढदिवस, नामकरण, साखरपुडा, वर्धापनदिन आणि इतर छोट्या कौटुंबिक कार्यक्रमांसाठी आमच्याकडे <strong className="text-brand-dark">मल्टिपर्पज फंक्शन हॉल</strong> देखील उपलब्ध आहे.
+                </p>
+                <p className="font-medium text-brand-dark">
+                  हॉटेल शुभारंभमध्ये आम्ही फक्त जेवण किंवा मुक्काम देत नाही, तर प्रत्येक पाहुण्यासाठी आनंददायी, सुरक्षित आणि अविस्मरणीय अनुभव घडवण्याचा प्रयत्न करतो.
                 </p>
               </div>
             </motion.div>
@@ -184,7 +189,7 @@ const About = () => {
                   <stat.icon className={`text-3xl ${stat.color}`} />
                 </div>
                 <div className="text-3xl font-bold mb-2 font-english">{stat.value}</div>
-                <div className="text-gray-400 font-medium font-english">{stat.label}</div>
+                <div className="text-gray-400 font-medium font-bold">{stat.label}</div>
               </motion.div>
             ))}
           </motion.div>
@@ -228,10 +233,10 @@ const About = () => {
             हॉटेल शुभारंभ मध्ये येऊन आमची स्वादिष्ट चव आणि आदरातिथ्य नक्की अनुभवा. 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
-            <a href="tel:+919860842093" className="bg-white text-brand-red hover:bg-gray-50 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
+            <a href="tel:+919168788989" className="bg-white text-brand-red hover:bg-gray-50 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
               <FaPhoneAlt className="mr-2" /> कॉल करा
             </a>
-            <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-600 text-white hover:bg-green-700 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
+            <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="bg-green-600 text-white hover:bg-green-700 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">
               <FaWhatsapp className="mr-2" size={20} /> <span className="font-english">WhatsApp</span>
             </a>
           </div>
@@ -242,3 +247,4 @@ const About = () => {
 };
 
 export default About;
+

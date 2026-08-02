@@ -1,6 +1,6 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaUtensils, FaStar, FaCar, FaChild, FaBed, FaLeaf, FaShieldAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaUtensils, FaStar, FaCar, FaChild, FaBed, FaLeaf, FaShieldAlt, FaFire } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { Marquee } from '../../components/ui/marquee';
 import SEO from '../../components/SEO';
@@ -114,7 +114,7 @@ const Home = () => {
             </p>
             
             <div className="hidden md:flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center max-w-[320px] mx-auto sm:max-w-none">
-              <a href="tel:+919860842093" className="btn-primary flex items-center justify-center text-[16px] md:text-lg h-[52px] md:h-auto md:py-4 w-full sm:w-[220px]">
+              <a href="tel:+919168788989" className="btn-primary flex items-center justify-center text-[16px] md:text-lg h-[52px] md:h-auto md:py-4 w-full sm:w-[220px]">
                 <FaPhoneAlt className="mr-2" /> आता कॉल करा
               </a>
               <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="btn-outline text-white border-white hover:bg-white hover:text-brand-dark flex items-center justify-center text-[16px] md:text-lg h-[48px] md:h-auto md:py-4 w-full sm:w-[220px] bg-black/20 backdrop-blur-[2px] md:bg-transparent">
@@ -129,11 +129,11 @@ const Home = () => {
       <section className="relative z-20 -mt-10 px-4 hidden tb:block">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 bg-white p-4 md:p-6 rounded-2xl shadow-card">
-            <a href="tel:+919860842093" className="flex flex-col items-center justify-center p-4 bg-red-50 rounded-xl hover:bg-brand-red hover:text-white transition-colors text-brand-red group">
+            <a href="tel:+919168788989" className="flex flex-col items-center justify-center p-4 bg-red-50 rounded-xl hover:bg-brand-red hover:text-white transition-colors text-brand-red group">
               <FaPhoneAlt size={24} className="mb-2" />
               <span className="font-semibold text-sm md:text-base">कॉल करा</span>
             </a>
-            <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 bg-green-50 rounded-xl hover:bg-green-600 hover:text-white transition-colors text-green-600 group">
+            <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center p-4 bg-green-50 rounded-xl hover:bg-green-600 hover:text-white transition-colors text-green-600 group">
               <FaWhatsapp size={28} className="mb-2" />
               <span className="font-semibold text-sm md:text-base font-english">WhatsApp</span>
             </a>
@@ -161,7 +161,10 @@ const Home = () => {
                   हॉटेल शुभारंभमध्ये आपले मनःपूर्वक स्वागत!
                 </p>
                 <p>
-                  अस्सल कोल्हापुरी चव, स्वच्छ आणि आरामदायी लॉजिंग, तसेच आपुलकीची सेवा यामुळे आम्ही अनेक कुटुंबांचा विश्वास संपादन केला आहे. आमचे स्पेशल बटर चिकन, तांबडा रस्सा, पांढरा रस्सा, तंदूर स्पेशालिटी आणि सीफूड पदार्थ ग्राहकांच्या विशेष पसंतीस उतरले आहेत.
+                  गेल्या <strong className="text-brand-dark">8 वर्षांपासून</strong> आम्ही <strong className="text-brand-dark">4 लाखांहून अधिक</strong> समाधानी ग्राहकांना उत्कृष्ट सेवा देत आहोत. अस्सल कोल्हापुरी चव, स्वच्छ आणि आरामदायी लॉजिंग, तसेच आपुलकीची सेवा यामुळे आम्ही अनेक कुटुंबांचा विश्वास संपादन केला आहे.
+                </p>
+                <p>
+                  आमचे स्पेशल बटर चिकन, तांबडा रस्सा, पांढरा रस्सा, तंदूर स्पेशालिटी आणि सीफूड पदार्थ ग्राहकांच्या विशेष पसंतीस उतरले आहेत.
                 </p>
               </div>
               
@@ -177,11 +180,11 @@ const Home = () => {
               transition={{ duration: 0.8 }}
               className="relative hidden md:block"
             >
-              <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
+              <div className="relative rounded-[32px] shadow-2xl">
                 <img 
                   src={hotelMainBg} 
                   alt="Hotel Shubharambh" 
-                  className="w-full h-auto object-cover lg:h-[450px]"
+                  className="w-full h-auto object-cover lg:h-[450px] rounded-[32px]"
                 />
                 <div className="absolute inset-0 border-4 border-white/20 rounded-[32px] pointer-events-none"></div>
                 
@@ -241,7 +244,7 @@ const Home = () => {
               </div>
               <div className="p-8">
                 <h3 className="card-title mb-3">स्वच्छ आणि आरामदायी खोल्या</h3>
-                <p className="text-gray-600 mb-6">प्रवाशांसाठी सुरक्षित आणि आरामदायी वास्तव्य. २४ तास गरम पाणी. चेक-आउट: १०:०० AM. रूम रेंट: ₹899/-</p>
+                <p className="text-gray-600 mb-6">प्रवाशांसाठी सुरक्षित आणि आरामदायी वास्तव्य. 24 तास गरम पाणी. चेक-आउट: 10:00 AM. रूम रेंट: ₹899/-</p>
                 <Link to="/lodging" className="text-brand-red font-semibold hover:text-red-800 flex items-center gap-2">अधिक पहा &rarr;</Link>
               </div>
             </motion.div>
@@ -276,8 +279,19 @@ const Home = () => {
             {[...specialOffers.slice(0, 4), ...chefRecommends.slice(0, 4)].map((item, i) => (
               <div key={i} className="min-w-[80vw] sm:min-w-[300px] md:min-w-0 md:w-auto snap-center bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800 relative group">
                 <div className="absolute top-4 left-0 z-20">
-                  <div className="bg-brand-red text-white text-xs font-bold px-3 py-1.5 rounded-r-md shadow-lg relative">
-                    {item.badge || "⭐ स्पेशल ऑफर"}
+                  <div className="bg-brand-red text-white text-xs font-bold px-3 py-1.5 rounded-r-md shadow-lg relative flex items-center gap-1.5">
+                    {item.badge ? (
+                      <>
+                        {(item.badge.includes('स्पेशल') || item.badge.includes('ऑफर')) && <FaFire className="text-yellow-400" />}
+                        {item.badge.includes('लोकप्रिय') && <FaStar className="text-yellow-400" />}
+                        {item.badge.includes('शेफ') && <FaUtensils className="text-white" />}
+                        {item.badge.replace(/[🔥⭐👨‍🍳]/g, '').trim()}
+                      </>
+                    ) : (
+                      <>
+                        <FaStar className="text-yellow-400" /> स्पेशल ऑफर
+                      </>
+                    )}
                   </div>
                 </div>
                 <div className="relative h-48 overflow-hidden">
@@ -293,7 +307,7 @@ const Home = () => {
           </div>
           <div className="text-center mt-10">
              <Link to="/menu" className="inline-flex items-center justify-center bg-brand-red hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full text-lg shadow-[0_10px_30px_rgba(220,38,38,0.4)] transition-all active:scale-95 hover:-translate-y-1 gap-2">
-               🍽️ संपूर्ण मेनू पाहा
+               <FaUtensils /> संपूर्ण मेनू पाहा
              </Link>
           </div>
         </div>
@@ -443,17 +457,20 @@ const Home = () => {
             <div className="space-y-6 mb-12">
               <div className="flex items-start gap-4 text-lg">
                 <FaMapMarkerAlt className="mt-1 text-brand-gold text-2xl flex-shrink-0" />
-                <span>कोल्हापूर-हुपरी रोड, मुडशिंगी,<br/>कोल्हापूर, महाराष्ट्र ४१६११९</span>
+                <span>कोल्हापूर-हुपरी रोड, मुडशिंगी,<br/>कोल्हापूर, महाराष्ट्र 416119</span>
               </div>
-              <div className="flex items-center gap-4 text-lg">
-                <FaPhoneAlt className="text-brand-gold text-2xl flex-shrink-0" />
-                <a href="tel:+919860842093" className="hover:text-brand-gold font-bold transition-colors">+91 98608 42093</a>
+              <div className="flex items-start gap-4 text-lg">
+                <FaPhoneAlt className="mt-1 text-brand-gold text-2xl flex-shrink-0" />
+                <div className="flex flex-col gap-1.5">
+                  <a href="tel:+919168788989" className="hover:text-brand-gold font-bold transition-colors font-english">+91 91687 88989</a>
+                  <a href="tel:+919860842093" className="hover:text-brand-gold font-bold transition-colors font-english">+91 98608 42093</a>
+                </div>
               </div>
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:+919860842093" className="btn-secondary text-brand-dark w-full sm:w-auto justify-center text-center">कॉल करा</a>
-              <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-green-500 hover:bg-green-600 text-white btn-base w-full sm:w-auto justify-center text-center transition-colors shadow-md flex items-center gap-2">
+              <a href="tel:+919168788989" className="btn-secondary text-brand-dark w-full sm:w-auto justify-center text-center">कॉल करा</a>
+              <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="bg-green-500 hover:bg-green-600 text-white btn-base w-full sm:w-auto justify-center text-center transition-colors shadow-md flex items-center gap-2">
                 <FaWhatsapp size={20} /> <span className="font-english">WhatsApp</span>
               </a>
             </div>
@@ -469,3 +486,4 @@ const Home = () => {
 import { FaUserFriends } from 'react-icons/fa';
 
 export default Home;
+

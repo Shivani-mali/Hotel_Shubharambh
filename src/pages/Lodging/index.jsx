@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+﻿import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaBed, FaBath, 
@@ -34,52 +34,41 @@ const galleryData = [
   { id: 1, type: 'रूम', src: room1 },
   { id: 2, type: 'रूम', src: room2 },
   { id: 3, type: 'रूम', src: room3 },
-  { id: 4, type: 'रूम', src: room4 },
-  { id: 5, type: 'बाथरूम', src: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80' },
-  { id: 6, type: 'बाथरूम', src: 'https://images.unsplash.com/photo-1620626011761-9ea018905ace?auto=format&fit=crop&q=80' },
-  { id: 7, type: 'रेस्टॉरंट', src: restaurantImg },
-  { id: 8, type: 'हॉटेल', src: hotelDay },
-  { id: 9, type: 'हॉटेल', src: hotelNight },
-  { id: 10, type: 'पार्किंग', src: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80' },
-  { id: 11, type: 'मल्टिपर्पज हॉल', src: hallImg },
+  { id: 4, type: 'रूम', src: room4 }
 ];
 
 const faqs = [
-  { q: "Check-in आणि Check-out ची वेळ काय आहे?", a: "आमची Check-in वेळ दुपारी १२:०० आणि Check-out वेळ सकाळी ११:०० आहे." },
+  { q: "Check-in आणि Check-out ची वेळ काय आहे?", a: "आमची Check-in वेळ दुपारी 12:00 आणि Check-out वेळ सकाळी 11:00 आहे." },
   { q: "पार्किंगची सुविधा उपलब्ध आहे का?", a: "होय, हॉटेलमध्ये आमच्या ग्राहकांसाठी प्रशस्त आणि मोफत सुरक्षित पार्किंग उपलब्ध आहे." },
   { q: "रेस्टॉरंटची सुविधा आहे का?", a: "होय, हॉटेलच्या खालील मजल्यावर आमचे प्रसिद्ध 'शुभारंभ रेस्टॉरंट' आहे, जिथे अस्सल कोल्हापुरी जेवण मिळते." },
-  { q: "२४ तास गरम पाणी मिळते का?", a: "होय, सर्व रूम्समध्ये अटॅच बाथरूम आणि २४ तास गरम पाण्याची सुविधा उपलब्ध आहे." },
+  { q: "24 तास गरम पाणी मिळते का?", a: "होय, सर्व रूम्समध्ये अटॅच बाथरूम आणि 24 तास गरम पाण्याची सुविधा उपलब्ध आहे." },
   { q: "UPI Payment किंवा कार्ड स्वीकारले जाते का?", a: "होय, आम्ही Google Pay, PhonePe, Paytm आणि सर्व प्रमुख Credit/Debit Cards स्वीकारतो." },
-  { q: "कुटुंबासाठी राहणे सुरक्षित आहे का?", a: "१००% सुरक्षित. आमचे हॉटेल विशेषतः फॅमिलीसाठी डिझाइन केलेले आहे आणि इथे पूर्णवेळ सुरक्षित आणि शांत वातावरण असते." }
+  { q: "कुटुंबासाठी राहणे सुरक्षित आहे का?", a: "100% सुरक्षित. आमचे हॉटेल विशेषतः फॅमिलीसाठी डिझाइन केलेले आहे आणि इथे पूर्णवेळ सुरक्षित आणि शांत वातावरण असते." }
 ];
 
 const Lodging = () => {
-  const [activeGalleryTab, setActiveGalleryTab] = useState('रूम');
   const [lightboxImg, setLightboxImg] = useState(null);
   const [activeFaq, setActiveFaq] = useState(null);
 
-  const galleryTabs = ['रूम', 'बाथरूम', 'रेस्टॉरंट', 'हॉटेल', 'पार्किंग', 'मल्टिपर्पज हॉल'];
-  const filteredGallery = galleryData.filter(img => img.type === activeGalleryTab);
-
   const handleLightboxNext = (e) => {
     e.stopPropagation();
-    const currentIndex = filteredGallery.findIndex(img => img.src === lightboxImg);
-    if (currentIndex < filteredGallery.length - 1) setLightboxImg(filteredGallery[currentIndex + 1].src);
-    else setLightboxImg(filteredGallery[0].src);
+    const currentIndex = galleryData.findIndex(img => img.src === lightboxImg);
+    if (currentIndex < galleryData.length - 1) setLightboxImg(galleryData[currentIndex + 1].src);
+    else setLightboxImg(galleryData[0].src);
   };
 
   const handleLightboxPrev = (e) => {
     e.stopPropagation();
-    const currentIndex = filteredGallery.findIndex(img => img.src === lightboxImg);
-    if (currentIndex > 0) setLightboxImg(filteredGallery[currentIndex - 1].src);
-    else setLightboxImg(filteredGallery[filteredGallery.length - 1].src);
+    const currentIndex = galleryData.findIndex(img => img.src === lightboxImg);
+    if (currentIndex > 0) setLightboxImg(galleryData[currentIndex - 1].src);
+    else setLightboxImg(galleryData[galleryData.length - 1].src);
   };
 
   return (
-    <div className="bg-[#FAF8F5] min-h-screen font-sans text-gray-800 pb-20 md:pb-0">
+    <div className="bg-[#FAF8F5] min-h-screen font-sans text-gray-800">
       <SEO 
         title="प्रीमियम रूम्स | हॉटेल शुभारंभ (Premium Lodging Kolhapur)"
-        description="कोल्हापूरमध्ये कुटुंबासाठी सर्वात सुरक्षित आणि आरामदायक हॉटेल. स्वच्छ खोल्या, २४ तास गरम पाणी, आणि मोफत पार्किंग. आजच आपली रूम बुक करा."
+        description="कोल्हापूरमध्ये कुटुंबासाठी सर्वात सुरक्षित आणि आरामदायक हॉटेल. स्वच्छ खोल्या, 24 तास गरम पाणी, आणि मोफत पार्किंग. आजच आपली रूम बुक करा."
       />
 
       {/* 1. Premium Hero Section */}
@@ -105,20 +94,20 @@ const Lodging = () => {
             {/* Trust Badges */}
             <div className="flex flex-wrap items-center gap-4 text-sm md:text-base font-bold text-white mb-10">
               <span className="flex items-center gap-1 bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 shadow-sm text-yellow-400">
-                <FaStar/><FaStar/><FaStar/><FaStar/><FaStarHalfAlt/> <span className="text-white ml-1">४.८ Google Rating</span>
+                <FaStar/><FaStar/><FaStar/><FaStar/><FaStarHalfAlt/> <span className="text-white ml-1">4.8 Google Rating</span>
               </span>
               <span className="flex items-center gap-2"><FaCheckCircle className="text-green-400"/> कुटुंबासाठी योग्य</span>
               <span className="flex items-center gap-2"><FaCheckCircle className="text-green-400"/> स्वच्छ खोल्या</span>
-              <span className="flex items-center gap-2"><FaCheckCircle className="text-green-400"/> २४ तास गरम पाणी</span>
+              <span className="flex items-center gap-2"><FaCheckCircle className="text-green-400"/> 24 तास गरम पाणी</span>
               <span className="flex items-center gap-2"><FaCheckCircle className="text-green-400"/> मोफत पार्किंग</span>
             </div>
             
             {/* CTA Buttons - Hidden on Mobile to avoid clutter */}
             <div className="hidden md:flex flex-row gap-4 mt-6">
-              <a href="tel:+919860842093" className="bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(183,28,28,0.4)] transition-all active:scale-95 border border-red-500/30">
+              <a href="tel:+919168788989" className="bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(183,28,28,0.4)] transition-all active:scale-95 border border-red-500/30">
                 <FaPhoneAlt /> कॉल करा
               </a>
-              <a href="https://wa.me/919860842093?text=मला रूम बुकिंगबद्दल माहिती हवी आहे." target="_blank" rel="noreferrer" className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(37,211,102,0.4)] transition-all active:scale-95 border border-green-500/30">
+              <a href="https://wa.me/919168788989?text=मला रूम बुकिंगबद्दल माहिती हवी आहे." target="_blank" rel="noreferrer" className="bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-[0_8px_25px_rgba(37,211,102,0.4)] transition-all active:scale-95 border border-green-500/30">
                 <FaWhatsapp size={22} /> WhatsApp
               </a>
               <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="bg-white hover:bg-gray-50 text-gray-800 font-bold py-4 px-8 rounded-full text-center flex items-center justify-center gap-3 text-lg shadow-lg transition-all active:scale-95 border border-gray-200">
@@ -154,7 +143,7 @@ const Lodging = () => {
               <div className="mb-8">
                 <p className="text-[#B71C1C] font-black text-5xl md:text-6xl mb-2 font-display">₹899<span className="text-lg text-gray-500 font-medium"> / रात्र</span></p>
                 <p className="text-gray-500 font-bold flex items-center gap-2 bg-gray-50 inline-flex px-4 py-2 rounded-full border border-gray-100">
-                  <FaChild className="text-[#D4AF37] text-lg"/> क्षमता: २ प्रौढ + १ लहान मूल
+                  <FaChild className="text-[#D4AF37] text-lg"/> क्षमता: 2 प्रौढ + 1 लहान मूल
                 </p>
               </div>
               
@@ -162,16 +151,16 @@ const Lodging = () => {
                 <div className="flex items-center gap-2 md:gap-3"><div className="bg-amber-50 p-2 md:p-2.5 rounded-full shrink-0"><FaBed className="text-[#D4AF37] text-sm md:text-lg"/></div> <span className="leading-tight">डबल बेड</span></div>
                 <div className="flex items-center gap-2 md:gap-3"><div className="bg-amber-50 p-2 md:p-2.5 rounded-full shrink-0"><FaBath className="text-[#D4AF37] text-sm md:text-lg"/></div> <span className="leading-tight">अटॅच बाथरूम</span></div>
                 <div className="flex items-center gap-2 md:gap-3"><div className="bg-amber-50 p-2 md:p-2.5 rounded-full shrink-0"><FaShieldAlt className="text-[#D4AF37] text-sm md:text-lg"/></div> <span className="leading-tight">कुटुंबासाठी सुरक्षित</span></div>
-                <div className="flex items-center gap-2 md:gap-3"><div className="bg-amber-50 p-2 md:p-2.5 rounded-full shrink-0"><FaBath className="text-[#D4AF37] text-sm md:text-lg"/></div> <span className="leading-tight">२४ तास गरम पाणी</span></div>
+                <div className="flex items-center gap-2 md:gap-3"><div className="bg-amber-50 p-2 md:p-2.5 rounded-full shrink-0"><FaBath className="text-[#D4AF37] text-sm md:text-lg"/></div> <span className="leading-tight">24 तास गरम पाणी</span></div>
                 <div className="flex items-center gap-2 md:gap-3"><div className="bg-amber-50 p-2 md:p-2.5 rounded-full shrink-0"><FaUtensils className="text-[#D4AF37] text-sm md:text-lg"/></div> <span className="leading-tight">रेस्टॉरंट सुविधा</span></div>
                 <div className="flex items-center gap-2 md:gap-3"><div className="bg-amber-50 p-2 md:p-2.5 rounded-full shrink-0"><FaCar className="text-[#D4AF37] text-sm md:text-lg"/></div> <span className="leading-tight">मोफत पार्किंग</span></div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-auto">
-                 <a href="tel:+919860842093" className="w-full bg-[#111] hover:bg-[#B71C1C] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
+                 <a href="tel:+919168788989" className="w-full bg-[#111] hover:bg-[#B71C1C] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
                   <FaPhoneAlt /> आता कॉल करा
                 </a>
-                <a href="https://wa.me/919860842093?text=मला प्रीमियम रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-full bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
+                <a href="https://wa.me/919168788989?text=मला प्रीमियम रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-full bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold py-4 rounded-xl text-center flex items-center justify-center gap-2 transition-all active:scale-95 shadow-md">
                   <FaWhatsapp size={20} /> WhatsApp बुक
                 </a>
               </div>
@@ -191,7 +180,7 @@ const Lodging = () => {
               { label: "स्वच्छ खोल्या", icon: <FaBroom /> },
               { label: "डबल बेड", icon: <FaBed /> },
               { label: "अटॅच बाथरूम", icon: <FaBath /> },
-              { label: "२४ तास गरम पाणी", icon: <FaBath /> },
+              { label: "24 तास गरम पाणी", icon: <FaBath /> },
               { label: "रेस्टॉरंट सुविधा", icon: <FaUtensils /> },
               { label: "मोफत पार्किंग", icon: <FaCar /> },
               { label: "शांत वातावरण", icon: <FaHotel /> },
@@ -216,18 +205,6 @@ const Lodging = () => {
           <div className="text-center mb-12">
             <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block">Take A Look</span>
             <h2 className="text-3xl md:text-5xl font-display font-bold text-white mb-8">हॉटेल गॅलरी</h2>
-            
-            {/* Category Chips */}
-            <div className="flex flex-wrap justify-center gap-3">
-              {galleryTabs.map(tab => (
-                <button 
-                  key={tab} onClick={() => setActiveGalleryTab(tab)}
-                  className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all ${activeGalleryTab === tab ? 'bg-[#D4AF37] text-black shadow-[0_0_20px_rgba(212,175,55,0.4)]' : 'bg-white/5 hover:bg-white/10 text-gray-300 border border-white/10'}`}
-                >
-                  {tab}
-                </button>
-              ))}
-            </div>
           </div>
           
           <motion.div 
@@ -235,7 +212,7 @@ const Lodging = () => {
             className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
           >
             <AnimatePresence mode="popLayout">
-              {filteredGallery.map((img) => (
+              {galleryData.map((img) => (
                 <motion.div
                   layout initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.3 }}
                   key={img.src} onClick={() => setLightboxImg(img.src)}
@@ -266,7 +243,7 @@ const Lodging = () => {
                 { title: "स्वच्छ व प्रशस्त खोल्या", desc: "आम्ही स्वच्छतेला सर्वोच्च प्राधान्य देतो. तुम्हाला नेहमी ताजे आणि नीटनेटके वातावरण मिळेल." },
                 { title: "परवडणारे दर", desc: "कोणतेही छुपे शुल्क नाही. फक्त ₹899 मध्ये तुम्हाला कोल्हापुरातील सर्वोत्तम प्रीमियम अनुभव मिळेल." },
                 { title: "इमारतीतच रेस्टॉरंट", desc: "जेवणासाठी बाहेर जाण्याची गरज नाही. आमच्या प्रसिद्ध रेस्टॉरंटमध्ये अस्सल कोल्हापुरी जेवणाचा आस्वाद घ्या." },
-                { title: "कुटुंबासाठी योग्य व सुरक्षित", desc: "२४ तास सुरक्षितता आणि कौटुंबिक वातावरण असल्यामुळे तुम्ही निवांत राहू शकता." }
+                { title: "कुटुंबासाठी योग्य व सुरक्षित", desc: "24 तास सुरक्षितता आणि कौटुंबिक वातावरण असल्यामुळे तुम्ही निवांत राहू शकता." }
               ].map((item, i) => (
                 <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="flex gap-5 bg-white p-6 rounded-[24px] shadow-sm border border-gray-100 hover:shadow-lg hover:border-red-100 transition-all">
                   <div className="w-12 h-12 bg-red-50 text-[#B71C1C] rounded-full flex items-center justify-center shrink-0 border border-red-100"><FaRegCheckCircle size={24}/></div>
@@ -301,10 +278,10 @@ const Lodging = () => {
             <div className="hidden md:block absolute top-1/2 left-[10%] right-[10%] h-1 bg-gray-100 -translate-y-1/2 z-0"></div>
             
             {[
-              { step: "१", label: "कॉल करा", icon: <FaPhoneAlt/> },
-              { step: "२", label: "उपलब्धता तपासा", icon: <FaBed/> },
-              { step: "३", label: "WhatsApp माहिती", icon: <FaWhatsapp/> },
-              { step: "४", label: "Booking Confirm", icon: <FaCheckCircle/> }
+              { step: "1", label: "कॉल करा", icon: <FaPhoneAlt/> },
+              { step: "2", label: "उपलब्धता तपासा", icon: <FaBed/> },
+              { step: "3", label: "WhatsApp माहिती", icon: <FaWhatsapp/> },
+              { step: "4", label: "Booking Confirm", icon: <FaCheckCircle/> }
             ].map((step, i) => (
               <div key={i} className="relative z-10 flex flex-col items-center mb-8 md:mb-0 group">
                 <div className="w-16 h-16 bg-white border-4 border-[#F5F5F5] group-hover:border-[#D4AF37] text-gray-800 group-hover:text-[#D4AF37] rounded-full flex items-center justify-center text-2xl mb-4 transition-all shadow-md">
@@ -367,12 +344,12 @@ const Lodging = () => {
             <div className="bg-[#FAF8F5] p-8 md:p-10 rounded-[32px] border border-gray-100 shadow-sm text-center md:text-left flex flex-col md:flex-row items-center gap-8">
               <div className="bg-white p-6 rounded-full shadow-md shrink-0">
                 <div className="flex text-yellow-400 text-2xl mb-2"><FaStar/><FaStar/><FaStar/><FaStar/><FaStarHalfAlt/></div>
-                <span className="font-black text-4xl text-gray-900">४.८</span>
+                <span className="font-black text-4xl text-gray-900">4.8</span>
                 <span className="text-gray-500 font-bold block mt-1">Rating</span>
               </div>
               <div>
                  <p className="text-gray-600 font-medium text-lg mb-6 italic">"खूप छान सर्व्हिस, स्वच्छ खोल्या आणि चविष्ट जेवण. कुटुंबासाठी अतिशय उत्तम हॉटेल."</p>
-                 <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="inline-flex font-bold text-[#B71C1C] hover:text-red-800 items-center gap-2 border-b-2 border-[#B71C1C] pb-1 transition-colors">
+                 <a href="https://share.google/iquNQQfUOWcsQC9dE" target="_blank" rel="noreferrer" className="inline-flex font-bold text-[#B71C1C] hover:text-red-800 items-center gap-2 border-b-2 border-[#B71C1C] pb-1 transition-colors">
                    सर्व Google Reviews पहा <FaChevronDown className="-rotate-90" />
                  </a>
               </div>
@@ -433,17 +410,17 @@ const Lodging = () => {
           <div className="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-8 text-xs md:text-sm text-gray-300 font-medium">
             <span className="flex items-center gap-1.5"><FaCheckCircle className="text-green-400"/> सुरक्षित मुक्काम</span>
             <span className="flex items-center gap-1.5"><FaCheckCircle className="text-green-400"/> स्वच्छ खोल्या</span>
-            <span className="flex items-center gap-1.5"><FaCheckCircle className="text-green-400"/> २४ तास सेवा</span>
+            <span className="flex items-center gap-1.5"><FaCheckCircle className="text-green-400"/> 24 तास सेवा</span>
           </div>
           
-          <div className="flex flex-col sm:flex-row justify-center items-center gap-3 w-full">
-            <a href="tel:+919860842093" className="w-[88%] sm:w-auto h-[52px] px-8 bg-[#B71C1C] hover:bg-red-700 text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-red-500/50">
+          <div className="flex flex-col tb:flex-row justify-center items-center gap-3 w-full">
+            <a href="tel:+919168788989" className="w-[88%] tb:w-auto h-[52px] px-8 bg-[#B71C1C] hover:bg-red-700 text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-red-500/50">
               <FaPhoneAlt /> कॉल करा
             </a>
-            <a href="https://wa.me/919860842093?text=मला रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-[88%] sm:w-auto h-[52px] px-8 bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-green-400/50">
+            <a href="https://wa.me/919168788989?text=मला रूम बुक करायची आहे." target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto h-[52px] px-8 bg-[#25D366] hover:bg-[#1ebd59] text-white font-bold rounded-[18px] flex items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 border border-green-400/50">
               <FaWhatsapp size={20} /> WhatsApp वर बुक करा
             </a>
-            <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="hidden sm:flex w-[88%] sm:w-auto h-[52px] px-8 bg-white/10 hover:bg-white/20 text-white font-bold rounded-[18px] items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 backdrop-blur-md border border-white/20">
+            <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="flex w-[88%] tb:w-auto h-[52px] px-8 bg-white/10 hover:bg-white/20 text-white font-bold rounded-[18px] items-center justify-center gap-2 text-base md:text-lg shadow-lg transition-transform hover:scale-105 backdrop-blur-md border border-white/20">
               <FaMapMarkerAlt className="text-[#D4AF37]" /> लोकेशन
             </a>
           </div>
@@ -479,3 +456,4 @@ const Lodging = () => {
 };
 
 export default Lodging;
+

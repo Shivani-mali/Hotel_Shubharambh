@@ -1,3 +1,22 @@
+import p_tikka from '../../assets/Menu/veg_special/Crush_paneer_tikka_masala.jpeg';
+import k_angara from '../../assets/Menu/veg_special/kaju_anagara.jpeg';
+import s_dish from '../../assets/Menu/veg_special/Special शुभारंभ डिश.png';
+import v_jaipuri from '../../assets/Menu/veg_special/veg_jaipuri.jpeg';
+import v_maratha from '../../assets/Menu/veg_special/veg_maratha.jpeg';
+import v_tawa from '../../assets/Menu/veg_special/veg_tava_masala.jpeg';
+
+import c_leg from '../../assets/Menu/nonveg_special/Chicken_leg_piece.jpeg';
+import c_murg from '../../assets/Menu/nonveg_special/chicken_murg_masalam.jpeg';
+import c_tand from '../../assets/Menu/nonveg_special/चिकन तंदुरी.jpeg';
+import c_banjara from '../../assets/Menu/nonveg_special/चिकन बंजारा कबाब.jpeg';
+import c_seekh from '../../assets/Menu/nonveg_special/चिकन शीख कबाब.jpeg';
+import nv_platter from '../../assets/Menu/nonveg_special/Chicken_platter_rate_629.jpeg';
+import m_lonche from '../../assets/Menu/nonveg_special/मटण लोणचे.png';
+
+import t_butter from '../../assets/Menu/Butter chicken thali.jpeg';
+import t_mutton from '../../assets/Menu/Mutton धनगरी थाळी.jpeg';
+import t_rakti from '../../assets/Menu/Rakti mundi थाळी.jpeg';
+
 export const mainTabs = [
   { id: 'veg', label: '🥗 शाकाहारी' },
   { id: 'chicken', label: '🍗 चिकन' },
@@ -13,18 +32,25 @@ export const mainTabs = [
 ];
 
 export const specialOffers = [
-  { id: "so1", name: "चिकन तंदुरी हाफ", price: "270", type: "Non-Veg", isHot: true, badge: "🔥 ऑफर", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
-  { id: "so2", name: "चिकन तंदुरी फुल", price: "490", type: "Non-Veg", isHot: true, badge: "🔥 ऑफर", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
-  { id: "so3", name: "पनीर प्लॅटर", price: "490", type: "Veg", isHot: false, badge: "⭐ लोकप्रिय", img: "https://images.unsplash.com/photo-1628294895950-9805252327bc?auto=format&fit=crop&q=80" },
-  { id: "so4", name: "चिकन लॉलीपॉप (8 पीस)", price: "300", type: "Non-Veg", isHot: true, badge: "🔥 ऑफर", img: "https://images.unsplash.com/photo-1564834724105-918b73d1b9e0?auto=format&fit=crop&q=80" }
+  { id: "so1", name: "स्पे. बटर चिकन थाळी", price: "250", type: "Non-Veg", isHot: true, badge: "🔥 स्पेशल", img: t_butter },
+  { id: "so2", name: "मटण धनगरी थाळी", price: "300", type: "Non-Veg", isHot: true, badge: "🔥 स्पेशल", img: t_mutton },
+  { id: "so3", name: "रक्ती मुंडी थाळी", price: "220", type: "Non-Veg", isHot: false, badge: "⭐ लोकप्रिय", img: t_rakti },
+  { id: "so4", name: "चिकन तंदुरी हाफ/फुल", price: "270 / 490", type: "Non-Veg", isHot: true, badge: "🔥 ऑफर", img: c_tand },
+  { id: "so5", name: "स्पेशल शुभारंभ डिश (रेड/ग्रीन)", price: "330", type: "Veg", isHot: true, badge: "🔥 स्पेशल", img: s_dish },
+  { id: "so6", name: "चिकन प्लॅटर", price: "629", type: "Non-Veg", isHot: true, badge: "🔥 ऑफर", img: nv_platter }
 ];
 
 export const chefRecommends = [
-  { id: "cr1", name: "बटर चिकन", price: "280/- 550/-", type: "Non-Veg", desc: "क्रीमी आणि स्वादिष्ट बटर चिकन.", img: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&q=80", badge: "👨‍🍳 शेफची निवड" },
-  { id: "cr2", name: "चिकन कोल्हापूरी", price: "230/-", type: "Non-Veg", desc: "झणझणीत अस्सल कोल्हापुरी चिकन.", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80", badge: "⭐ लोकप्रिय" },
-  { id: "cr3", name: "मटण मसाला", price: "330/- 640/-", type: "Non-Veg", desc: "अस्सल कोल्हापुरी मटण मसाला.", img: "https://images.unsplash.com/photo-1585937421612-70a008356fbe?auto=format&fit=crop&q=80", badge: "👨‍🍳 शेफची निवड" },
-  { id: "cr4", name: "पनीर टिक्का मसाला", price: "220/-", type: "Veg", desc: "मसालेदार पनीर टिक्का.", img: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&q=80", badge: "⭐ लोकप्रिय" },
-  { id: "cr5", name: "स्पेशल शुभारंभ डिश (रेड/ग्रीन)", price: "330/-", type: "Veg", desc: "आमची खासियत असलेली डिश.", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80", badge: "👨‍🍳 शेफची निवड" },
+  { id: "cr1", name: "चिकन लेगपिस", price: "230", type: "Non-Veg", desc: "चविष्ट आणि मसालेदार चिकन लेगपिस.", img: c_leg, badge: "👨‍🍳 शेफची निवड" },
+  { id: "cr2", name: "चिकन मुर्ग मुसल्लम", price: "360", type: "Non-Veg", desc: "अस्सल मुर्ग मुसल्लम.", img: c_murg, badge: "⭐ लोकप्रिय" },
+  { id: "cr3", name: "चिकन बंजारा कबाब (8 पीस)", price: "240", type: "Non-Veg", desc: "तंदुरी चिकन बंजारा कबाब.", img: c_banjara, badge: "👨‍🍳 शेफची निवड" },
+  { id: "cr4", name: "चिकन शीख कबाब", price: "240", type: "Non-Veg", desc: "स्वादिष्ट चिकन शीख कबाब.", img: c_seekh, badge: "⭐ लोकप्रिय" },
+  { id: "cr5", name: "मटण लोणचे", price: "250", type: "Non-Veg", desc: "गावरान मटण लोणचे.", img: m_lonche, badge: "👨‍🍳 शेफची निवड" },
+  { id: "cr6", name: "पनीर टिक्का मसाला (खिसुन)", price: "240", type: "Veg", desc: "मसालेदार पनीर टिक्का (खिसुन).", img: p_tikka, badge: "⭐ लोकप्रिय" },
+  { id: "cr7", name: "काजू अंगारा (सिझलर)", price: "250", type: "Veg", desc: "काजू अंगारा सिझलर डिश.", img: k_angara, badge: "👨‍🍳 शेफची निवड" },
+  { id: "cr8", name: "व्हेज जयपुरी", price: "250", type: "Veg", desc: "अस्सल व्हेज जयपुरी.", img: v_jaipuri, badge: "⭐ लोकप्रिय" },
+  { id: "cr9", name: "व्हेज मराठा", price: "240", type: "Veg", desc: "झणझणीत व्हेज मराठा.", img: v_maratha, badge: "👨‍🍳 शेफची निवड" },
+  { id: "cr10", name: "व्हेज तवा मसाला", price: "240", type: "Veg", desc: "व्हेज तवा मसाला.", img: v_tawa, badge: "⭐ लोकप्रिय" },
 ];
 
 export const menuData = [

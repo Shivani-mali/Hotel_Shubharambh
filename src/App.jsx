@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import AppRoutes from './routes/AppRoutes';
 import ScrollToTop from './components/ScrollToTop';
 import Loader from './components/Loader';
+import CallModal from './components/CallModal';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,6 +23,7 @@ function App() {
     <>
       <ScrollToTop />
       <AppRoutes />
+      <CallModal />
     </>
   )
 }

@@ -5,6 +5,8 @@ import SEO from '../../components/SEO';
 
 // Local Assets
 import video1 from '../../assets/Gallery/Video_1 (1).mp4';
+const videoFiles = import.meta.glob('../../assets/Gallery/*.mp4', { eager: true, query: '?url', import: 'default' });
+const videos = Object.values(videoFiles);
 
 import hotel1 from '../../assets/Gallery/Hotel_1.jpg';
 import hotel2 from '../../assets/Gallery/Hotel2.jpg';
@@ -20,21 +22,8 @@ import room4 from '../../assets/Rooms/room4.jpeg';
 import room5 from '../../assets/Rooms/room5.jpeg';
 import room6 from '../../assets/Rooms/room6.jpeg';
 
-import dish1 from '../../assets/Menu/Chicken_Banjara.jpeg';
-import dish2 from '../../assets/Menu/Chicken_leg_piece.jpeg';
-import dish3 from '../../assets/Menu/Roasted_chicken.png';
-import dish4 from '../../assets/Menu/Tandoori_paneer.jpeg';
-import dish5 from '../../assets/Menu/tandorri_cheicken.jpeg';
-import dish6 from '../../assets/Menu/veg_harabara.jpeg';
-
-const foodImages = [
-  dish1,
-  dish2,
-  dish3,
-  dish4,
-  dish5,
-  dish6,
-];
+const menuImagesMap = import.meta.glob('../../assets/Menu/**/*.{jpg,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const foodImages = Object.values(menuImagesMap).filter(img => !img.includes('menu_book'));
 
 const hotelImages = [
   hotel1, hotel2, hotelNight, hotelNight2, hall
@@ -82,6 +71,18 @@ const MasonryGrid = ({ images, onImageClick }) => {
 const Gallery = () => {
   // Lightbox State
   const [lightboxData, setLightboxData] = useState({ images: [], index: 0, isOpen: false });
+
+  // Grid Expansion State
+  const [showAllFood, setShowAllFood] = useState(false);
+  const [showAllRooms, setShowAllRooms] = useState(false);
+
+  // Video Playback Control
+  const handleVideoPlay = (e) => {
+    const vids = document.querySelectorAll('.gallery-video');
+    vids.forEach(v => {
+      if (v !== e.target) v.pause();
+    });
+  };
 
   // Typewriter State
   const [typedText, setTypedText] = useState('');
@@ -179,12 +180,14 @@ const Gallery = () => {
               <h2 className="text-4xl md:text-5xl font-display font-bold text-white">स्वादिष्ट पदार्थ</h2>
             </div>
           </div>
-          <MasonryGrid images={foodImages} onImageClick={openLightbox} />
-          <div className="mt-10 text-center">
-             <button onClick={() => openLightbox(foodImages, 0)} className="bg-transparent hover:bg-white/5 border border-white/20 text-white font-bold py-3.5 px-8 rounded-full transition-all flex items-center gap-2 mx-auto">
-                <FaImage className="text-[#D4AF37]" /> अजून पदार्थ पहा
-             </button>
-          </div>
+          <MasonryGrid images={showAllFood ? foodImages : foodImages.slice(0, 5)} onImageClick={openLightbox} />
+          {!showAllFood && (
+            <div className="mt-10 text-center">
+               <button onClick={() => setShowAllFood(true)} className="bg-transparent hover:bg-white/5 border border-white/20 text-white font-bold py-3.5 px-8 rounded-full transition-all flex items-center gap-2 mx-auto">
+                  <FaImage className="text-[#D4AF37]" /> अजून पदार्थ पहा
+               </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -215,12 +218,14 @@ const Gallery = () => {
               <h2 className="text-4xl md:text-5xl font-display font-bold text-white">आरामदायी रूम्स</h2>
             </div>
           </div>
-          <MasonryGrid images={roomImages} onImageClick={openLightbox} />
-          <div className="mt-10 text-center">
-             <button onClick={() => openLightbox(roomImages, 0)} className="bg-transparent hover:bg-white/5 border border-white/20 text-white font-bold py-3.5 px-8 rounded-full transition-all flex items-center gap-2 mx-auto">
-                <FaImage className="text-[#D4AF37]" /> सर्व रूम फोटो
-             </button>
-          </div>
+          <MasonryGrid images={showAllRooms ? roomImages : roomImages.slice(0, 5)} onImageClick={openLightbox} />
+          {!showAllRooms && (
+            <div className="mt-10 text-center">
+               <button onClick={() => setShowAllRooms(true)} className="bg-transparent hover:bg-white/5 border border-white/20 text-white font-bold py-3.5 px-8 rounded-full transition-all flex items-center gap-2 mx-auto">
+                  <FaImage className="text-[#D4AF37]" /> सर्व रूम फोटो
+               </button>
+            </div>
+          )}
         </div>
       </section>
 
@@ -229,23 +234,29 @@ const Gallery = () => {
         <div className="container-ds px-4 max-w-6xl mx-auto">
           <div className="mb-12 text-center">
             <span className="text-[#B71C1C] font-bold tracking-widest uppercase text-sm mb-2 block">Cinematic View</span>
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-white">व्हिडिओ गॅलरी</h2>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">व्हिडिओ गॅलरी</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto text-lg">आमच्या हॉटेलची सुंदर झलक पाहण्यासाठी व्हिडिओ गॅलरीला भेट द्या.</p>
           </div>
           
-          <div className="flex justify-center">
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }} 
-              whileInView={{ opacity: 1, y: 0 }} 
-              viewport={{ once: true }}
-              className="w-full max-w-4xl bg-black rounded-3xl overflow-hidden border-2 border-[#D4AF37]/30 relative group shadow-[0_20px_60px_rgba(0,0,0,0.6)] aspect-video"
-            >
-              <video 
-                src={video1} 
-                controls 
-                poster={hotel1}
-                className="w-full h-full object-cover"
-              ></video>
-            </motion.div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {videos.map((vid, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }} 
+                whileInView={{ opacity: 1, y: 0 }} 
+                viewport={{ once: true }}
+                transition={{ delay: idx * 0.1 }}
+                className="bg-black rounded-2xl overflow-hidden border border-[#D4AF37]/20 relative shadow-lg aspect-square sm:aspect-video md:aspect-[4/5] lg:aspect-[4/3]"
+              >
+                <video 
+                  src={vid} 
+                  controls 
+                  preload="metadata"
+                  onPlay={handleVideoPlay}
+                  className="w-full h-full object-contain bg-black gallery-video"
+                ></video>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

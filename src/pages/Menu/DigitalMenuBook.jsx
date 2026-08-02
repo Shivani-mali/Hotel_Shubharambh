@@ -117,7 +117,7 @@ const DigitalMenuBook = () => {
         </div>
         
         <div className="flex items-center justify-center w-1/3">
-          <span className="text-xs font-bold tracking-widest text-gray-300 bg-white/5 px-3 py-1 rounded-full shadow-inner">
+          <span className="text-xs font-bold tracking-widest text-gray-300 bg-white/5 px-3 py-1 rounded-full shadow-inner whitespace-nowrap">
             पान {currentPage + 1} / {totalPages * 2}
           </span>
         </div>

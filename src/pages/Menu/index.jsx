@@ -45,7 +45,10 @@ const DishCard = ({ dish, onSelect }) => (
         <span className={`text-[10px] font-bold px-3 py-1.5 rounded-full shadow-sm uppercase tracking-widest flex items-center gap-1 backdrop-blur-md 
           ${dish.badge.includes('शेफ') ? 'bg-black/80 text-[#D4AF37] border border-[#D4AF37]/50' : 'bg-[#B71C1C]/90 text-white border border-white/20'}`}
         >
-          {dish.badge}
+          {(dish.badge.includes('स्पेशल') || dish.badge.includes('ऑफर')) && <FaFire className="text-yellow-400" />}
+          {dish.badge.includes('लोकप्रिय') && <FaStar className="text-yellow-400" />}
+          {dish.badge.includes('शेफ') && <FaUtensils className="text-[#D4AF37]" />}
+          <span className="ml-0.5">{dish.badge.replace(/[🔥⭐👨‍🍳✨]/g, '').trim()}</span>
         </span>
       </div>
     )}
@@ -67,7 +70,11 @@ const DishCard = ({ dish, onSelect }) => (
       {dish.desc && <p className="text-gray-500 text-sm mb-6 line-clamp-2 leading-relaxed">{dish.desc}</p>}
       
       <div className="mt-auto flex justify-between items-center pt-4 border-t border-gray-50">
-        <span className="text-xl md:text-2xl font-black text-[#111]">₹ {dish.price?.toString().replace('/-', '')}</span>
+        <span className="text-xl md:text-2xl font-black text-[#111]">
+          ₹ {dish.price?.toString().includes(' ') 
+              ? dish.price.toString().replace('/- ', ' / ') 
+              : dish.price?.toString().replace('/-', '')}
+        </span>
         <button className="w-10 h-10 rounded-full bg-gray-50 group-hover:bg-[#B71C1C] text-gray-400 group-hover:text-white flex items-center justify-center transition-all shadow-sm">
           <span className="text-lg">→</span>
         </button>
@@ -97,21 +104,52 @@ const Menu = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const allDishes = useMemo(() => {
+    return [...specialOffers, ...chefRecommends, ...menuData];
+  }, []);
+
   const searchResults = useMemo(() => {
     if (!searchQuery.trim()) return [];
     const query = searchQuery.toLowerCase();
-    return menuData.filter(item => 
+    
+    // Quick fallback for English searches of popular dishes
+    const enToMr = {
+      'paneer tikka': 'पनीर टिक्का',
+      'butter chicken': 'बटर चिकन',
+      'chicken tandoori': 'चिकन तंदुरी',
+      'tandoori': 'तंदुरी',
+      'paneer platter': 'पनीर प्लॅटर',
+      'mutton thali': 'मटण',
+      'chicken thali': 'चिकन',
+      'veg thali': 'व्हेज थाळी',
+      'chicken lollipop': 'चिकन लॉलीपॉप',
+      'chicken crispy': 'चिकन क्रिस्पी'
+    };
+
+    let mrQuery = query;
+    for (const [en, mr] of Object.entries(enToMr)) {
+      if (query.includes(en)) {
+        mrQuery = mr;
+        break;
+      }
+    }
+
+    return allDishes.filter(item => 
       item.name.toLowerCase().includes(query) || 
-      (item.category && item.category.toLowerCase().includes(query))
+      item.name.includes(mrQuery) ||
+      (item.category && item.category.toLowerCase().includes(query)) ||
+      (item.desc && item.desc.toLowerCase().includes(query))
+    ).filter((item, index, self) => 
+      index === self.findIndex((t) => t.name === item.name)
     ).slice(0, 6);
-  }, [searchQuery]);
+  }, [searchQuery, allDishes]);
 
   const categoryDishes = useMemo(() => {
     let dishes = menuData.filter(d => d.tab === activeCategory);
     if (foodType !== 'All') {
       dishes = dishes.filter(d => d.type === foodType);
     }
-    return dishes.slice(0, 8); // Display top 8 dishes per category to keep it uncluttered
+    return dishes.slice(0, 8);
   }, [activeCategory, foodType]);
 
   return (
@@ -215,9 +253,21 @@ const Menu = () => {
                       ))}
                     </div>
                   ) : (
-                    <div className="p-10 text-center text-gray-400 font-medium">
-                      <FaSearch className="mx-auto text-3xl mb-3 opacity-30" />
-                      माफ करा, हा पदार्थ उपलब्ध नाही.
+                    <div className="p-8 text-center text-gray-500 font-medium">
+                      <FaSearch className="mx-auto text-3xl mb-3 opacity-30 text-gray-400" />
+                      <p className="mb-4 text-sm md:text-base">माफ करा, हा पदार्थ शोधण्यात आम्हाला अडचण येत आहे.</p>
+                      <button 
+                        onClick={() => {
+                          setShowSuggestions(false);
+                          const menuBookSection = document.getElementById('digital-menu-book');
+                          if (menuBookSection) {
+                            menuBookSection.scrollIntoView({ behavior: 'smooth' });
+                          }
+                        }}
+                        className="bg-[#D4AF37]/10 hover:bg-[#D4AF37]/20 text-[#111] font-bold py-2.5 px-6 rounded-full text-xs md:text-sm transition-colors border border-[#D4AF37]/30 inline-flex items-center justify-center gap-2 mx-auto"
+                      >
+                        <FaBookOpen className="text-[#D4AF37]" /> आमचे डिजिटल मेनूपुस्तक पहा
+                      </button>
                     </div>
                   )}
                 </motion.div>
@@ -257,8 +307,10 @@ const Menu = () => {
           >
             <div className="bg-white rounded-[24px] p-3 md:p-6 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 group transition-all duration-500 hover:shadow-[0_30px_70px_rgba(183,28,28,0.1)]">
               <div className="absolute -top-4 md:-top-5 left-1/2 -translate-x-1/2 z-30 pointer-events-none flex justify-center w-full">
-                <span className="bg-[#B71C1C] text-white text-xs md:text-base font-bold px-6 md:px-8 py-2 md:py-2.5 rounded-full shadow-xl tracking-widest uppercase border border-red-500/50 whitespace-nowrap w-max">
-                  {promotionalOffers[activePromoIndex].badge}
+                <span className="bg-[#B71C1C] text-white text-xs md:text-base font-bold px-6 md:px-8 py-2 md:py-2.5 rounded-full shadow-xl tracking-widest uppercase border border-red-500/50 flex items-center gap-2 whitespace-nowrap w-max">
+                  {(promotionalOffers[activePromoIndex].badge.includes('स्पेशल') || promotionalOffers[activePromoIndex].badge.includes('ऑफर')) && <FaFire className="text-yellow-400" />}
+                  {promotionalOffers[activePromoIndex].badge.includes('खासियत') && <FaStar className="text-yellow-400" />}
+                  {promotionalOffers[activePromoIndex].badge.replace(/[🔥⭐👨‍🍳✨]/g, '').trim()}
                 </span>
               </div>
 
@@ -316,7 +368,9 @@ const Menu = () => {
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-            {chefRecommends.slice(0, 6).map((dish, i) => (
+            {[...specialOffers, ...chefRecommends]
+              .filter(dish => foodType === 'All' || dish.type === foodType)
+              .map((dish, i) => (
               <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} key={dish.id}>
                 <DishCard dish={dish} onSelect={() => setSelectedDish(dish)} />
               </motion.div>
@@ -337,9 +391,9 @@ const Menu = () => {
                संपूर्ण डिजिटल मेनूपुस्तक
              </h2>
              
-             <div className="flex overflow-x-auto pb-2 snap-x gap-2 md:gap-4 text-xs md:text-sm font-bold text-gray-300 justify-start md:justify-center mx-auto max-w-2xl px-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+             <div className="flex flex-wrap justify-center gap-2 md:gap-4 text-[11px] md:text-sm font-bold text-gray-300 mx-auto max-w-2xl px-2 md:px-4">
                {["सर्व पदार्थ", "किंमत सूची", "विशेष ऑफर्स"].map((badge, idx) => (
-                 <span key={idx} className="snap-center shrink-0 bg-white/5 backdrop-blur-md px-4 py-2 rounded-full border border-white/10 uppercase tracking-widest text-[#D4AF37]">
+                 <span key={idx} className="bg-white/5 backdrop-blur-md px-3 md:px-4 py-1.5 md:py-2 rounded-full border border-white/10 uppercase tracking-widest text-[#D4AF37] whitespace-nowrap">
                    {badge}
                  </span>
                ))}
@@ -358,14 +412,14 @@ const Menu = () => {
           <h2 className="text-3xl md:text-6xl font-display font-bold text-[#111] mb-4">चला, अनुभव घेऊया!</h2>
           <p className="text-base md:text-xl text-[#111]/80 font-bold mb-8">आजच तुमची ऑर्डर द्या किंवा हॉटेलला भेट द्या.</p>
           
-          <div className="flex flex-col sm:flex-row justify-center gap-3">
-            <a href="tel:+919860842093" className="bg-[#111] hover:bg-black text-white font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
+          <div className="flex flex-col tb:flex-row justify-center items-center gap-3">
+            <a href="tel:+919168788989" className="w-[88%] tb:w-auto bg-[#111] hover:bg-black text-white font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
               <FaPhoneAlt /> कॉल करा
             </a>
-            <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="bg-white hover:bg-gray-50 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
+            <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto bg-white hover:bg-gray-50 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl">
               <FaWhatsapp size={20} className="text-[#25D366]" /> WhatsApp
             </a>
-            <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="bg-white/30 hover:bg-white/40 border border-[#111]/20 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 backdrop-blur-sm">
+            <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto bg-white/30 hover:bg-white/40 border border-[#111]/20 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 backdrop-blur-sm">
               <FaMapMarkerAlt /> लोकेशन
             </a>
           </div>
@@ -390,7 +444,14 @@ const Menu = () => {
                 {selectedDish.img && <img src={selectedDish.img} alt={selectedDish.name} className="w-full h-full object-cover" />}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
                 <div className="absolute bottom-6 left-6">
-                  {selectedDish.badge && <span className="inline-block bg-[#D4AF37] text-black text-[10px] font-bold px-3 py-1.5 rounded-sm uppercase tracking-widest mb-3">{selectedDish.badge}</span>}
+                  {selectedDish.badge && (
+                    <span className="inline-flex items-center gap-1.5 bg-[#D4AF37] text-black text-[10px] font-bold px-3 py-1.5 rounded-sm uppercase tracking-widest mb-3">
+                      {(selectedDish.badge.includes('स्पेशल') || selectedDish.badge.includes('ऑफर')) && <FaFire className="text-[#B71C1C]" />}
+                      {selectedDish.badge.includes('लोकप्रिय') && <FaStar className="text-[#B71C1C]" />}
+                      {selectedDish.badge.includes('शेफ') && <FaUtensils className="text-[#B71C1C]" />}
+                      {selectedDish.badge.replace(/[🔥⭐👨‍🍳✨]/g, '').trim()}
+                    </span>
+                  )}
                   <h2 className="text-white text-3xl font-display font-bold leading-tight">{selectedDish.name}</h2>
                 </div>
               </div>
@@ -427,8 +488,8 @@ const Menu = () => {
               </div>
 
               <div className="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 flex items-center gap-3 pb-safe z-20">
-                <a href="tel:+919860842093" className="flex-[1] bg-gray-100 hover:bg-gray-200 text-[#111] font-bold py-3.5 rounded-xl text-center transition-colors">कॉल</a>
-                <a href={`https://wa.me/919860842093?text=मला ${selectedDish.name} ची ऑर्डर द्यायची आहे.`} target="_blank" rel="noreferrer" className="flex-[2] bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-3.5 rounded-xl text-center transition-colors shadow-lg">WhatsApp ऑर्डर</a>
+                <a href="tel:+919168788989" className="flex-[1] bg-gray-100 hover:bg-gray-200 text-[#111] font-bold py-3.5 rounded-xl text-center transition-colors">कॉल</a>
+                <a href={`https://wa.me/919168788989?text=मला ${selectedDish.name} ची ऑर्डर द्यायची आहे.`} target="_blank" rel="noreferrer" className="flex-[2] bg-[#B71C1C] hover:bg-red-800 text-white font-bold py-3.5 rounded-xl text-center transition-colors shadow-lg">WhatsApp ऑर्डर</a>
               </div>
             </motion.div>
           </div>
@@ -450,7 +511,7 @@ const Menu = () => {
                  <button onClick={() => setActivePromoIndex(p => (p - 1 + promotionalOffers.length) % promotionalOffers.length)} className="w-12 h-12 bg-white/10 hover:bg-[#D4AF37] hover:text-black text-white rounded-full flex items-center justify-center transition-colors">
                    <FaChevronLeft />
                  </button>
-                 <a href={`https://wa.me/919860842093?text=मला ${promotionalOffers[activePromoIndex].title} बद्दल माहिती हवी आहे.`} target="_blank" rel="noreferrer" className="bg-[#25D366] text-white font-bold py-3 px-8 rounded-full flex items-center gap-2 flex-grow max-w-xs justify-center">
+                 <a href={`https://wa.me/919168788989?text=मला ${promotionalOffers[activePromoIndex].title} बद्दल माहिती हवी आहे.`} target="_blank" rel="noreferrer" className="bg-[#25D366] text-white font-bold py-3 px-8 rounded-full flex items-center gap-2 flex-grow max-w-xs justify-center">
                    <FaWhatsapp size={20} /> WhatsApp
                  </a>
                  <button onClick={() => setActivePromoIndex(p => (p + 1) % promotionalOffers.length)} className="w-12 h-12 bg-white/10 hover:bg-[#D4AF37] hover:text-black text-white rounded-full flex items-center justify-center transition-colors">

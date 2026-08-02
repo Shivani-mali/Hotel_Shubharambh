@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaHome, FaUtensils, FaBed, FaImages } from 'react-icons/fa';
+﻿import { FaPhoneAlt, FaMapMarkerAlt, FaWhatsapp, FaHome, FaUtensils, FaBed, FaImages } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/Logo.bmp';
 
@@ -39,15 +39,18 @@ const Footer = () => {
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <FaMapMarkerAlt className="mt-1 text-brand-gold flex-shrink-0" />
-              <span>कोल्हापूर-हुपरी रोड, मुडशिंगी,<br/>कोल्हापूर, महाराष्ट्र ४१६११९</span>
+              <span>कोल्हापूर-हुपरी रोड, मुडशिंगी,<br/>कोल्हापूर, महाराष्ट्र 416119</span>
             </li>
-            <li className="flex items-center gap-3">
-              <FaPhoneAlt className="text-brand-gold flex-shrink-0" />
-              <a href="tel:+919860842093" className="hover:text-white transition-colors font-english">+91 98608 42093</a>
+            <li className="flex items-start gap-3">
+              <FaPhoneAlt className="text-brand-gold flex-shrink-0 mt-1" />
+              <div className="flex flex-col gap-1.5">
+                <a href="tel:+919168788989" className="hover:text-white transition-colors font-english font-medium text-[15px]">+91 91687 88989</a>
+                <a href="tel:+919860842093" className="hover:text-white transition-colors font-english font-medium text-[15px]">+91 98608 42093</a>
+              </div>
             </li>
             <li className="flex items-center gap-3">
               <FaWhatsapp className="text-brand-gold flex-shrink-0" />
-              <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><span className="font-english">WhatsApp</span> वर मेसेज करा</a>
+              <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="hover:text-white transition-colors"><span className="font-english">WhatsApp</span> वर मेसेज करा</a>
             </li>
           </ul>
         </div>
@@ -62,3 +65,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
