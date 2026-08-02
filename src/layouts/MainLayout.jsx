@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import Popup from '../components/Popup';
 import SEO from '../seo/SEO';
 import FloatingMobileBar from '../components/FloatingMobileBar';
+import FeedbackSection from '../components/FeedbackSection';
 
 const MainLayout = () => {
   return (
@@ -17,6 +18,7 @@ const MainLayout = () => {
       <main className="flex-grow">
         <Outlet />
       </main>
+      <FeedbackSection />
       <Footer />
       <FloatingMobileBar />
     </div>

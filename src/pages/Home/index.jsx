@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaUtensils, FaStar, FaCar, FaChild, FaBed, FaLeaf, FaShieldAlt, FaFire } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -150,7 +150,7 @@ const Home = () => {
       </section>
 
       {/* 3. About Preview */}
-      <section className="py-24 bg-brand-light">
+      <section className="py-16 md:py-24 bg-brand-light">
         <div className="container-ds">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}>
@@ -168,7 +168,7 @@ const Home = () => {
                 </p>
               </div>
               
-              <div className="flex flex-col sm:flex-row items-center justify-start gap-6 mt-10">
+              <div className="flex flex-col sm:flex-row items-center justify-start gap-6 mt-6 md:mt-10">
                 <Link to="/about" className="btn-secondary">आमच्याबद्दल अधिक जाणून घ्या &rarr;</Link>
               </div>
             </motion.div>
@@ -205,7 +205,7 @@ const Home = () => {
       </section>
 
       {/* 4. Services */}
-      <section className="py-24 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="container-ds">
           <div className="section-header">
             <span className="section-subtitle">आमच्या सेवा</span>
@@ -399,12 +399,12 @@ const Home = () => {
               href="https://share.google/W5ooU7S6AwEb45kdv" 
               target="_blank" 
               rel="noreferrer" 
-              className="inline-flex flex-col sm:flex-row items-center gap-3 bg-brand-red hover:bg-red-700 text-white font-bold text-lg md:text-xl py-4 px-8 md:px-12 rounded-full shadow-[0_10px_30px_rgba(200,30,30,0.3)] hover:shadow-[0_15px_40px_rgba(200,30,30,0.4)] transform hover:-translate-y-1.5 transition-all duration-300 group"
+              className="inline-flex flex-col items-center justify-center gap-1.5 bg-brand-red hover:bg-red-700 text-white font-bold text-lg md:text-xl py-3.5 px-6 rounded-[2rem] shadow-[0_10px_30px_rgba(200,30,30,0.3)] hover:shadow-[0_15px_40px_rgba(200,30,30,0.4)] transform hover:-translate-y-1.5 transition-all duration-300 group w-full max-w-[280px]"
             >
               <div className="flex text-brand-gold text-xl group-hover:scale-110 transition-transform">
                 <FaStar /><FaStar /><FaStar /><FaStar /><FaStar />
               </div>
-              <span>आम्हाला <span className="font-english">Google</span> वर रेटिंग द्या</span>
+              <span className="text-center leading-tight">आम्हाला <span className="font-english">Google</span> वर रेटिंग<br/>द्या</span>
             </a>
           </div>
 
