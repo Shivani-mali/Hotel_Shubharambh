@@ -67,14 +67,14 @@ const Lodging = () => {
   return (
     <div className="bg-[#FAF8F5] min-h-screen font-sans text-gray-800">
       <SEO 
-        title="प्रीमियम रूम्स | 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant (Premium Lodging Kolhapur)"
+        title="प्रीमियम रूम्स | हॉटेल शुभारंभ Lodging & Family Restaurant (Premium Lodging Kolhapur)"
         description="कोल्हापूरमध्ये कुटुंबासाठी सर्वात सुरक्षित आणि आरामदायक हॉटेल. स्वच्छ खोल्या, 24 तास गरम पाणी, आणि मोफत पार्किंग. आजच आपली रूम बुक करा."
       />
 
       {/* 1. Premium Hero Section */}
       <section className="relative h-[70vh] min-h-[500px] md:h-[85vh] md:min-h-[600px] flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-           <img src={room1} alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Premium Room" className="w-full h-full object-cover" />
+           <img src={room1} alt="हॉटेल शुभारंभ Lodging & Family Restaurant Premium Room" className="w-full h-full object-cover" />
            <div className="absolute inset-0 bg-gradient-to-r from-[#111111]/95 via-[#111111]/80 to-transparent"></div>
            <div className="absolute inset-0 bg-gradient-to-t from-[#FAF8F5] via-transparent to-transparent opacity-90 h-32 bottom-0 top-auto"></div>
         </div>
@@ -229,12 +229,12 @@ const Lodging = () => {
         </div>
       </section>
 
-      {/* 5. का निवडाल 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant? */}
+      {/* 5. का निवडाल हॉटेल शुभारंभ Lodging & Family Restaurant? */}
       <section className="py-24 bg-[#FAF8F5]">
         <div className="container-ds px-4 max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="text-[#B71C1C] font-bold tracking-widest uppercase text-sm mb-2 block">Why Choose Us</span>
-            <h2 className="text-3xl md:text-5xl font-display font-bold text-[#111]">का निवडाल 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant?</h2>
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-[#111]">का निवडाल हॉटेल शुभारंभ Lodging & Family Restaurant?</h2>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
@@ -255,11 +255,11 @@ const Lodging = () => {
               ))}
             </div>
             <div className="relative rounded-[32px] overflow-hidden shadow-2xl h-full min-h-[400px]">
-              <img src={hotelNight} alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Night View" className="absolute inset-0 w-full h-full object-cover" />
+              <img src={hotelNight} alt="हॉटेल शुभारंभ Lodging & Family Restaurant Night View" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-8 md:p-12">
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-white">
                    <p className="font-bold text-xl mb-2 drop-shadow-md">"कोल्हापूरला भेट देणाऱ्या प्रत्येकासाठी आमचे दरवाजे नेहमी उघडे आहेत."</p>
-                   <p className="text-[#D4AF37] font-bold">— 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant व्यवस्थापन</p>
+                   <p className="text-[#D4AF37] font-bold">— हॉटेल शुभारंभ Lodging & Family Restaurant व्यवस्थापन</p>
                 </div>
               </div>
             </div>
@@ -322,7 +322,7 @@ const Lodging = () => {
           <div className="rounded-[32px] overflow-hidden shadow-xl border border-gray-200 relative h-[400px]">
             <iframe 
               src="https://maps.google.com/maps?q=Hotel%20Shubharambh,%20Mudshingi,%20Kolhapur&t=&z=14&ie=UTF8&iwloc=&output=embed"
-              width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Map"
+              width="100%" height="100%" style={{ border: 0 }} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="हॉटेल शुभारंभ Lodging & Family Restaurant Map"
             ></iframe>
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2">
               <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="bg-[#111] hover:bg-[#B71C1C] text-white font-bold py-3 px-8 rounded-full shadow-xl flex items-center gap-2 transition-colors whitespace-nowrap border border-white/20">

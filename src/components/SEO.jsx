@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, url, image, schema }) => {
-  const siteName = "🏨 हॉटेल शुभारंभ Lodging & Family Restaurant (🏨 हॉटेल शुभारंभ Lodging & Family Restaurant)";
+  const siteName = "हॉटेल शुभारंभ Lodging & Family Restaurant (हॉटेल शुभारंभ Lodging & Family Restaurant)";
   const fullTitle = title ? `${title} | ${siteName}` : siteName;
   const defaultDesc = "मुडशिंगी मधील सर्वोत्तम फॅमिली रेस्टॉरंट, आरामदायक लॉजिंग आणि तुमच्या खास क्षणांसाठी फंक्शन हॉल. अस्सल कोल्हापुरी चवीचा अनुभव.";
   const metaDesc = description || defaultDesc;

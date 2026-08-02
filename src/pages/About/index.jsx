@@ -44,7 +44,7 @@ const About = () => {
     <div className="overflow-hidden bg-brand-light">
       <SEO 
         title="आमच्याबद्दल"
-        description="विश्वास, गुणवत्ता आणि आपुलकीचा अनुभव. 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant मधील आमची कथा, मिशन आणि सुविधा."
+        description="विश्वास, गुणवत्ता आणि आपुलकीचा अनुभव. हॉटेल शुभारंभ Lodging & Family Restaurant मधील आमची कथा, मिशन आणि सुविधा."
       />
 
       {/* 1. Hero Banner */}
@@ -52,7 +52,7 @@ const About = () => {
         <div className="absolute inset-0 z-0">
           <img 
             src={aboutPageImg} 
-            alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant About" 
+            alt="हॉटेल शुभारंभ Lodging & Family Restaurant About" 
             className="w-full h-full object-cover object-center"
           />
           <div className="absolute inset-0 bg-black/60"></div>
@@ -123,7 +123,7 @@ const About = () => {
               <div className="relative rounded-[32px] overflow-hidden shadow-2xl">
                 <img 
                   src={aboutPageImg} 
-                  alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Story" 
+                  alt="हॉटेल शुभारंभ Lodging & Family Restaurant Story" 
                   className="w-full h-auto object-cover md:h-[500px]"
                 />
                 <div className="absolute inset-0 border-4 border-white/20 rounded-[32px] pointer-events-none"></div>
@@ -230,7 +230,7 @@ const About = () => {
         <div className="container-ds relative z-10 text-center">
           <h2 className="text-3xl md:text-5xl font-display font-normal text-white mb-6">आजच भेट द्या!</h2>
           <p className="text-red-100 text-lg md:text-xl mb-10 max-w-2xl mx-auto">
-            🏨 हॉटेल शुभारंभ Lodging & Family Restaurant मध्ये येऊन आमची स्वादिष्ट चव आणि आदरातिथ्य नक्की अनुभवा. 
+            हॉटेल शुभारंभ Lodging & Family Restaurant मध्ये येऊन आमची स्वादिष्ट चव आणि आदरातिथ्य नक्की अनुभवा. 
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
             <a href="tel:+919168788989" className="bg-white text-brand-red hover:bg-gray-50 font-bold py-4 px-8 rounded-full shadow-lg transition-all hover:scale-105 flex items-center justify-center">

@@ -9,7 +9,7 @@ const MainLayout = () => {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-brand-light pb-[72px] tb:pb-0">
       <SEO 
-        title="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant | 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant" 
+        title="हॉटेल शुभारंभ Lodging & Family Restaurant | हॉटेल शुभारंभ Lodging & Family Restaurant" 
         description="मुडशिंगी, कोल्हापूर मधील सर्वोत्तम फॅमिली रेस्टॉरंट आणि लॉजिंग. (Best Family Restaurant & Lodging in Mudshingi, Kolhapur)" 
       />
       <Navbar />

@@ -150,8 +150,8 @@ const Gallery = () => {
   return (
     <div className="bg-[#111] min-h-screen text-white font-sans selection:bg-[#D4AF37] selection:text-black">
       <SEO 
-        title="गॅलरी | 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant (Premium Gallery)"
-        description="🏨 हॉटेल शुभारंभ Lodging & Family Restaurantचे प्रीमियम फोटो आणि व्हिडिओ. आमचे स्वादिष्ट पदार्थ, स्वच्छ रूम्स, आणि भव्य हॉलची झलक पहा."
+        title="गॅलरी | हॉटेल शुभारंभ Lodging & Family Restaurant (Premium Gallery)"
+        description="हॉटेल शुभारंभ Lodging & Family Restaurantचे प्रीमियम फोटो आणि व्हिडिओ. आमचे स्वादिष्ट पदार्थ, स्वच्छ रूम्स, आणि भव्य हॉलची झलक पहा."
       />
 
       {/* 1. Hero Section (Cinematic Video) */}
@@ -170,20 +170,6 @@ const Gallery = () => {
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white drop-shadow-2xl uppercase tracking-wider min-h-[36px] md:min-h-[48px] lg:min-h-[60px]">
               {typedText}<span className="animate-pulse">|</span>
             </h1>
-            <div className="flex flex-row justify-center gap-4 mt-8">
-              <button 
-                onClick={() => document.getElementById('photos-section').scrollIntoView({ behavior: 'smooth' })} 
-                className="bg-white/10 hover:bg-white/20 border border-white/30 backdrop-blur-md text-white font-bold py-3 px-6 md:px-8 rounded-full flex items-center gap-2 transition-all"
-              >
-                <FaImage className="text-[#D4AF37]" /> Photos
-              </button>
-              <button 
-                onClick={() => document.getElementById('videos-section').scrollIntoView({ behavior: 'smooth' })} 
-                className="bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold py-3 px-6 md:px-8 rounded-full flex items-center gap-2 transition-all shadow-lg"
-              >
-                <FaPlay /> Videos
-              </button>
-            </div>
           </motion.div>
         </div>
       </section>
@@ -191,21 +177,21 @@ const Gallery = () => {
       {/* 2. स्वादिष्ट पदार्थ */}
       <section id="photos-section" className="py-24 bg-[#1a1a1a]">
         <div className="container-ds px-4 max-w-6xl mx-auto">
-          <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-            <div>
-              <span className="text-[#B71C1C] font-bold tracking-widest uppercase text-sm mb-2 block">Our Cuisine</span>
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-white">स्वादिष्ट पदार्थ</h2>
-            </div>
-            <div className="flex gap-3 mt-4 md:mt-0">
+          <div className="mb-10 text-center">
+            <span className="text-[#B71C1C] font-bold tracking-widest uppercase text-sm mb-2 block">Our Cuisine</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">स्वादिष्ट पदार्थ</h2>
+            
+            {/* Quick Nav Buttons */}
+            <div className="flex justify-center gap-4">
                <button 
                  onClick={() => document.getElementById('photos-section').scrollIntoView({ behavior: 'smooth' })} 
-                 className="bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm md:text-base font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-all"
+                 className="bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-md text-white text-base md:text-lg font-bold py-3 px-8 rounded-full flex items-center gap-2 transition-all"
                >
                  <FaImage className="text-[#D4AF37]" /> Photos
                </button>
                <button 
                  onClick={() => document.getElementById('videos-section').scrollIntoView({ behavior: 'smooth' })} 
-                 className="bg-[#D4AF37] hover:bg-yellow-500 text-black text-sm md:text-base font-bold py-2.5 px-5 rounded-full flex items-center gap-2 transition-all shadow-lg"
+                 className="bg-[#D4AF37] hover:bg-yellow-500 text-black text-base md:text-lg font-bold py-3 px-8 rounded-full flex items-center gap-2 transition-all shadow-lg"
                >
                  <FaPlay /> Videos
                </button>

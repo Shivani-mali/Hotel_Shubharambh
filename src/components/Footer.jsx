@@ -11,7 +11,7 @@ const Footer = () => {
         <div>
           <div className="flex items-center gap-3 mb-4">
             <div className="bg-white p-1 rounded-lg">
-              <img src={logoImg} alt="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant Logo" className="h-12 w-auto object-contain" />
+              <img src={logoImg} alt="हॉटेल शुभारंभ Lodging & Family Restaurant Logo" className="h-12 w-auto object-contain" />
             </div>
             <h2 className="text-brand-gold font-display font-bold text-2xl">हॉटेल शुभारंभ Lodging & Family Restaurant</h2>
           </div>
@@ -58,7 +58,7 @@ const Footer = () => {
       </div>
       
       <div className="max-w-7xl mx-auto mt-12 pt-6 border-t border-gray-800 text-center text-sm text-gray-500">
-        <span className="font-english">&copy; {new Date().getFullYear()} 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant. All Rights Reserved.</span>
+        <span className="font-english">&copy; {new Date().getFullYear()} हॉटेल शुभारंभ Lodging & Family Restaurant. All Rights Reserved.</span>
       </div>
     </footer>
   );

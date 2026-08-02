@@ -23,15 +23,15 @@ import flayer9 from '../../assets/Gallery/Flayer9.jpeg';
 
 const promotionalOffers = [
   { id: 1, title: 'तंदूर स्पेशल ऑफर', img: offerPoster, badge: '🔥 आजची खास ऑफर', desc: '⏳ मर्यादित कालावधीसाठी उपलब्ध', isOffer: true },
-  { id: 2, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer1, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 3, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer2, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 4, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer3, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 5, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer4, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 6, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer5, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 7, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer6, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 8, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer7, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 9, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer8, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
-  { id: 10, title: '🏨 हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer9, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false }
+  { id: 2, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer1, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 3, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer2, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 4, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer3, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 5, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer4, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 6, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer5, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 7, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer6, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 8, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer7, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 9, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer8, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false },
+  { id: 10, title: 'हॉटेल शुभारंभ Lodging & Family Restaurant खासियत', img: flayer9, badge: '✨ आमची खासियत', desc: 'कोल्हापुरी अस्सल चव', isOffer: false }
 ];
 
 const DishCard = ({ dish, onSelect }) => (
@@ -154,7 +154,7 @@ const Menu = () => {
 
   return (
     <div className="bg-[#FAF8F5] min-h-screen font-sans selection:bg-[#D4AF37] selection:text-[#111]">
-      <SEO title="आमचे मेनू | 🏨 हॉटेल शुभारंभ Lodging & Family Restaurant (Fine Dining Menu)" description="अस्सल कोल्हापुरी चव आणि लक्झरी अनुभव. आमचे प्रीमियम डिजिटल मेनू पहा." />
+      <SEO title="आमचे मेनू | हॉटेल शुभारंभ Lodging & Family Restaurant (Fine Dining Menu)" description="अस्सल कोल्हापुरी चव आणि लक्झरी अनुभव. आमचे प्रीमियम डिजिटल मेनू पहा." />
 
       {/* 1. Minimal Luxury Hero Section */}
       <section className="relative pt-20 pb-2 md:pt-32 md:pb-16 bg-white overflow-hidden">

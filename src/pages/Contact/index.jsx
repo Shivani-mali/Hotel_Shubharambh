@@ -20,7 +20,7 @@ const Contact = () => {
     <div className="bg-brand-light">
       <SEO 
         title="संपर्क (Contact Us)"
-        description="🏨 हॉटेल शुभारंभ Lodging & Family Restaurant, मुडशिंगी. पत्ता, फोन नंबर, गुगल मॅप आणि संपर्क माहिती."
+        description="हॉटेल शुभारंभ Lodging & Family Restaurant, मुडशिंगी. पत्ता, फोन नंबर, गुगल मॅप आणि संपर्क माहिती."
       />
 
       {/* Hero Section */}
@@ -59,7 +59,7 @@ const Contact = () => {
               <div>
                 <h3 className="font-bold text-gray-900 text-lg mb-1">पत्ता (Address)</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  🏨 हॉटेल शुभारंभ Lodging & Family Restaurant, फॅमिली रेस्टॉरंट आणि लॉजिंग,<br />
+                  हॉटेल शुभारंभ Lodging & Family Restaurant, फॅमिली रेस्टॉरंट आणि लॉजिंग,<br />
                   मुडशिंगी रोड, कोल्हापूर, महाराष्ट्र 416005
                 </p>
                 <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="inline-block mt-3 text-brand-red font-bold hover:underline text-sm uppercase tracking-wide">
