@@ -39,11 +39,10 @@ This **Hotel Website** and **Restaurant Website** is fully **Responsive**, blazi
 
 ## 📸 Screenshots
 
-| Home Page | Digital Menu | Lodging |
-| :---: | :---: | :---: |
-| <img src="public/hotel_main_page.png" width="250"/> | <img src="src/assets/Menu/menu_book/page1.png" width="250"/> | <img src="src/assets/Lodging/room1.jpeg" width="250"/> |
-
-*(Note: Replace paths with absolute URLs if viewing off-site)*
+<div align="center">
+  <img src="src/assets/Menu/menu_book/page1.png" alt="Digital Menu" width="400"/>
+  <p><i>Official 3D Digital Menu Book</i></p>
+</div>
 
 ---
 
@@ -78,51 +77,7 @@ Hotel_Shubharambh/
 └── vite.config.js          # Vite build configuration
 ```
 
----
 
-## 🚀 Installation Guide
-
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Shivani-mali/Hotel_Shubharambh.git
-   ```
-2. **Navigate into the project directory:**
-   ```bash
-   cd Hotel_Shubharambh
-   ```
-3. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
----
-
-## 💻 Local Development
-
-To start the development server with Hot Module Replacement (HMR):
-```bash
-npm run dev
-```
-Open your browser and navigate to `http://localhost:5173`.
-
----
-
-## ☁️ Deployment
-
-This project is fully optimized for **Vercel** deployment.
-1. Push your code to GitHub.
-2. Link your repository to Vercel.
-3. Vercel will automatically detect Vite and run `npm run build`.
-
----
-
-## ⚡ Performance
-
-- **Lighthouse 90+ Score:** Optimized asset delivery.
-- **Code Splitting:** Native to Vite.
-- **Lazy Loading:** Implemented on heavy components and gallery images.
-
----
 
 ## 📈 SEO Features
 
