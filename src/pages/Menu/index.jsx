@@ -440,9 +440,6 @@ const Menu = () => {
             <a href="https://maps.app.goo.gl/eMeHdpesVxN9zmtf8" target="_blank" rel="noreferrer" className="w-[88%] tb:w-auto bg-white/30 hover:bg-white/40 border border-[#111]/20 text-[#111] font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 backdrop-blur-sm">
               <FaMapMarkerAlt /> लोकेशन
             </a>
-            <a href="/hotel-shubharambh-menu.pdf" download="Hotel-Shubharambh-Menu.pdf" className="w-[88%] tb:w-auto bg-black text-white hover:bg-gray-800 font-bold py-3 md:py-4 px-8 rounded-full flex items-center justify-center gap-3 text-base md:text-lg transition-all active:scale-95 shadow-xl border border-white/20">
-              <FaDownload /> मेनू PDF डाउनलोड करा
-            </a>
           </div>
         </div>
       </section>
