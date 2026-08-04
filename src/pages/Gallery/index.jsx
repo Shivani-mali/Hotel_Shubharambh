@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTimes, FaChevronLeft, FaChevronRight, FaPlay, FaCamera, FaImage } from 'react-icons/fa';
+import { FaTimes, FaChevronLeft, FaChevronRight, FaPlay, FaCamera, FaImage, FaBookOpen } from 'react-icons/fa';
 import SEO from '../../components/SEO';
 
 // Local Assets
@@ -22,9 +22,28 @@ import room4 from '../../assets/Rooms/room4.jpeg';
 import room5 from '../../assets/Rooms/room5.jpeg';
 import room6 from '../../assets/Rooms/room6.jpeg';
 
+const menuBookMap = import.meta.glob('../../assets/Menu/Hotel_menu/*.{jpg,jpeg,png}', { eager: true, query: '?url', import: 'default' });
+const menuBookOrder = [
+  'front_page.png',
+  'front_page_letter_page.png',
+  'page_1.png',
+  'page_2.png',
+  'page_3.png',
+  'page_4.png',
+  'page_5.png',
+  'page_6.png',
+  'page_7.png',
+  'page_8.png',
+  'page_9.png',
+  'page_10.png',
+  'last_page.png'
+];
+const menuBookImages = menuBookOrder.map(name => menuBookMap[`../../assets/Menu/Hotel_menu/${name}`]).filter(Boolean);
+
 const menuImagesMap = import.meta.glob([
   '../../assets/Menu/**/*.{jpg,jpeg,png}',
-  '!../../assets/Menu/menu_book/**'
+  '!../../assets/Menu/menu_book/**',
+  '!../../assets/Menu/Hotel_menu/**'
 ], { eager: true, query: '?url', import: 'default' });
 const foodImages = Object.values(menuImagesMap);
 
@@ -76,6 +95,7 @@ const Gallery = () => {
   const [lightboxData, setLightboxData] = useState({ images: [], index: 0, isOpen: false });
 
   // Grid Expansion State
+  const [showAllMenu, setShowAllMenu] = useState(false);
   const [showAllFood, setShowAllFood] = useState(false);
   const [showAllRooms, setShowAllRooms] = useState(false);
 
@@ -180,6 +200,24 @@ const Gallery = () => {
               {typedText}<span className="animate-pulse">|</span>
             </h1>
           </motion.div>
+        </div>
+      </section>
+
+      {/* 1.5. मेनू पुस्तक */}
+      <section id="menu-book-section" className="py-24 bg-[#111]">
+        <div className="container-ds px-4 max-w-6xl mx-auto">
+          <div className="mb-10 text-center">
+            <span className="text-[#D4AF37] font-bold tracking-widest uppercase text-sm mb-2 block">Our Menu</span>
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-8">आमचा मेनू</h2>
+          </div>
+          <MasonryGrid images={showAllMenu ? menuBookImages : menuBookImages.slice(0, 6)} onImageClick={openLightbox} />
+          {!showAllMenu && (
+            <div className="mt-10 text-center">
+               <button onClick={() => setShowAllMenu(true)} className="bg-transparent hover:bg-white/5 border border-white/20 text-white font-bold py-3.5 px-8 rounded-full transition-all flex items-center gap-2 mx-auto">
+                  <FaBookOpen className="text-[#D4AF37]" /> संपूर्ण मेनू पहा
+               </button>
+            </div>
+          )}
         </div>
       </section>
 
