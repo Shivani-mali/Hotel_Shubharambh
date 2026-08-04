@@ -1,15 +1,27 @@
 import { FaStar } from 'react-icons/fa';
+import QRCode from 'react-qr-code';
 
 const FeedbackSection = () => {
+  const formUrl = "https://forms.gle/1ecfVmxpdEaBH4qE9";
+
   return (
     <section className="bg-[#111] border-t border-gray-800 py-12 px-4 text-center">
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-3xl mx-auto flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">फीडबॅक</h2>
         <p className="text-gray-400 text-lg mb-8">आपला अनुभव आमच्यासोबत शेअर करा.</p>
         
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+        <div className="bg-white p-4 rounded-xl mb-8 shadow-[0_10px_30px_rgba(255,255,255,0.1)] inline-block">
+          <QRCode 
+            value={formUrl}
+            size={150}
+            level="M"
+            className="w-full h-auto"
+          />
+        </div>
+        
+        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSek-g6FJ9MmWGKLEiOZuiijuo1X0pfcxaR0e7aKeigGUPjjow/viewform" 
+            href={formUrl}
             target="_blank" 
             rel="noreferrer"
             className="bg-[#D4AF37] hover:bg-yellow-500 text-black font-bold py-3 px-6 rounded-2xl transition-all flex flex-col items-center justify-center gap-1 shadow-[0_10px_30px_rgba(212,175,55,0.3)] hover:-translate-y-1 w-64 max-w-full"
