@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/Logo.bmp';
 
@@ -30,6 +30,12 @@ const Footer = () => {
               <span className="text-brand-gold font-bold flex items-center gap-2 mb-1"><FaMapMarkerAlt /> पत्ता:</span>
               <div className="ml-6">
                 कोल्हापूर-हुपरी रोड, मुडशिंगी,<br/>कोल्हापूर, महाराष्ट्र 416119
+              </div>
+            </li>
+            <li>
+              <span className="text-brand-gold font-bold flex items-center gap-2 mb-1"><FaClock /> वेळ (Hours):</span>
+              <div className="ml-6 font-english text-gray-300">
+                11:00 AM to 11:00 PM (All Days)
               </div>
             </li>
             <li>

@@ -116,7 +116,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900 mb-1">वेळ (Hours)</h3>
-                  <p className="text-gray-600 text-sm">सकाळी 11:00 ते<br />रात्री 11:00 पर्यंत</p>
+                  <p className="text-gray-600 font-english font-medium text-[15px]">11:00 AM to 11:00 PM<br /><span className="text-brand-red text-[13px] font-bold tracking-wider">ALL DAYS</span></p>
                 </div>
               </div>
 
