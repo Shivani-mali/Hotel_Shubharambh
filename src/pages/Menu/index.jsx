@@ -513,25 +513,31 @@ const Menu = () => {
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">किंमत</span>
                   {selectedDish.price?.toString().includes('/') ? (
                     <div className="flex gap-4">
-                       <span className="text-lg font-black text-[#111]">₹{selectedDish.price.toString().split('/')[0].replace(/[-]/g, '').trim()} <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Half</span></span>
-                       <span className="text-lg font-black text-[#B71C1C]">₹{selectedDish.price.toString().split('/')[1].replace(/[-]/g, '').trim()} <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">Full</span></span>
+                       <span className="text-lg font-black text-[#111]">₹{selectedDish.price.toString().split('/')[0].replace(/[-]/g, '').trim()} <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">हाफ</span></span>
+                       <span className="text-lg font-black text-[#B71C1C]">₹{selectedDish.price.toString().split('/')[1].replace(/[-]/g, '').trim()} <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">फुल</span></span>
                     </div>
                   ) : (
                     <span className="text-2xl font-black text-[#111]">₹{selectedDish.price?.toString().replace(/[-]/g, '').trim()}</span>
                   )}
                 </div>
 
-                <div className="grid grid-cols-2 gap-3 text-sm">
-                  <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl">
+                <div className={`grid ${selectedDish.badge?.includes('मसालेदार') ? 'grid-cols-3' : 'grid-cols-2'} gap-3 text-sm`}>
+                  <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl justify-center">
                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">प्रकार</span>
                     <span className="font-bold text-gray-800">{selectedDish.category || 'स्पेशल डिश'}</span>
                   </div>
-                  <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl">
+                  <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl justify-center">
                     <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">आहार</span>
                     <span className="font-bold flex items-center gap-1.5">
                       {selectedDish.type === 'Veg' ? <><span className="w-2.5 h-2.5 bg-green-500 rounded-sm"></span> शाकाहारी</> : <><span className="w-2.5 h-2.5 bg-[#B71C1C] rounded-sm"></span> मांसाहारी</>}
                     </span>
                   </div>
+                  {selectedDish.badge?.includes('मसालेदार') && (
+                    <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl justify-center">
+                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">चव</span>
+                      <span className="font-bold text-red-600 flex items-center gap-1.5">🌶 मसालेदार</span>
+                    </div>
+                  )}
                 </div>
               </div>
 

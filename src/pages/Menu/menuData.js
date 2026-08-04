@@ -32,18 +32,18 @@ export const mainTabs = [
 ];
 
 export const specialOffers = [
-  { id: "so1", name: "स्पे. बटर चिकन थाळी", price: "250", type: "Non-Veg", isHot: true, badge: "🔥 स्पेशल", img: t_butter },
+  { id: "so1", name: "स्पे. बटर चिकन थाळी", price: "270", type: "Non-Veg", isHot: true, badge: "🔥 स्पेशल", img: t_butter },
   { id: "so2", name: "मटण धनगरी थाळी", price: "300", type: "Non-Veg", isHot: true, badge: "🔥 स्पेशल", img: t_mutton },
-  { id: "so3", name: "रक्ती मुंडी थाळी", price: "220", type: "Non-Veg", isHot: false, badge: "⭐ लोकप्रिय", img: t_rakti },
+  { id: "so3", name: "रक्ती मुंडी थाळी", price: "240", type: "Non-Veg", isHot: false, badge: "⭐ लोकप्रिय", img: t_rakti },
   { id: "so4", name: "चिकन तंदुरी हाफ/फुल", price: "270 / 490", type: "Non-Veg", isHot: true, badge: "🔥 ऑफर", img: c_tand },
-  { id: "so5", name: "स्पेशल शुभारंभ डिश (रेड/ग्रीन)", price: "330", type: "Veg", isHot: true, badge: "🔥 स्पेशल", img: s_dish },
+  { id: "so5", name: "स्पेशल शुभारंभ डिश (रेड/ग्रीन)", price: "350", type: "Veg", isHot: true, badge: "🔥 स्पेशल", img: s_dish },
   { id: "so6", name: "चिकन प्लॅटर", price: "629", type: "Non-Veg", isHot: true, badge: "🔥 ऑफर", img: nv_platter }
 ];
 
 export const chefRecommends = [
   { id: "cr1", name: "चिकन लेगपिस", price: "230", type: "Non-Veg", desc: "चविष्ट आणि मसालेदार चिकन लेगपिस.", img: c_leg, badge: "👨‍🍳 शेफची निवड" },
-  { id: "cr2", name: "चिकन मुर्ग मुसल्लम", price: "360", type: "Non-Veg", desc: "अस्सल मुर्ग मुसल्लम.", img: c_murg, badge: "⭐ लोकप्रिय" },
-  { id: "cr3", name: "चिकन बंजारा कबाब (8 पीस)", price: "240", type: "Non-Veg", desc: "तंदुरी चिकन बंजारा कबाब.", img: c_banjara, badge: "👨‍🍳 शेफची निवड" },
+  { id: "cr2", name: "चिकन मुर्ग मुसल्लम", price: "380", type: "Non-Veg", desc: "अस्सल मुर्ग मुसल्लम.", img: c_murg, badge: "⭐ लोकप्रिय" },
+  { id: "cr3", name: "चिकन बंजारा कबाब (8 पीस)", price: "260", type: "Non-Veg", desc: "तंदुरी चिकन बंजारा कबाब.", img: c_banjara, badge: "👨‍🍳 शेफची निवड" },
   { id: "cr4", name: "चिकन शीख कबाब", price: "240", type: "Non-Veg", desc: "स्वादिष्ट चिकन शीख कबाब.", img: c_seekh, badge: "⭐ लोकप्रिय" },
   { id: "cr5", name: "मटण लोणचे", price: "250", type: "Non-Veg", desc: "गावरान मटण लोणचे.", img: m_lonche, badge: "👨‍🍳 शेफची निवड" },
   { id: "cr6", name: "पनीर टिक्का मसाला (खिसुन)", price: "240", type: "Veg", desc: "मसालेदार पनीर टिक्का (खिसुन).", img: p_tikka, badge: "⭐ लोकप्रिय" },
@@ -129,7 +129,7 @@ export const menuData = [
   { id: "v60", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "व्हेज कढई स्पेशल", price: "230", type: "Veg", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
   { id: "v61", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "व्हेज मॅक्स मसाला (व्हाईट ग्रेव्ही)", price: "250", type: "Veg", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
   { id: "v62", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "व्हेज मालवणी", price: "270", type: "Veg", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
-  { id: "v63", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "स्पेशल शुभारंभ डिश (रेड/ग्रीन)", price: "330", type: "Veg", badge: "👨‍🍳 शेफची निवड", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
+  { id: "v63", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "स्पेशल शुभारंभ डिश (रेड/ग्रीन)", price: "350", type: "Veg", badge: "👨‍🍳 शेफची निवड", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
   { id: "v64", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "व्हेज खिमा", price: "250", type: "Veg", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
   { id: "v65", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "व्हेज मख्खनवाला", price: "240", type: "Veg", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
   { id: "v66", tab: "veg", category: "पंजाबी-व्हेज डिश", name: "व्हेज पटियाला", price: "260", type: "Veg", img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&q=80" },
@@ -212,7 +212,7 @@ export const menuData = [
   { id: "nv14", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन चटपटा कबाब", price: "240", type: "Non-Veg", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
   { id: "nv15", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन पहाडी कबाब (8 पीस)", price: "240", type: "Non-Veg", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
   { id: "nv16", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन मलाई कबाब (8 पीस)", price: "240", type: "Non-Veg", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
-  { id: "nv17", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन बंजारा कबाब (8 पीस)", price: "240", type: "Non-Veg", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
+  { id: "nv17", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन बंजारा कबाब (8 पीस)", price: "260", type: "Non-Veg", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
   { id: "nv18", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन अंगारा कबाब (8 पीस)", price: "240", type: "Non-Veg", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
   { id: "nv19", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन मालवणी कबाब (8 पीस)", price: "240", type: "Non-Veg", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
   { id: "nv20", tab: "tandoor", category: "नॉन-व्हेज कबाब", name: "चिकन तंदुरी हाफ (4 पीस)", price: "270", type: "Non-Veg", badge: "🔥 स्पेशल", img: "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?auto=format&fit=crop&q=80" },
@@ -232,7 +232,7 @@ export const menuData = [
   { id: "nv32", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन लाजवाब", price: "260", type: "Non-Veg", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
   { id: "nv33", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन अंगारा (सिझलर)", price: "260", type: "Non-Veg", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
   { id: "nv34", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन साऊजी", price: "270", type: "Non-Veg", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
-  { id: "nv35", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन मुर्ग मुसल्लम", price: "360", type: "Non-Veg", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
+  { id: "nv35", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन मुर्ग मुसल्लम", price: "380", type: "Non-Veg", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
   { id: "nv36", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन धनगरी", price: "270", type: "Non-Veg", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
   { id: "nv37", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन रोगन ज्युस", price: "290", type: "Non-Veg", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
   { id: "nv38", tab: "chicken", category: "नॉन-व्हेज डिश चिकन", name: "चिकन खर्डा", price: "240", type: "Non-Veg", badge: "🌶 मसालेदार", img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&q=80" },
@@ -279,8 +279,8 @@ export const menuData = [
   { id: "nt2", tab: "thali", category: "नॉन-व्हेज थाळी", name: "मटण फ्राय / मसाला थाळी", price: "300", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, मटण फ्राय / मसाला प्लेट, रक्ती वाटी, अंडा मसाला वाटी, राईस, तांबडा-पांढरा रस्सा, सोलकढी", badge: "⭐ लोकप्रिय", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
   { id: "nt3", tab: "thali", category: "नॉन-व्हेज थाळी", name: "चिकन खर्डा थाळी", price: "220", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, चिकन खर्डा प्लेट, अंडा मसाला वाटी, राईस, तांबडा-पांढरा रस्सा, सोलकढी", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
   { id: "nt4", tab: "thali", category: "नॉन-व्हेज थाळी", name: "मटण धनगरी थाळी", price: "300", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, मटण धनगरी प्लेट, रक्ती वाटी, अंडा मसाला वाटी, राईस, तांबडा-पांढरा रस्सा, सोलकढी", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
-  { id: "nt5", tab: "thali", category: "नॉन-व्हेज थाळी", name: "रक्ती मुंडी थाळी", price: "220", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, मुंडी मसाला प्लेट, रक्ती वाटी, राईस, मुंडी रस्सा, तांबडा-पांढरा रस्सा, सोलकढी", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
-  { id: "nt6", tab: "thali", category: "नॉन-व्हेज थाळी", name: "स्पे. बटर चिकन थाळी", price: "250", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, बटर चिकन प्लेट, चिकन फ्राय प्लेट, अंडा मसाला वाटी, राईस, तांबडा-पांढरा रस्सा, सोलकढी", badge: "⭐ लोकप्रिय", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
+  { id: "nt5", tab: "thali", category: "नॉन-व्हेज थाळी", name: "रक्ती मुंडी थाळी", price: "240", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, मुंडी मसाला प्लेट, रक्ती वाटी, राईस, मुंडी रस्सा, तांबडा-पांढरा रस्सा, सोलकढी", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
+  { id: "nt6", tab: "thali", category: "नॉन-व्हेज थाळी", name: "स्पे. बटर चिकन थाळी", price: "270", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, बटर चिकन प्लेट, चिकन फ्राय प्लेट, अंडा मसाला वाटी, राईस, तांबडा-पांढरा रस्सा, सोलकढी", badge: "⭐ लोकप्रिय", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
   { id: "nt7", tab: "thali", category: "नॉन-व्हेज थाळी", name: "चिकन फ्राय / मसाला थाळी", price: "200", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, चिकन फ्राय / मसाला प्लेट, अंडा मसाला वाटी, राईस, तांबडा-पांढरा रस्सा, सोलकढी", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
   { id: "nt8", tab: "thali", category: "नॉन-व्हेज थाळी", name: "चिकन लेगपिस थाळी", price: "230", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, चिकन लेगपिस प्लेट, अंडा मसाला वाटी, राईस, तांबडा-पांढरा रस्सा, सोलकढी", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
   { id: "nt9", tab: "thali", category: "नॉन-व्हेज थाळी", name: "अंडा मसाला थाळी", price: "140", type: "Non-Veg", desc: "भाकरी 2 / चपाती 3 / रोटी 3, अंडा मसाला प्लेट, राईस, तांबडा-पांढरा रस्सा, सोलकढी", img: "https://images.unsplash.com/photo-1626779840251-ce54be1d3cb4?auto=format&fit=crop&q=80" },
