@@ -504,12 +504,34 @@ const Menu = () => {
                 </div>
               </div>
               
-              <div className="p-6 md:p-8 overflow-y-auto flex-grow pb-32">
-                <p className="text-gray-600 font-medium text-sm md:text-base mb-6 leading-relaxed">
+              <div className="p-6 md:p-8 overflow-y-auto flex-grow pb-28">
+                <p className="text-gray-600 font-medium text-sm md:text-base mb-4 leading-relaxed">
                   {selectedDish.desc || "अस्सल कोल्हापुरी चवीचा उत्तम पदार्थ. ताजे मसाले आणि उत्कृष्ट दर्जा."}
                 </p>
 
-                <div className="bg-gray-50 rounded-2xl p-5 mb-6 border border-gray-100 flex justify-between items-center">
+                {/* Tags for Diet, Spicy, and Quantity */}
+                <div className="flex flex-wrap gap-2.5 mb-6">
+                  {/* Diet Type */}
+                  <span className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold ${selectedDish.type === 'Veg' ? 'bg-green-50 text-green-700 border border-green-200' : 'bg-red-50 text-red-700 border border-red-200'}`}>
+                    {selectedDish.type === 'Veg' ? <FaLeaf size={10} /> : <FaDrumstickBite size={10} />}
+                    {selectedDish.type === 'Veg' ? 'शाकाहारी' : 'मांसाहारी'}
+                  </span>
+                  
+                  {/* Spicy Indicator */}
+                  {(selectedDish.badge?.includes('मसालेदार') || selectedDish.desc?.includes('मसालेदार') || selectedDish.badge?.includes('🔥') || selectedDish.name?.includes('कोल्हापूरी') || selectedDish.name?.includes('खर्डा')) && (
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-orange-50 text-orange-700 border border-orange-200">
+                      <FaFire size={10} /> मसालेदार
+                    </span>
+                  )}
+
+                  {/* Quantity */}
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold bg-gray-50 text-gray-700 border border-gray-200">
+                    <FaUtensils size={10} /> 
+                    {selectedDish.price?.toString().includes('/') ? 'प्रमाण: हाफ / फुल' : 'प्रमाण: १ प्लेट'}
+                  </span>
+                </div>
+
+                <div className="bg-gray-50 rounded-2xl p-5 border border-gray-100 flex justify-between items-center">
                   <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">किंमत</span>
                   {selectedDish.price?.toString().includes('/') ? (
                     <div className="flex gap-4">
@@ -518,25 +540,6 @@ const Menu = () => {
                     </div>
                   ) : (
                     <span className="text-2xl font-black text-[#111]">₹{selectedDish.price?.toString().replace(/[-]/g, '').trim()}</span>
-                  )}
-                </div>
-
-                <div className={`grid ${selectedDish.badge?.includes('मसालेदार') ? 'grid-cols-3' : 'grid-cols-2'} gap-3 text-sm`}>
-                  <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl justify-center">
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">प्रकार</span>
-                    <span className="font-bold text-gray-800">{selectedDish.category || 'स्पेशल डिश'}</span>
-                  </div>
-                  <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl justify-center">
-                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">आहार</span>
-                    <span className="font-bold flex items-center gap-1.5">
-                      {selectedDish.type === 'Veg' ? <><span className="w-2.5 h-2.5 bg-green-500 rounded-sm"></span> शाकाहारी</> : <><span className="w-2.5 h-2.5 bg-[#B71C1C] rounded-sm"></span> मांसाहारी</>}
-                    </span>
-                  </div>
-                  {selectedDish.badge?.includes('मसालेदार') && (
-                    <div className="flex flex-col gap-1 bg-white border border-gray-100 p-4 rounded-xl justify-center">
-                      <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">चव</span>
-                      <span className="font-bold text-red-600 flex items-center gap-1.5">🌶 मसालेदार</span>
-                    </div>
                   )}
                 </div>
               </div>
