@@ -3,6 +3,7 @@ import AppRoutes from './routes/AppRoutes';
 import ScrollToTop from './components/ScrollToTop';
 import Loader from './components/Loader';
 import CallModal from './components/CallModal';
+import { Analytics } from "@vercel/analytics/react";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,7 @@ function App() {
       <ScrollToTop />
       <AppRoutes />
       <CallModal />
+      <Analytics />
     </>
   )
 }
