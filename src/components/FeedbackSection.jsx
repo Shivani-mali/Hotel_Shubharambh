@@ -1,5 +1,4 @@
 import { FaStar } from 'react-icons/fa';
-import QRCode from 'react-qr-code';
 
 const FeedbackSection = () => {
   const formUrl = "https://forms.gle/1ecfVmxpdEaBH4qE9";
@@ -9,15 +8,6 @@ const FeedbackSection = () => {
       <div className="max-w-3xl mx-auto flex flex-col items-center">
         <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">फीडबॅक</h2>
         <p className="text-gray-400 text-lg mb-8">आपला अनुभव आमच्यासोबत शेअर करा.</p>
-        
-        <div className="bg-white p-4 rounded-xl mb-8 shadow-[0_10px_30px_rgba(255,255,255,0.1)] inline-block">
-          <QRCode 
-            value={formUrl}
-            size={150}
-            level="M"
-            className="w-full h-auto"
-          />
-        </div>
         
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full">
           <a 

@@ -1,4 +1,5 @@
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/Logo.bmp';
 
@@ -15,10 +16,26 @@ const Footer = () => {
             </div>
             <h2 className="text-brand-gold font-display font-bold text-2xl tracking-wide">हॉटेल शुभारंभ</h2>
           </div>
-          <p className="text-gray-400 text-[15px] leading-relaxed">
+          <p className="text-gray-400 text-[15px] leading-relaxed mb-6">
             मुडशिंगी, कोल्हापूर मधील सर्वोत्तम फॅमिली रेस्टॉरंट आणि लॉजिंग. 
             चविष्ट जेवण, सुरक्षित वास्तव्य आणि उत्तम सेवा.
           </p>
+
+          {/* Social Media & WhatsApp Links */}
+          <div className="flex flex-wrap gap-4 items-center mt-4">
+            <a href="https://www.instagram.com/hotel_shubharambh__/" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#E1306C] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+              <FaInstagram className="text-xl" />
+            </a>
+            <a href="https://www.facebook.com/hotelshubharambhkolhapur/" target="_blank" rel="noreferrer" aria-label="Facebook" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#1877F2] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+              <FaFacebookF className="text-xl" />
+            </a>
+            <a href="https://x.com/hotelshubharamb" target="_blank" rel="noreferrer" aria-label="X (Twitter)" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-black hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+              <FaXTwitter className="text-xl" />
+            </a>
+            <a href="https://whatsapp.com/channel/0029VbCvWr70VycETVyILQ46" target="_blank" rel="noreferrer" aria-label="WhatsApp Channel" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#25D366] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+              <FaWhatsapp className="text-xl" />
+            </a>
+          </div>
         </div>
 
 
@@ -43,17 +60,6 @@ const Footer = () => {
               <div className="flex flex-col gap-1 ml-6">
                 <a href="tel:+919860842093" className="hover:text-white transition-colors font-english">+91 98608 42093</a>
                 <a href="tel:+919168788989" className="hover:text-white transition-colors font-english">+91 91687 88989</a>
-              </div>
-            </li>
-            <li>
-              <span className="text-brand-gold font-bold flex items-center gap-2 mb-2"><FaWhatsapp /> WhatsApp:</span>
-              <div className="flex flex-col gap-1 ml-6">
-                <a href="https://wa.me/919860842093" target="_blank" rel="noreferrer" className="hover:text-white transition-colors font-english">
-                  +91 98608 42093
-                </a>
-                <a href="https://wa.me/919168788989" target="_blank" rel="noreferrer" className="hover:text-white transition-colors font-english">
-                  +91 91687 88989
-                </a>
               </div>
             </li>
           </ul>
