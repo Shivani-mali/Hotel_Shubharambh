@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaTimes } from 'react-icons/fa';
-import offerPoster from '../assets/Gallery/Offer.jpeg';
+import offerPoster from '../assets/Gallery/Sravanoffer.jpeg';
 
 const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);

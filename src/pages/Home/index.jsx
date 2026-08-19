@@ -417,7 +417,7 @@ const Home = () => {
           
           <div className="text-center mt-12 relative z-10">
             <a 
-              href="https://share.google/W5ooU7S6AwEb45kdv" 
+              href="https://g.page/r/CSCQi72zK9wbEAE/review" 
               target="_blank" 
               rel="noreferrer" 
               className="inline-flex flex-col items-center justify-center gap-1.5 bg-brand-red hover:bg-red-700 text-white font-bold text-lg md:text-xl py-3.5 px-6 rounded-[2rem] shadow-[0_10px_30px_rgba(200,30,30,0.3)] hover:shadow-[0_15px_40px_rgba(200,30,30,0.4)] transform hover:-translate-y-1.5 transition-all duration-300 group w-full max-w-[280px]"

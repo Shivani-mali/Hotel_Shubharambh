@@ -1,4 +1,4 @@
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebookF } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock, FaInstagram, FaFacebookF, FaGoogle } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
 import logoImg from '../assets/Logo.bmp';
@@ -23,6 +23,9 @@ const Footer = () => {
 
           {/* Social Media & WhatsApp Links */}
           <div className="flex flex-wrap gap-4 items-center mt-4">
+            <a href="https://g.page/r/CSCQi72zK9wbEAE/review" target="_blank" rel="noreferrer" aria-label="Google Review" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#DB4437] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+              <FaGoogle className="text-xl" />
+            </a>
             <a href="https://www.instagram.com/hotel_shubharambh__/" target="_blank" rel="noreferrer" aria-label="Instagram" className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center text-gray-400 hover:bg-[#E1306C] hover:text-white transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
               <FaInstagram className="text-xl" />
             </a>

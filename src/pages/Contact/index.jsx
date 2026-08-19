@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock, FaCar, FaEnvelope } from 'react-icons/fa';
+import { FaPhoneAlt, FaWhatsapp, FaMapMarkerAlt, FaClock, FaCar, FaEnvelope, FaGoogle } from 'react-icons/fa';
 import SEO from '../../components/SEO';
 import hotelMainBg from '../../assets/hotel_main_page.png';
 
@@ -170,6 +170,9 @@ const Contact = () => {
       <section className="bg-brand-dark py-16 text-center px-4">
         <h2 className="text-2xl md:text-3xl font-display font-normal text-white mb-8">आम्ही तुमच्या स्वागतासाठी तयार आहोत!</h2>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="https://g.page/r/CSCQi72zK9wbEAE/review" target="_blank" rel="noreferrer" className="bg-white hover:bg-gray-100 text-[#DB4437] font-bold flex items-center justify-center text-lg px-8 py-3 rounded-full transition-colors border border-gray-200 shadow-sm">
+            <FaGoogle className="mr-2" size={20} /> <span className="text-brand-dark">गुगलवर रिव्ह्यू द्या</span>
+          </a>
           <a href="tel:+919860842093" className="btn-primary flex items-center justify-center text-lg px-8 py-3 rounded-full">
             <FaPhoneAlt className="mr-2" /> कॉल करा
           </a>

@@ -20,14 +20,17 @@ const FeedbackSection = () => {
             <span>फीडबॅक द्या</span>
           </a>
           
-          <button 
+          <a 
+            href="https://g.page/r/CSCQi72zK9wbEAE/review"
+            target="_blank"
+            rel="noreferrer"
             className="bg-white/5 hover:bg-white/10 border border-white/20 text-white font-bold py-3 px-6 rounded-2xl transition-all flex flex-col items-center justify-center gap-1 w-64 max-w-full"
           >
             <span className="text-[#D4AF37] flex gap-1 mb-0.5 text-lg">
               <FaStar/><FaStar/><FaStar/><FaStar/><FaStar/>
             </span> 
             <span>गुगल रिव्ह्यू</span>
-          </button>
+          </a>
         </div>
       </div>
     </section>
